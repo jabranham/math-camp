@@ -1,0 +1,29 @@
+\documentclass[12pt]{beamer}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\title{Introduction to Matrix Algebra}
+\author{J. Alexander Branham}
+\date{}
+\usetheme{Warsaw}
+\usecolortheme{beaver}
+\begin{document}
+
+\frame{
+\titlepage
+}
+
+\section{What is a matrix?}
+
+\frame{
+\frametitle{Scalars}
+\begin{itemize}
+\item Let's start with something familiar, with a new word
+\item One number (12, for example) is referred to as a \emph{scalar}
+\end{itemize}
+}
+
+
+
+\end{document}
