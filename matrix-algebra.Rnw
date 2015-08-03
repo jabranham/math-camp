@@ -15,14 +15,223 @@
 }
 
 \section{What is a matrix?}
+\subsection{Scalars}
 
 \frame{
 \frametitle{Scalars}
 \begin{itemize}
 \item Let's start with something familiar, with a new word
 \item One number (12, for example) is referred to as a \emph{scalar}
+\item This can be thought of as a $1 x 1$ matrix 
+\begin{itemize}
+\item more on that in a bit\ldots
+\end{itemize}
+\end{itemize}
+\[
+\begin{bmatrix}
+12
+\end{bmatrix}
+= c 
+\]
+}
+
+\subsection{Vectors}
+
+\frame{
+\frametitle{Vectors}
+We can put several scalars together to make a vector
+\pause
+For example
+\[
+\begin{bmatrix}
+12 \\
+14 \\
+15
+\end{bmatrix}
+\pause 
+= b
+\]
+\pause
+Since this is a column of numbers, we cleverly refer to it as a \emph{column vector}
+}
+
+\frame{
+\frametitle{Row vectors}
+If we take $b$ and arrange it so that it it a row of numbers instead of a column, we refer to it as a \emph{row vector}:
+\[
+\begin{bmatrix}
+12 & 14 & 15
+\end{bmatrix}
+= d
+\]
+}
+
+\subsection{Matrices}
+\frame{
+\frametitle{Matrix}
+We can put multiple vectors together to get a \emph{matrix}:
+\[
+\begin{bmatrix}
+12 & 14 & 15 \\
+115 & 22 & 127 \\
+193 & 29 & 219
+\end{bmatrix}
+= A
+\]
+}
+
+\frame{
+\frametitle{Matrices, cntd}
+\begin{itemize}
+  \item We refer to the \emph{dimensions} of matrices by \emph{row} x \emph{column}
+
+\item So $A$ is a $3x3$ matrix.
+
+\item Note that matrices are usually designated by capital letters (and sometimes bolded as well)
+\end{itemize}
+
+}
+
+\frame{
+\frametitle{Dimensions}
+\centering
+{\Huge ROW x COLUMN}
+}
+
+\frame{
+\frametitle{Matrix Indices}
+\begin{itemize}
+\item But how do we refer to specific elements of the matrix?
+\pause 
+
+\item Come up with a clever index!
+\pause
+
+\item Matrix $A$ is an $mxn$ matrix where $m=n=3$.
+
+\pause
+
+\item More generally, matrix $B$ is an $mxn$ matrix where the elements look like this:
+\end{itemize}
+
+\[
+B=
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} & \ldots & b_{1m} \\
+b_{21} & b_{22} & b_{23} & \ldots & b_{2m} \\
+\vdots & \vdots & \vdots & \ldots & \vdots \\
+b_{n1} & b_{n2} & b_{n3} & \ldots & b_{nm}
+\end{bmatrix}
+\]
+}
+
+\section{Matrix operations}
+\subsection{Addition and subtraction}
+
+\frame{
+\frametitle{Addition and subtraction are EASY}
+\begin{itemize}
+  \item Requirement: Must have \emph{exactly} the same dimensions
+  \item To do the operation, just add or subtract each element with the corresponding element from the other matrix:
+\end{itemize}
+\[
+A \pm B
+\]
+}
+
+\frame{
+\[
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\pm
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13}\\
+b_{21} & b_{22} & b_{23}\\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+\]
+
+\[
+=
+\begin{bmatrix}
+a_{11}\pm b_{11} & a_{12}\pm b_{12} & a_{13}\pm b_{13}\\
+a_{21}\pm b_{21} & a_{22}\pm b_{22} & a_{23}\pm b_{23}\\
+a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
+\end{bmatrix}
+\]
+}
+
+\subsection{Multiplication}
+
+\frame{
+\frametitle{Scalar Multiplication}
+Easy - just multiply each element of the matrix by the scalar
+\[
+cA = 
+\begin{bmatrix}
+ca_{11} & ca_{12} & ca_{13}\\
+ca_{21} & ca_{22} & ca_{23}\\
+ca_{31} & ca_{32} & ca_{33}
+\end{bmatrix}
+\]
+}
+
+\frame{
+\frametitle{Matrix Multiplication}
+\begin{itemize}
+  \item Requirement: the two matrices must be \emph{conformable}
+  \item This means that the number of columns in the first matrix equals the number of rows in the second
+  \item The resulting matrix will have the number of rows in the first, and the number of columns in the second! 
 \end{itemize}
 }
+
+\frame{
+\frametitle{Question time}
+Which can we multiply? What will the resulting dimensions be?
+\[
+b=
+\begin{bmatrix}
+2 \\
+3\\
+4\\
+1
+\end{bmatrix}
+M = 
+\begin{bmatrix}
+1 & 0 & 2\\
+1 & 2 & 4\\
+2 & 3 & 2
+\end{bmatrix}
+L = 
+\begin{bmatrix}
+6 & 5 & -1\\
+1 & 4 & 3 
+\end{bmatrix}
+\]
+\pause 
+\textbf{ONLY} $LM$ and NOT $ML$\\
+The dimensions will be $2x3$
+}
+
+\begin{frame}[fragile]
+\frametitle{How to actually do this?}
+Multiply each row by each column
+
+(Board examples)
+\pause
+
+<<matrix-ex>>=
+L <- matrix(c(6,5,-1, 1,4,3),
+            nrow=2, byrow=TRUE)
+M <- matrix(c(1,0,2, 1,2,4, 2,3,2), 
+            nrow=3, byrow=TRUE)
+L%*%M
+@
+
+\end{frame}
 
 
 
