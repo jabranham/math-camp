@@ -233,6 +233,134 @@ L%*%M
 
 \end{frame}
 
+\frame{
+\frametitle{Matrix Division}
+\pause 
+\centering
+{\Huge HAHAHA \ldots NOPE }
+}
+
+\subsection{Properties of operators}
+\frame{
+\frametitle{Properties of matrix operations}
+\begin{itemize}
+  \item Addition and subtraction
+  \begin{itemize}
+  \item Associative $ (A \pm B) \pm C = A \pm (B \pm C) $
+  \item Communicative $A \pm B = B \pm A$
+\end{itemize}
+\item Multiplication
+  \begin{itemize}
+    \item $AB \neq BA$
+    \item $A(BC) = (AB)C$
+    \item $A(B+C) = AB + AC$
+    \item $ (A+B)C = AC + BC $
+  \end{itemize}
+
+\end{itemize}
+
+}
+
+\section{Transposition}
+\subsection{What is it?}
+\begin{frame}[fragile]
+\begin{itemize}
+  \item Switch the rows and columns
+  \item so a $nxm$ matrix becomes $mxn$
+  \item typically denoted $L'$ or $L^T$
+\end{itemize}
+<<transpose>>=
+L
+t(L)
+@
+\end{frame}
+
+\subsection{Properties}
+\frame{
+\frametitle{Properties of transposition}
+\begin{itemize}
+  \item Matrix is \emph{always} conformable for multiplication with its transpose in both directions
+  \item $(A\pm B)' = A' \pm B'$
+  \item $A'' = A$
+  \item $(AB)' = B'A'$
+  \item $ (cA)' = cA' $ where $c$ is a scalar
+\end{itemize}
+}
+
+\section{Special matrices}
+\frame{
+\frametitle{Special types of matrices}
+Some matricies get more love than others
+}
+
+\frame{
+\frametitle{Square matrix}
+Any $nxn$ matrix (same number rows and columns)
+\[
+\begin{bmatrix}
+1 & 0 & 2\\
+1 & 2 & 4\\
+2 & 3 & 2
+\end{bmatrix}
+\]
+}
+
+\frame{
+\frametitle{Symmetric matrix}
+A square matrix that is the same as its transpose
+\[
+\begin{bmatrix}
+2 & 5 & 7\\
+5 & 9 & 6\\
+7 & 6 & 7
+\end{bmatrix}
+\]
+}
+
+\frame{
+\frametitle{Diagonal matrix}
+A symmetric matrix with zeros everywhere but the main diagonal 
+\[
+\begin{bmatrix}
+2 & 0 & 0\\
+0 & 9 & 0\\
+0 & 0 & 7
+\end{bmatrix}
+\]
+}
+
+\frame{
+\frametitle{Scalar matrix}
+A diagonal matrix with the same number all along the diagonal
+\[
+\begin{bmatrix}
+2 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 2
+\end{bmatrix}
+\]
+}
+
+\frame{
+\frametitle{Identity matrix}
+A scalar matrix where the diagonal elements are 1. 
+\[
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}
+\]
+
+\pause
+\begin{itemize}
+\item This is a super important type of matrix. 
+
+\item It gets its own notation: $I_n$ where $n$ is the number of rows and columns
+
+\item Note that $I_n A = A$ and also $A I_n = A$
+\end{itemize}
+}
 
 
 \end{document}
