@@ -1,0 +1,282 @@
+---
+title: "Introduction to Matrix Algebra"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    theme: "Warsaw"
+    colortheme: "beaver"
+    slide_level: 3
+---
+
+# What is a matrix?
+
+## Scalars
+
+### Scalars
+* Let's start with something familiar, with a new word
+* One number (12, for example) is referred to as a *scalar*
+* This can be thought of as a $1 x 1$ matrix
+    + More on that in a bit...
+$$
+\begin{bmatrix}
+12
+\end{bmatrix}
+= c  $$
+
+## Vectors 
+
+### Vectors 
+>- We can put several scalars together to make a vector
+<- For example: 
+$$
+\begin{bmatrix}
+12 \\
+14 \\
+15
+\end{bmatrix}
+= b
+$$
+>- Since this is a column of numbers, we cleverly refer to it as a *column vector*
+
+### Row Vectors 
+If we take $b$ and arrange it so that it it a row of numbers instead of a column, we refer to it as a *row vector*:
+$$
+\begin{bmatrix}
+12 & 14 & 15
+\end{bmatrix}
+= d
+$$
+
+## Matrices
+
+### Matrix
+We can put multiple vectors together to get a *matrix*:
+$$
+\begin{bmatrix}
+12 & 14 & 15 \\
+115 & 22 & 127 \\
+193 & 29 & 219
+\end{bmatrix}
+= A
+$$
+
+### Matrices, cntd
+* We refer to the *dimensions* of matrices by *row* x *column*
+* So $A$ is a $3x3$ matrix.
+* Note that matrices are usually designated by capital letters 
+    + And sometimes bolded as well
+    
+### Dimensions
+\centering
+\Huge ROW x COLUMN
+
+### Indices 
+>- How do we refer to specific elements of the matrix???
+>- Solution: come up with a clever indexing scheme
+>- Matrix $A$ is an $mxn$ matrix where $m=n=3$.
+>-  More generally, matrix $B$ is an $mxn$ matrix where the elements look like this:
+$$
+B=
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13} & \ldots & b_{1m} \\
+b_{21} & b_{22} & b_{23} & \ldots & b_{2m} \\
+\vdots & \vdots & \vdots & \ldots & \vdots \\
+b_{n1} & b_{n2} & b_{n3} & \ldots & b_{nm}
+\end{bmatrix}
+$$
+
+# Matrix Operations
+## Addition and subtraction
+
+### Addition and subtraction are EASY!
+* Requirement: Must have \emph{exactly} the same dimensions
+* To do the operation, just add or subtract each element with the corresponding element from the other matrix:
+$$
+A \pm B
+$$
+
+### Addition and Subtraction
+$$
+\begin{bmatrix}
+a_{11} & a_{12} & a_{13}\\
+a_{21} & a_{22} & a_{23}\\
+a_{31} & a_{32} & a_{33}
+\end{bmatrix}
+\pm
+\begin{bmatrix}
+b_{11} & b_{12} & b_{13}\\
+b_{21} & b_{22} & b_{23}\\
+b_{31} & b_{32} & b_{33}
+\end{bmatrix}
+$$
+
+$$
+=
+\begin{bmatrix}
+a_{11}\pm b_{11} & a_{12}\pm b_{12} & a_{13}\pm b_{13}\\
+a_{21}\pm b_{21} & a_{22}\pm b_{22} & a_{23}\pm b_{23}\\
+a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
+\end{bmatrix}
+$$
+
+## Multiplication
+
+### Scalar multiplication
+Easy - just multiply each element of the matrix by the scalar
+$$
+cA = 
+\begin{bmatrix}
+ca_{11} & ca_{12} & ca_{13}\\
+ca_{21} & ca_{22} & ca_{23}\\
+ca_{31} & ca_{32} & ca_{33}
+\end{bmatrix}
+$$
+
+### Matrix multiplication
+* Requirement: the two matrices must be *conformable*
+* This means that the number of columns in the first matrix equals the number of rows in the second
+* The resulting matrix will have the number of rows in the first, and the number of columns in the second! 
+
+### Pop quiz
+>- Which can we multiply? What will the resulting dimensions be?
+$$
+b=
+\begin{bmatrix}
+2 \\
+3\\
+4\\
+1
+\end{bmatrix}
+M = 
+\begin{bmatrix}
+1 & 0 & 2\\
+1 & 2 & 4\\
+2 & 3 & 2
+\end{bmatrix}
+L = 
+\begin{bmatrix}
+6 & 5 & -1\\
+1 & 4 & 3 
+\end{bmatrix}
+$$
+>- **ONLY** $LM$ and **NOT** $ML$
+>- The dimensions will be $2x3$
+
+### How to actually do this? 
+>- Multiply each row by each column
+>- (Board examples)
+\pause 
+```{r}
+L <- matrix(c(6,5,-1, 1,4,3),
+            nrow=2, byrow=TRUE)
+M <- matrix(c(1,0,2, 1,2,4, 2,3,2), 
+            nrow=3, byrow=TRUE)
+L%*%M
+```
+
+### Matrix Division
+\centering 
+\pause
+\Huge HAHAHA... NOPE
+
+## Properties of matrix operations
+### Properties of operators 
+>- Addition and subtraction
+    + Associative $(A \pm B) \pm C = A \pm (B \pm C)$
+    + Communicative $A \pm B = B \pm A$
+>- Multiplication
+    + $AB \neq BA$
+    + $A(BC) = (AB)C$
+    + $A(B+C) = AB + AC$
+    + $(A+B)C = AC + BC$
+
+# Transposition
+## What is it? 
+### Qu'est-ce que c'est?
+* Switch the rows and columns
+* So a $nxm$ matrix becomes $mxn$
+* Typically denoted $L'$ or $L^T$
+```{r}
+L
+t(L)
+```
+
+## Properties 
+### Properties of transposing
+>- Matrix is *always* conformable for multiplication with its transpose in both directions
+>- $(A\pm B)' = A' \pm B'$
+>- $A'' = A$
+>- $(AB)' = B'A'$
+>- $(cA)' = cA'$ where $c$ is a scalar
+
+
+# Special matrices
+## Special matrices
+### Special types of matrices
+Some matricies get more love than others
+
+### Square matrix
+Any $nxn$ matrix (same number rows and columns)
+$$
+\begin{bmatrix}
+1 & 0 & 2\\
+1 & 2 & 4\\
+2 & 3 & 2
+\end{bmatrix}
+$$
+
+
+### Symmetric matrix
+A square matrix that is the same as its transpose
+$$
+\begin{bmatrix}
+2 & 5 & 7\\
+5 & 9 & 6\\
+7 & 6 & 7
+\end{bmatrix}
+$$
+
+### Diagonal matrix
+A symmetric matrix with zeros everywhere but the main diagonal 
+$$
+\begin{bmatrix}
+2 & 0 & 0\\
+0 & 9 & 0\\
+0 & 0 & 7
+\end{bmatrix}
+$$
+
+
+### Scalar matrix 
+A diagonal matrix with the same number all along the diagonal
+$$
+\begin{bmatrix}
+2 & 0 & 0\\
+0 & 2 & 0\\
+0 & 0 & 2
+\end{bmatrix}
+$$
+
+### Identity matrix
+>- A scalar matrix where the diagonal elements are 1. 
+$$
+\begin{bmatrix}
+1 & 0 & 0\\
+0 & 1 & 0\\
+0 & 0 & 1
+\end{bmatrix}
+$$
+\pause
+
+* This is a super important type of matrix. 
+
+* It gets its own notation: $I_n$ where $n$ is the number of rows and columns
+
+* Note that $I_n A = A$ and also $A I_n = A$
+
