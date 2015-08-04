@@ -1,0 +1,145 @@
+---
+title: "Intro to R"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    theme: "Warsaw"
+    colortheme: "beaver"
+    slide_level: 3
+---
+
+# What is R?
+## Intro
+### What is R? 
+* R is a language and environment for statistical computing and graphics.
+    + From R's website
+* Note that it is a **language**
+    + Those of you who have learned a foreign language know how slow and frustrating that process is... 
+
+## Why use R?
+### Advantages of R
+* It's **FREE**, open-source, and available on every platform
+    + Stata is between $55/yr and $1000/year for students, depending on what you need 
+* Unparalleled in the number of statistical packages (groups of functions)
+* Great community help (e.g. stackoverflow.com, R-bloggers)
+* You can combine documents and r code together (rmarkdown or knitr)
+    + For example, this presentation is written in rmarkdown
+
+### Disadvantages of R
+* Some feel like it's not as intuitive as Stata or other stats programs
+* Uses lots of memory 
+* If you know another programming language (C, Python, etc), R's syntax is very odd
+* Since anyone can write a package, some of the code (and help files) are difficult to follow 
+
+## Installation 
+### R
+* Go to www.r-project.org, click "Download R," select a mirror close to you, and select your operating system 
+* R by itself is pretty dinky, so we like to use RStudio
+
+### RStudio
+* Go to www.rstudio.com and download the appropriate desktop version of Rstudio (the free one)
+* Install like normal 
+* Open RStudio, click tools > global options and change "Save workspace to RData on exit" to Never
+
+# RStudio Layout
+### RStudio Layout 
+* Bottom left: Console
+    + This is where you can enter R code to execute
+* Top left: editor window
+    + You can have open R scripts or rmarkdown files here to edit
+* Top right: environment, history, (git)
+    + Environment will list everything that R is "remembering"
+    + History lists all commands entered in that "project"
+* Bottom right: files, plots, packages, help
+
+### R Projects
+* You can set up different "projects" from within Rstudio
+* This will automatically change the working directory to where you put the project
+* I use a project for each paper, for example
+
+# Using R
+## The basics 
+### Calculator 
+* R is a great calculator 
+```{r}
+3 + 2
+1.7729^4 * (1930/4)
+```
+
+### Assignment
+R uses ` <- ` for assignment. 
+```{r}
+a <- 4
+a + 7
+a <- a + 2
+a + 7
+```
+`a` is now referred to as an "object." Pretty much anything R remembers is an object. 
+
+### Functions
+Functions take arguments
+```{r}
+myvector <- c(1, 5, 2, 7, 9, NA, 1)
+mean(myvector, na.rm = TRUE)
+rnorm(5, 0, 1)
+```
+
+## Data Structures
+### Basic Data Structures
+R has four basic types of data: logical, numeric, integer, and character
+```{r, eval = FALSE}
+TRUE ; FALSE
+3
+3L
+"character"
+```
+
+
+### matrix
+```{r}
+mymatrix <- matrix(c(1,2,3, 5,11,4), nrow=2, byrow=FALSE)
+mymatrix
+mean(mymatrix[ , 1])
+```
+
+### data.frame
+```{r}
+mydata <- data.frame(x=c(1,2,3), y=c(5,11,4))
+mydata
+mean(mydata$x)
+```
+
+### list
+```{r}
+mylist <- list(amatrix = mymatrix,
+               adataframe = mydata)
+mylist
+```
+
+
+## Programming tools
+### If-else
+If else statements say IF this is true, then do this. OTHERWISE, do that. There are two types in R: if, else (which work for scalars) and ifelse, which works on vectors
+```{r}
+x <- 1:10
+if(5>3){
+  x+1
+}
+ifelse(x<=5, x+1, x-4)
+```
+
+### For loops
+For loops do something a specified number of times:
+```{r}
+x <- numeric()
+for(i in 1:10){
+  x[i] <- rnorm(1)
+}
+x
+```
