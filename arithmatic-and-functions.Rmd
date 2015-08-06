@@ -1,0 +1,28 @@
+---
+title: "Introduction to Math for Political Scientists"
+author: "J. Alexander Branham & Megan Moeller"
+date: "Fall 2015"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    theme: "Warsaw"
+    colortheme: "beaver"
+    slide_level: 3
+---
+
+# Arithmatic 
+## Addition and Subtraction
+### Let's start real slow...
+So we all know that
+$$2+2 =4$$
+But addition and subtraction have some cool rules
+
+### Properties of Addition and subtraction
+* Communiciative:
+    + $a\pm b = b \pm a$
+* Associative
+    + $(a\pm b) \pm c = a \pm (b\pm c)$
