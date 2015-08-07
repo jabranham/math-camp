@@ -72,3 +72,32 @@ Or I could just do
 * Multiplication and division (left tor right)
 * Addition and subtraction (left to right)
 $$(10-48\div 12 * 2)^2 + 3^2 * (8-6)$$
+
+# Exponents and Logarithms 
+## What are they?
+### Exponents and Logarithms
+* Exponents tell you to multiply that thing by its base x times:
+    + $3^4 = 3*3*3*3 = $
+* Logarithms ask how many times you must raise the base to get x:
+    + $log_3(81) = 4$
+    + Note that logarithms with negative arguments are undefined 
+    + Sometimes $log(n)$ means $log_{10}(n)$
+    + Othertimes, it means $log_e(n) = ln(n)$
+    
+## Properties
+### Properties of exponents
+* $a^ma^n = a^{m+n}$
+* $\dfrac{a^m}{a^n}  = a^{m-n}$
+* $(a^m)^n = a^{mn}$
+* $a^0=1$
+* $a^{1/n} = \sqrt[n]{a}$
+* $\left( \dfrac{a}{b} \right)^n = \dfrac{a^n}{b^n} = a^nb^{-n} \qquad \forall b\neq 0$
+* $\left( \dfrac{a}{b} \right)^{-n} = \left( \dfrac{b}{a} \right)^n \qquad \forall a,b\neq 0$
+
+### Properties of logs
+* $log_x(ab) = log_xa + log_xb$
+* $log_x(\dfrac{a}{b}) = log_xa - log_xb$
+* $log_xa^b = b log_x a$
+* $log_x 1 = 0$
+* $m^{log_m(a)} = a$
+* $\dfrac{log_x n}{log_x m} = log_m n$
