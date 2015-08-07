@@ -12,17 +12,63 @@ output:
     theme: "Warsaw"
     colortheme: "beaver"
     slide_level: 3
+    incremental: TRUE
 ---
 
 # Arithmatic 
 ## Addition and Subtraction
 ### Let's start real slow...
-So we all know that
+* So we all know that
 $$2+2 =4$$
-But addition and subtraction have some cool rules
+* But addition and subtraction have some cool (grool?) rules
 
 ### Properties of Addition and subtraction
 * Communiciative:
     + $a\pm b = b \pm a$
 * Associative
     + $(a\pm b) \pm c = a \pm (b\pm c)$
+    
+## Multiplication and Division
+### Multiplication
+* Multiplication - I have these 4 things 10 times. 
+```{r} 
+4+4+4+4+4+4+4+4+4+4 
+```
+\pause 
+Or I could just do 
+```{r}
+4*10
+```
+
+### Division 
+* Just fancy multiplication.
+\pause
+* I have these four things one of ten times.
+```{r}
+4*(1/10)
+```
+
+## Properties 
+### Properties of Multiplication and Division
+* Communicative 
+    + $a*b = b*a$
+* Associative
+    + $(ab)c = a(bc)$
+* Distributive
+    + $a(b+c) = ab + ac$
+    + Note that this works for division: $\dfrac{a+b}{c} = \dfrac{a}{c} + \dfrac{b}{c}$
+
+
+# Properties of Equalities
+### Relationships that hold with (real) numbers
+* $a=b \longleftrightarrow b=a$ (Symmetric relationships)
+* $a = b$ and $b=c \Rightarrow a=c$ (Transitive relationships)
+    + $a>b$ and $b>c \Rightarrow a>c$
+    
+# PEMDAS
+### PEMDAS
+* Parentheses 
+* Exponents
+* Multiplication and division (left tor right)
+* Addition and subtraction (left to right)
+$$(10-48\div 12 * 2)^2 + 3^2 * (8-6)$$
