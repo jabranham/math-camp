@@ -1,0 +1,90 @@
+---
+title: "functions"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    colortheme: beaver
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    theme: Warsaw
+    fig_width: 3
+    fig_height: 3
+---
+
+```{r, echo=FALSE}
+library(ggplot2)
+```
+
+# Exponents and Logarithms 
+## What are they?
+### Exponents and Logarithms
+* Exponents tell you to multiply that thing by its base x times:
+    + $3^4 = 3*3*3*3 = $
+* Logarithms ask how many times you must raise the base to get x:
+    + $log_3(81) = 4$
+    + Note that logarithms with negative arguments are undefined 
+    + Sometimes $log(n)$ means $log_{10}(n)$
+    + Othertimes, it means $log_e(n) = ln(n)$
+    
+## Properties
+### Properties of exponents
+* $a^ma^n = a^{m+n}$
+* $\dfrac{a^m}{a^n}  = a^{m-n}$
+* $(a^m)^n = a^{mn}$
+* $a^0=1$
+* $a^{1/n} = \sqrt[n]{a}$
+* $\left( \dfrac{a}{b} \right)^n = \dfrac{a^n}{b^n} = a^nb^{-n} \qquad \forall b\neq 0$
+* $\left( \dfrac{a}{b} \right)^{-n} = \left( \dfrac{b}{a} \right)^n \qquad \forall a,b\neq 0$
+
+### Properties of logs
+* $log_x(ab) = log_xa + log_xb$
+* $log_x(\dfrac{a}{b}) = log_xa - log_xb$
+* $log_xa^b = b log_x a$
+* $log_x 1 = 0$
+* $m^{log_m(a)} = a$
+* $\dfrac{log_x n}{log_x m} = log_m n$
+
+# Functions
+## The Basics
+### What's a function?
+* Anything that takes input and gives one output
+* In math, this usually looks something like $f(x,z) = y$
+    + $x$ and $z$ are the *arguments* that the function takes
+    + $y$ is the *output* from the function
+![alt text](images/Function_machine.jpg)
+
+## Functional Forms
+### Linear functions
+* We can make a function that describes a line pretty easily
+* $y=mx+b$
+    + $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units)
+    + $b$ is the x-intercept: the value of $y$ when $x=0$
+    
+### Linear functions
+```{r}
+ggplot(data.frame(x=c(-3, 3)), aes(x)) + 
+  stat_function(fun=function(x)-2*x+3, geom="line")  +
+  stat_function(fun=function(x)(1/2)*x+1)
+```
+
+
+
+### Quadratics
+* These lines have one curve
+* $y=ax^2 + bx + c$
+
+### Quadratics
+```{r, warning=FALSE}
+ggplot(data.frame(x=c(-3,4)), aes(x)) + 
+  stat_function(fun=function(x)2*x^2, color="red") + 
+  stat_function(fun=function(x)x^2, color="green") + 
+  stat_function(fun=function(x)-2*x^2 + 6*x -4) + 
+  ylim(c(-5, 5))
+```
