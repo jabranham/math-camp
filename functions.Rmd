@@ -86,3 +86,27 @@ ggplot(data.frame(x=c(-3,4)), aes(x)) +
   stat_function(fun=function(x)-2*x^2 + 6*x -4) + 
   ylim(c(-5, 5))
 ```
+
+### Exponential
+* General form: $y = a * b^{kx} + k$
+```{r, fig.height=4}
+ggplot(data.frame(x=c(-1, 5)), aes(x)) + 
+  stat_function(fun=function(x)exp(x)) + 
+  stat_function(fun=function(x)2*exp(x), color="red")
+```
+
+### Logs
+* General form: $y= a*log(bx) + k$
+```{r, fig.height=4}
+ggplot(data.frame(x=c(0,5)), aes(x)) + 
+  stat_function(fun=function(x)log(x)) + 
+  stat_function(fun=function(x)log10(x), color="red") + 
+  stat_function(fun=function(x)2*log(x), color="green")
+```
+
+### Logs and Exponents
+* The log and exponent charts are obviously related
+* In fact, these functions are each others "inverse" function
+    + Plug in $y$ to find $x$
+* Exponents have horizontal asymptote
+* Logs have vertical asymptote
