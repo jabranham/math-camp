@@ -8,8 +8,64 @@ header-includes:
    - \AtBeginSubsubsection{}
 output: 
   beamer_presentation:
-    theme: "Warsaw"
-    colortheme: "beaver"
-    slide_level: 3
+    incremental: true
+fontsize: 10pt
 ---
+
+# Basic statistics in R
+
+# Reading in some data
+* Let's read in some data from the internets:
+
+```{r}
+# Data is available on this course's github page:
+# github.com/jabranham/math-camp
+# Data from Herrera et al (forthcoming, AJPS)
+library(foreign)
+my_data <- read.dta("data/herrera-data.dta")
+my_data$fptp <- as.logical(my_data$fptp)
+```
+
+# What's in this data?
+* unit of observation: country-year
+* DV: turnout
+* margin: margin between candidite w/ plurality and runner-up
+* fptp: dummy for FPTP systems
+* ppi: parliamentary power index 
+
+# First step: Plot your data! 
+```{r, warning=FALSE}
+library(ggplot2)
+ggplot(my_data, aes(margin, turnout)) + geom_jitter()
+```
+
+# Maybe it looks different in FPTP systems?
+```{r, warning=FALSE}
+ggplot(my_data, aes(margin, turnout, color=fptp)) + 
+  geom_jitter()
+```
+
+# Means by group
+```{r}
+mean_fptp <- mean(my_data$turnout[my_data$fptp==TRUE])
+mean_notfptp <- mean(my_data$turnout[my_data$fptp==FALSE])
+c(mean_fptp, mean_notfptp)
+```
+
+# Maybe we want uncertainty too...
+```{r}
+sd_fptp <- sd(my_data$turnout[my_data$fptp==TRUE])
+sd_notfptp <- sd(my_data$turnout[my_data$fptp==FALSE])
+c(sd_fptp, sd_notfptp)
+```
+
+# There's a formal test
+* Tests whether the mean is statistically different from each other
+* LOTS more of this in Stats I
+```{r}
+with(my_data, t.test(my_data$turnout[my_data$fptp==TRUE],
+  my_data$turnout[my_data$fptp==FALSE]))
+```
+
+
 
