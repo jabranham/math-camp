@@ -1,0 +1,15 @@
+---
+title: "Intro to R - the Stats"
+author: "J. Alexander Branham"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    theme: "Warsaw"
+    colortheme: "beaver"
+    slide_level: 3
+---
+

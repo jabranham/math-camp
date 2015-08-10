@@ -1,5 +1,5 @@
 ---
-title: "Intro to R"
+title: "Intro to R - the Language"
 author: "J. Alexander Branham"
 date: "Fall 2015"
 header-includes: 
