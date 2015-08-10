@@ -143,3 +143,9 @@ for(i in 1:10){
 }
 x
 ```
+
+# Further Resources
+### Further resources 
+* [Importing data into R](http://blog.datacamp.com/r-data-import-tutorial/)
+* [Useful R packages](https://support.rstudio.com/hc/en-us/articles/201057987-Quick-list-of-useful-R-packages)
+* R tutorials on lynda.com (free for UT students)
