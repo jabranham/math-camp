@@ -25,6 +25,7 @@ output:
 ## Why use R?
 ### Advantages of R
 * It's **FREE**, open-source, and available on every platform
+    + Free as in speech and free as in beer
     + Stata is between $55/yr and $1000/year for students, depending on what you need 
 * Unparalleled in the number of statistical packages (groups of functions)
 * Great community help (e.g. stackoverflow.com, R-bloggers)
