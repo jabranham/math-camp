@@ -146,4 +146,16 @@ $$
 
 ## Combinations
 ### Repition not allowed
-* 
+* Easiest way: do permutation without repitition, then get rid of all the "same" outcomes
+* We've already figured out hte permutation part, so need to figure out the second part 
+$$
+\dfrac{n!}{(n-r)!} * \dfrac{1}{r!} = \dfrac{n!}{r!(n-r)!} = {n \choose r}
+$$
+
+### Repitition allowed
+* These aren't used much
+* Also the most difficult to calculate
+* Formula:
+$$
+{n+r-1 \choose r} = \dfrac{(n+r-1)!}{r!(n-1)!}
+$$
