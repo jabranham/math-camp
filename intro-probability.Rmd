@@ -1,0 +1,88 @@
+---
+title: "Introduction to Probability"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+header-includes: 
+   - \AtBeginPart{}
+   - \AtBeginSection{}
+   - \AtBeginSubsection{}
+   - \AtBeginSubsubsection{}
+output: 
+  beamer_presentation:
+    colortheme: beaver
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    theme: Warsaw
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+```
+
+
+# What is probability?
+### Probability
+* Frequency with which an event occurs
+* Typically:
+$$
+Pr(A) = P(A) = \pi(A) = \dfrac{\text{Number of ways an event can occur}}{\text{Total number of possible outcomes}}
+$$
+* There are other ways of thinking about probability, but we'll stick with this one
+
+### Kolmogorov's Axioms 
+* First: $Pr(E)\in\mathbb{R}, Pr(E)\geq 0 \qquad \forall E\in F$
+    + Probabilities must be non-negative
+* Second: $Pr(\Omega) = 1$
+    + Something has to happen
+    + Probabilities sum/integrate to 1
+* Third: $Pr\left(\bigcup_{i = 1}^\infty E_i\right) = \sum_{i=1}^\infty Pr(E_i)$
+    + The probability of disjoint (mutually exclusive) sets is equal to their sums 
+
+# Probability Distributions
+## Discrete
+### Discrete probabilities 
+* What's the probability that we'll roll a 3 on one die roll:
+$$
+Pr(y=3) = \dfrac{1}{6}
+$$
+
+* If one roll of the die is an "experiment"
+* We can think of a 3 as a "success"
+* And $Y \sim Bern(\dfrac{1}{6})$
+* Fair coins are $\sim Bern(.5)$ for example
+* More generally $Bern(\pi )$
+    + $\pi$ represents the probability of success
+
+### Binomial distributions
+* Before we ran the experiment just once
+* What happens if we run it multiple times?
+$$
+Pr(y_1=3, y_2=3) = \dfrac{1}{6} * \dfrac{1}{6}
+$$
+
+* Now $Y \sim Binom(2, \dfrac{1}{6})$
+    + Generally, $Y \sim Binom(n, p)$
+    + n = number of trials, p = probability of success
+* PMF:
+$$
+{n \choose k} p^k (1-6)^{n-k}
+$$
+
+## Continuous distributions
+### The basics
+* What happens when our outcome is continous
+* Much harder to think about... 
+* There are infinity possible outcomes
+* Makes the denominator of our fraction difficult to work with 
+* What's the probability that you make $15,293.19/year? 
+* Probability of the whole space must equal 1
+* Even if all events equally likely, $\dfrac{1}{\infty} =0$ 
+    + Kinda...
+    
+### Continuous distributions 
+```{r, fig.height=2.25, fig.width=3}
+ggplot(data.frame(x = c(-5, 5)), aes(x)) + 
+  stat_function(fun = dnorm)
+```
+
