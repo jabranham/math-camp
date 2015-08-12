@@ -102,3 +102,48 @@ $$
 * $(A \cap B) \cap C = A \cap (B \cap C)$
 * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 * $A \cup (C \cap C) = (A \cup B) \cap (A \cup C)$
+
+# Combinatorics 
+## What is it?
+### Combinatorics - What is it? 
+* How to count things? 
+* Countabl *discrete* structures 
+* Let's say we have the set $R$ from above
+$$
+R = \left\{ 1,2,3,4,5,6 \right\}
+$$
+* How many different combinations of 3 dice rolls are there? 
+
+### Order
+* First thing to ask is if order matters
+* Is rolling 1, 4, 2 the same as rolling 4, 2, 1?
+* If order matters, we talk about **permutations**
+* If not, it's a **combination**
+* think "permutation" = "position"
+
+## Permutations
+### Repitition? 
+* Can we repeat things? 
+* Is rolling 3, 3, 3, permissable? 
+* If yes, we choose one die roll of six three times:
+$$
+6 * 6 * 6 = 6^3
+$$
+* more generally, $n^r$
+    + $n$ is number of things to choose from
+    + choose $r$
+    
+### Permutations without replacement
+* We need to reduce the number of things from which to choose each time
+* How many different orderings of 9 horses in a race??
+    + $9*8*7$...$=9!=362,880$
+* Alternatively, maybe we just care about the first three:
+    + $9*8*7=504$
+* More generally:
+$$
+\dfrac{n!}{(n-r)!}
+$$
+
+## Combinations
+### Repition not allowed
+* 
