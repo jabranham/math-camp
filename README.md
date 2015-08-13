@@ -8,3 +8,5 @@ Feel free to suggest changes (small or large) using either the [issues](https://
 
 # .Rmd files
 You can compile .Rmd files in Rstudio. Open them and click the "Knit PDF" button. Note that you'll need a LaTeX distribution installed to do this. I recommend [TeXLive](https://www.tug.org/texlive/), which is available for all major operating systems.  
+
+If you want an OS-specific TeX distribution, there is MiKTex for Windows and MaCTeX for Mac.
