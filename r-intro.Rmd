@@ -13,6 +13,13 @@ output:
     colortheme: "beaver"
     slide_level: 3
 ---
+### 
+> If you wanted to do foundational research in
+statistics in the mid-twentieth century, you had
+to be bit of a mathematician, whether you wanted
+to or not. . . . if you want to do statistical re-
+search at the turn of the twenty-first century,
+you have to be a computer programmer. - Andrew Gelman
 
 # What is R?
 ## Intro
