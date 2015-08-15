@@ -8,9 +8,15 @@ output:
 ---
 
 # A Quick Overview...
-1. Code well
-2. Write using plain text
+1. Write using plain text 
+2. Code well
 3. Use a version control system 
+
+# Write using plain text! 
+* What if we write an article now that gets famous?
+* 20 years later, some grad student wants to extend our work
+* How did we make Figure 1?
+* Non-plain text files may be unuseable 20 years from now
 
 # Code well - DO NOT CLICK A MOUSE
 * All results should be replicable from a source file
@@ -73,10 +79,22 @@ ggplot(mtcars, aes(mpg, wt)) +
 * You also tend to end up with many versions of the same project
     + ((show example paper))
 
-# Git (and Github)
+# Git
 * Git is a formal *distributed version control system*
 * It is an easy way to keep track of all the revisions you have saved
 * It enables easy collaborating between many different people, without the need to email files back and forth or tell them when you're working on something 
 * You only have *one* version of a file at any one time
 * You can see the entire history of a file easily
 * You can see exactly what changed in each new commit 
+* There are *many* different GUIs so you don't have to deal with the command line
+    + I like Sourcetree (for Windows) and SmartGit (for Linux)
+* ((show example git history))
+
+# Github 
+* Github is the most popular online git service
+    + There are many others, such as BitBucket
+* Each project gets a repository ("repo") 
+* Each repo is version-controlled (using git)
+* Default is open-source (public)
+* You can make repos private (for a fee - students get 5 for free)
+* This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
