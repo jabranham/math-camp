@@ -53,13 +53,13 @@ Figure \ref{fig:mpg-and-weight}.
 % NTS - updating that figure with squared x doesn't change it 
 \begin{figure}
 \centering
-<<fig1plot>>= 
+<<fig1plot>>=  # Starts R code, labels it `fig1plot`
 # I use the mtcars dataset (included with R)
 library(ggplot2)
 ggplot(mtcars, aes(mpg, wt)) + 
   geom_point() + 
   geom_smooth(method="lm") # Adds OLS line with SEs
-@
+@ % closes R code 
 \caption{Miles per gallon and weight}
 \label{fig:mpg-and-weight}
 \end{figure}
@@ -99,3 +99,35 @@ ggplot(mtcars, aes(mpg, wt)) +
 * You can make repos private (for a fee - students get 5 for free)
 * This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
     + Feel free to fork-edit-pull request any changes! 
+
+# Bonus best practice - Test your code!
+* If you write your own function, it is important to test it to make sure it does what you want it to do!
+```{r}
+my_mean <- function(dat){
+  the_sum <- numeric()
+  N <- length(dat)
+  for (i in 1:N){
+    if(i==1){the_sum <- dat[1]}
+    else{
+    the_sum <- the_sum * dat[i]
+  }}
+  my_mean <- the_sum / N
+  my_mean
+}
+mean_of_zero <- c(-2, -1, 1, 2)
+my_mean(mean_of_zero)
+```
+
+# For further reading - Literate data analysis 
+* For R: 
+    + Markdown: [rmarkdown](https://www.rstudio.org/links/using_rmarkdown?version=0.99.473&mode=desktop)
+    + LaTeX: [knitr]()
+    + WYSIWYM: [Lyx + knitr]()
+    + Office: [odfWeave]()
+* For Stata: 
+    + Google "Sweave for Stata"
+    
+# For further reading - version control systems
+* Git
+    + Nice tutorial 
+    + Using [GitFlow]()
