@@ -29,7 +29,7 @@ ggsave("fig/fig1.pdf")
 ```
 * Save this code snippit as `fig1.R` (or similar)
 
-# Literate programming 
+# Literate programming and reproducible research 
 * Previous example - have two files for one plot in a paper
     + The paper itself (document.tex or similar)
     + the script to create the figure (fig1.R or similar)
@@ -39,5 +39,22 @@ ggsave("fig/fig1.pdf")
 # Literate programming example (using `knitr`)
 
 ```
-
+\begin{section}
+This is an example paragraph, writte in \LaTeX. 
+Using knitr, we can include R code in the following manner.
+I can reference the figure number by calling ref:
+Figure \ref{fig:mpg-and-weight}. 
+% NTS - updating that figure with squared x doesn't change it 
+\begin{figure}
+\centering
+<<fig1plot>>= 
+# I use the mtcars dataset (included with R)
+library(ggplot2)
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point() + 
+  geom_smooth(method="lm") # Adds OLS line with SEs
+@
+\caption{Miles per gallon and weight}
+\label{fig:mpg-and-weight}
+\end{figure}
 ```
