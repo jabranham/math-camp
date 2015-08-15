@@ -58,3 +58,25 @@ ggplot(mtcars, aes(mpg, wt)) +
 \label{fig:mpg-and-weight}
 \end{figure}
 ```
+
+# Version Control
+* **YOU NEED TO USE VERSION CONTROL!!!!!**
+* This can be as simple as putting things in Dropbox, which enables you to recover previous file versions automatically
+* Word's "track changes" feature... 
+
+# Pathologies of the Dropbox/Word approach:
+* Assumes they're both going to be around (in the same form(ish)) in the future
+    + Remember computers 20 years ago???
+* You can "clobber" work (save over good work)
+* Must tell coauthors not to touch files while you're working on them
+    + Though this may be changing...
+* You also tend to end up with many versions of the same project
+    + ((show example paper))
+
+# Git (and Github)
+* Git is a formal *distributed version control system*
+* It is an easy way to keep track of all the revisions you have saved
+* It enables easy collaborating between many different people, without the need to email files back and forth or tell them when you're working on something 
+* You only have *one* version of a file at any one time
+* You can see the entire history of a file easily
+* You can see exactly what changed in each new commit 
