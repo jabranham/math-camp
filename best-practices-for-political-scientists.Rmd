@@ -1,0 +1,139 @@
+---
+title: "Best Practices for the Political Scientist"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+output:
+  beamer_presentation:
+    incremental: true
+---
+
+# A Quick Overview...
+1. Write using plain text
+2. Code well
+3. Use a version control system
+
+# Write using plain text!
+* What if we write an article now that gets famous?
+* 20 years later, some grad student wants to extend our work
+* How did we make Figure 1?
+* Non-plain text files may be unusable 20 years from now
+* Word processors (like MS Word) are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
+
+# Code well - DO NOT CLICK A MOUSE
+* All results should be replicable from a source file
+* These source files (for example, .R for R scripts or .do for Stat do-files) should be liberally commented
+* Comments explain what you are doing to your future self, collaborators, and others
+
+# Comment example
+```
+# This code creates Fig 1
+# I use the mtcars dataset (included with R)
+library(ggplot2)
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  geom_smooth(method="lm") # Adds OLS line with SEs
+ggsave("fig/fig1.pdf")
+```
+* Save this code snippit as `fig1.R` (or similar)
+
+# Literate programming and reproducible research
+* Previous example - have two files for one plot in a paper
+    + The paper itself (document.tex or similar)
+    + the script to create the figure (fig1.R or similar)
+* What if we could combine these to have everything in one easy-to-read file?
+    + This is what literate programming is all about!
+
+# Literate programming example (using `knitr`)
+
+```
+\begin{section}
+This is an example paragraph, writte in \LaTeX.
+Using knitr, we can include R code in the following manner.
+I can reference the figure number by calling ref:
+Figure \ref{fig:mpg-and-weight}.
+% NTS - updating that figure with squared x doesn't change it
+\begin{figure}
+\centering
+<<fig1plot>>=  # Starts R code, labels it `fig1plot`
+# I use the mtcars dataset (included with R)
+library(ggplot2)
+ggplot(mtcars, aes(mpg, wt)) +
+  geom_point() +
+  geom_smooth(method="lm") # Adds OLS line with SEs
+@ % closes R code
+\caption{Miles per gallon and weight}
+\label{fig:mpg-and-weight}
+\end{figure}
+```
+
+# Version Control
+* **YOU NEED TO USE VERSION CONTROL!!!!!**
+* This can be as simple as putting things in Dropbox, which enables you to recover previous file versions automatically
+* Word's "track changes" feature...
+
+# Pathologies of the Dropbox/Word approach:
+* Assumes they're both going to be around (in the same form(ish)) in the future
+    + Remember computers 20 years ago???
+* You can "clobber" work (save over good work)
+* Must tell coauthors not to touch files while you're working on them
+    + Though this may be changing...
+* You also tend to end up with many versions of the same project
+    + ((show example paper))
+
+# Git
+* Git is a formal *distributed version control system*
+    + There are others (Subversion and Mercurial are the big two), but we're going to focus on git
+* It is an easy way to keep track of all the revisions you have saved
+* It enables easy collaborating between many different people, without the need to email files back and forth or tell them when you're working on something
+* You only have *one* version of a file at any one time
+* You can see the entire history of a file easily
+* You can see exactly what changed in each new commit
+* There are *many* different GUIs so you don't have to deal with the command line
+    + I like Sourcetree (for Windows) and SmartGit (for Linux)
+* ((show example git history))
+
+# Github
+* Github is the most popular online git service
+    + There are many others, such as BitBucket
+* Each project gets a repository ("repo")
+* Each repo is version-controlled (using git)
+* Default is open-source (public)
+* You can make repos private (for a fee - students get 5 for free)
+* This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
+    + Feel free to fork-edit-pull request any changes!
+    + I included the PDFs, which is unusual since they aren't plain text
+
+# Bonus best practice - Test your code!
+* If you write your own function, it is important to test it to make sure it does what you want it to do!
+```{r}
+my_mean <- function(dat){
+  the_sum <- numeric()
+  N <- length(dat)
+  for (i in 1:N){
+    if(i==1){the_sum <- dat[1]}
+    else{
+    the_sum <- the_sum * dat[i]
+  }}
+  my_mean <- the_sum / N
+  my_mean
+}
+mean_of_zero <- c(-2, -1, 1, 2)
+my_mean(mean_of_zero)
+```
+
+# For further reading - Literate data analysis
+* For R:
+    + CRAN has a webpage dedicated to [just this](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+    + Markdown: [rmarkdown](http://www.rmarkdown.rstudio.com)
+    + LaTeX: [knitr](http://yihui.name/knitr/)
+    + WYSIWYM: [Lyx + knitr](www.lyx.org)
+    + Office: [odfWeave](https://cran.r-project.org/web/packages/odfWeave/index.html)
+* For Stata:
+    + [StatWeave](http://homepage.cs.uiowa.edu/~rlenth/StatWeave/)
+    + Google "Sweave for Stata" or "reproducable research and Stata"
+
+# For further reading - version control systems
+* Git
+    + Nice tutorial [here](https://try.github.io/levels/1/challenges/1)
+    + Here's [more than you need to know about git](https://www.atlassian.com/git/tutorials)
+    + Using [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
