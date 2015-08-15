@@ -121,14 +121,17 @@ my_mean(mean_of_zero)
 
 # For further reading - Literate data analysis 
 * For R: 
-    + Markdown: [rmarkdown](https://www.rstudio.org/links/using_rmarkdown?version=0.99.473&mode=desktop)
-    + LaTeX: [knitr]()
-    + WYSIWYM: [Lyx + knitr]()
-    + Office: [odfWeave]()
+    + CRAN has a webpage dedicated to [just this](https://cran.r-project.org/web/views/ReproducibleResearch.html)
+    + Markdown: [rmarkdown](http://www.rmarkdown.rstudio.com)
+    + LaTeX: [knitr](http://yihui.name/knitr/)
+    + WYSIWYM: [Lyx + knitr](www.lyx.org)
+    + Office: [odfWeave](https://cran.r-project.org/web/packages/odfWeave/index.html)
 * For Stata: 
-    + Google "Sweave for Stata"
+    + [StatWeave](http://homepage.cs.uiowa.edu/~rlenth/StatWeave/)
+    + Google "Sweave for Stata" or "reproducable research and Stata"
     
 # For further reading - version control systems
 * Git
-    + Nice tutorial 
-    + Using [GitFlow]()
+    + Nice tutorial [here](https://try.github.io/levels/1/challenges/1)
+    + Here's [more than you need to know about git](https://www.atlassian.com/git/tutorials)
+    + Using [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
