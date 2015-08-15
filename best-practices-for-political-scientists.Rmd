@@ -74,11 +74,17 @@ ggplot(mtcars, aes(mpg, wt)) +
 # Pathologies of the Dropbox/Word approach:
 * Assumes they're both going to be around (in the same form(ish)) in the future
     + Remember computers 20 years ago???
+* Word is expensive; not everyone has it
 * You can "clobber" work (save over good work)
 * Must tell coauthors not to touch files while you're working on them
     + Though this may be changing...
+* Word conflates two parts of creating a paper:
+    + Writing the actual document
+    + Typesetting
+    + We want to only focus on the latter (especially in the early stages!)
 * You also tend to end up with many versions of the same project
     + ((show example paper))
+
 
 # Git
 * Git is a formal *distributed version control system*
