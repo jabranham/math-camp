@@ -16,7 +16,8 @@ output:
 * What if we write an article now that gets famous?
 * 20 years later, some grad student wants to extend our work
 * How did we make Figure 1?
-* Non-plain text files may be unuseable 20 years from now
+* Non-plain text files may be unusable 20 years from now
+* Word processors (like MS Word) are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
 
 # Code well - DO NOT CLICK A MOUSE
 * All results should be replicable from a source file
@@ -81,7 +82,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 
 # Git
 * Git is a formal *distributed version control system*
-    + There are others (Subversion and Mercurial are the big two), but we're going to focus on git 
+    + There are others (Subversion and Mercurial are the big two), but we're going to focus on git
 * It is an easy way to keep track of all the revisions you have saved
 * It enables easy collaborating between many different people, without the need to email files back and forth or tell them when you're working on something
 * You only have *one* version of a file at any one time
