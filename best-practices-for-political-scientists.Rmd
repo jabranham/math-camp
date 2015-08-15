@@ -96,6 +96,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 * You can see exactly what changed in each new commit
 * There are *many* different GUIs so you don't have to deal with the command line
     + I like Sourcetree (for Windows) and SmartGit (for Linux)
+    + Rstudio can also do most things 
 * ((show example git history))
 
 # Github
