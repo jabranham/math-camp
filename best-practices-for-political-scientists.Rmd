@@ -99,6 +99,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 * You can make repos private (for a fee - students get 5 for free)
 * This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
     + Feel free to fork-edit-pull request any changes! 
+    + I included the PDFs, which is unusual since they aren't plain text 
 
 # Bonus best practice - Test your code!
 * If you write your own function, it is important to test it to make sure it does what you want it to do!
