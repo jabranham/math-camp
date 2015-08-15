@@ -1,0 +1,43 @@
+---
+title: "Best Practices for the Political Scientist"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+output: 
+  beamer_presentation:
+    incremental: true
+---
+
+# A Quick Overview...
+1. Code well
+2. Write using plain text
+3. Use a version control system 
+
+# Code well - DO NOT CLICK A MOUSE
+* All results should be replicable from a source file
+* These source files (for example, .R for R scripts or .do for Stat do-files) should be liberally commented
+* Comments explain what you are doing to your future self, collaborators, and others 
+
+# Comment example
+```
+# This code creates Fig 1
+# I use the mtcars dataset (included with R)
+library(ggplot2)
+ggplot(mtcars, aes(mpg, wt)) + 
+  geom_point() + 
+  geom_smooth(method="lm") # Adds OLS line with SEs
+ggsave("fig/fig1.pdf")
+```
+* Save this code snippit as `fig1.R` (or similar)
+
+# Literate programming 
+* Previous example - have two files for one plot in a paper
+    + The paper itself (document.tex or similar)
+    + the script to create the figure (fig1.R or similar)
+* What if we could combine these to have everything in one easy-to-read file? 
+    + This is what literate programming is all about!
+
+# Literate programming example (using `knitr`)
+
+```
+
+```
