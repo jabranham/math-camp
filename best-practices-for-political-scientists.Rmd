@@ -98,3 +98,4 @@ ggplot(mtcars, aes(mpg, wt)) +
 * Default is open-source (public)
 * You can make repos private (for a fee - students get 5 for free)
 * This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
+    + Feel free to fork-edit-pull request any changes! 
