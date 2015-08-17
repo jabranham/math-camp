@@ -27,7 +27,7 @@ output:
 * Thursday: Matrix algebra (morning), intro to R (afternoon)
 * Friday: Logic, set theory, intro to probability, integration
 * Monday: More probability, research best practices (morning), intro to Stata (afteroon)
-* Tuesday: Wrap up (and catch-up), student panel, pizza par-tay 
+* Tuesday: Wrap up (and catch-up), student panel, pizza par-tay
 
 # Arithmatic
 ## Addition and Subtraction
