@@ -45,3 +45,5 @@ where $x$ is the concentration of alcohol in the blood and $k$ is a constant.
     2. Using this value of $k$, what is the risk if the concentration is $0.17$? 
     3. Using the same value of $k$, what concentration of alcohol corresponds to a risk of 100 percent?
     4. If the law asserts that anyone with a risk of having an accident of 15 percent may not drive, at what concentraion of alcohol in the blood should a driver be arrested for DUI? 
+    
+7. If you have time, it's a good idea to familiarize yourself with the [Greek alphabet](https://en.wikipedia.org/wiki/Greek_alphabet)
