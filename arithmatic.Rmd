@@ -16,6 +16,9 @@ output:
     theme: Warsaw
 ---
 
+### Welcome to UT! 
+* Welcome to UT!
+* And to Math Camp! 
 
 # Arithmatic 
 ## Addition and Subtraction
