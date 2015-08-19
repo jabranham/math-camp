@@ -147,3 +147,5 @@ Find the following:
         2. Run the command `with(mtcars, lm(mpg~weight))`. This will tell R to run OLS with `mpg` as the dependent variable and `wt` as the predictor variable. 
         3. What is the intercept? Describe both its value as well as its subtantive intrepretation.
         4. What is the slope? Describe both its value as well as its substantive intrepretation. (hint: a one unit change in x is associated with\ldots)
+        5. If you're feeling especially adventurous with R, try adding the line of best fit to the scatterplot you made above. (hint: in `ggplot`, you can do this with the `stat_smooth` command with the `method` set to `"lm"`)
+        
