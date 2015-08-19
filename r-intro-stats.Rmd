@@ -6,6 +6,7 @@ header-includes:
    - \AtBeginSection{}
    - \AtBeginSubsection{}
    - \AtBeginSubsubsection{}
+   - \beamertemplatenavigationsymbolsempty
 output: 
   beamer_presentation:
     incremental: true
@@ -54,6 +55,7 @@ ggplot(my_data, aes(margin, turnout, color=fptp)) +
 * Another way uses `$` to subset by variable name
 * We can combine these two types of subsetting too
 * This is how base R thinks about it: there are other (better?) ways using the `dplyr` or `data.table` packages
+    + Personally, I prefer `dplyr`
 
 # The code
 ```{r}
@@ -73,8 +75,8 @@ c(sd_fptp, sd_notfptp)
 * Tests whether the mean is statistically different from each other
 * LOTS more of this in Stats I
 ```{r}
-with(my_data, t.test(my_data$turnout[my_data$fptp==TRUE],
-  my_data$turnout[my_data$fptp==FALSE]))
+t.test(my_data$turnout[my_data$fptp==TRUE],
+  my_data$turnout[my_data$fptp==FALSE])
 ```
 
 
