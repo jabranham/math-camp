@@ -16,7 +16,7 @@ output:
     incremental: true
 ---
 ### 
-> If you wanted to do foundational research in statistics in the mid-twentieth century, you had to be bit of a mathematician, whether you wanted to or not. . . . if you want to do statistical re search at the turn of the twenty-first century,
+> If you wanted to do foundational research in statistics in the mid-twentieth century, you had to be bit of a mathematician, whether you wanted to or not\ldots if you want to do statistical research at the turn of the twenty-first century,
 you have to be a computer programmer. - Andrew Gelman
 
 # What is R?
@@ -31,17 +31,19 @@ you have to be a computer programmer. - Andrew Gelman
 ### Advantages of R
 * It's **FREE**, open-source, and available on every platform
     + Free as in speech and free as in beer
-    + Stata is between $55/yr and $1000/year for students, depending on what you need 
+    + Stata is between $55/year and $1000/year for students, depending on what you need 
 * Unparalleled in the number of statistical packages (groups of functions)
 * Great community help (e.g. stackoverflow.com, R-bloggers)
 * You can combine documents and r code together (rmarkdown or knitr)
     + For example, this presentation is written in rmarkdown
 
 ### Disadvantages of R
-* Some feel like it's not as intuitive as Stata or other stats programs
-* Uses lots of memory 
-* If you know another programming language (C, Python, etc), R's syntax is very odd
-* Since anyone can write a package, some of the code (and help files) are difficult to follow 
+* vs Stata
+    + Some feel like it's not as intuitive as Stata or other stats programs
+    + Documentation is sometimes not as clear (but you can see functions\ldots)
+* vs other programming languages (e.g. Python, C++)
+    + Uses lots of memory 
+    + If you know another programming language (C, Python, etc), R's syntax is very odd
 
 ## Installation 
 ### R
