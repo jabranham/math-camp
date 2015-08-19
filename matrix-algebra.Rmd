@@ -238,7 +238,7 @@ $$
 * $A'$ is also invertible 
 * $(A^{-1})^{-1} = A$
 * $(kA)^{-1} = k^{-1}A^{-1}$ for nonzero scalar $k$
-* $(a')^{-1} = (A^{-1})'$
+* $(A')^{-1} = (A^{-1})'$
 
 # Special matrices
 ## Special matrices
