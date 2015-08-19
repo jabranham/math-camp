@@ -137,9 +137,6 @@ Find the following:
     6. $|C|$
     7. $|C'|$
     8. $|E'E|$
-    9. $C-1$
-    10. $(C' )-1$
-    11. $G-1$
 
 4. The `mtcars` dataset comes with R and has data about cars.
     1. What are the names of the variables in the dataset? (hint: `?names`)
