@@ -47,7 +47,7 @@ ggsave("fig/fig1.pdf")
 
 ```
 \begin{section}
-This is an example paragraph, writte in \LaTeX.
+This is an example paragraph, written in \LaTeX.
 Using knitr, we can include R code in the following manner.
 I can reference the figure number by calling ref:
 Figure \ref{fig:mpg-and-weight}.
@@ -74,11 +74,17 @@ ggplot(mtcars, aes(mpg, wt)) +
 # Pathologies of the Dropbox/Word approach:
 * Assumes they're both going to be around (in the same form(ish)) in the future
     + Remember computers 20 years ago???
+* Word is expensive; not everyone has it
 * You can "clobber" work (save over good work)
 * Must tell coauthors not to touch files while you're working on them
     + Though this may be changing...
+* Word conflates two parts of creating a paper:
+    + Writing the actual document
+    + Typesetting
+    + We want to only focus on the latter (especially in the early stages!)
 * You also tend to end up with many versions of the same project
     + ((show example paper))
+
 
 # Git
 * Git is a formal *distributed version control system*
@@ -90,6 +96,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 * You can see exactly what changed in each new commit
 * There are *many* different GUIs so you don't have to deal with the command line
     + I like Sourcetree (for Windows) and SmartGit (for Linux)
+    + Rstudio can also do most things 
 * ((show example git history))
 
 # Github

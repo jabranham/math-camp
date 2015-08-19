@@ -2,12 +2,12 @@
 title: "Introduction to Math for Political Scientists"
 author: "J. Alexander Branham & Megan Moeller"
 date: "Fall 2015"
-header-includes: 
+header-includes:
    - \AtBeginPart{}
    - \AtBeginSection{}
    - \AtBeginSubsection{}
    - \AtBeginSubsubsection{}
-output: 
+output:
   beamer_presentation:
     colortheme: beaver
     fig_caption: yes
@@ -16,11 +16,20 @@ output:
     theme: Warsaw
 ---
 
-### Welcome to UT! 
+### Welcome to UT!
 * Welcome to UT!
-* And to Math Camp! 
+* And to Math Camp!
 
-# Arithmatic 
+### Math Camp (tentative) schedule
+* Today: Arithmetic, functions
+* Tomorrow: Functions (cntd), Calculus
+* Wednesday: Derivatives, optimization, OLS
+* Thursday: Matrix algebra (morning), intro to R (afternoon)
+* Friday: Logic, set theory, intro to probability, integration
+* Monday: More probability, research best practices (morning), intro to Stata (afteroon)
+* Tuesday: Wrap up (and catch-up), student panel, pizza par-tay
+
+# Arithmatic
 ## Addition and Subtraction
 ### Let's start real slow...
 * So we all know that
@@ -32,20 +41,20 @@ $$2+2 =4$$
     + $a\pm b = b \pm a$
 * Associative
     + $(a\pm b) \pm c = a \pm (b\pm c)$
-    
+
 ## Multiplication and Division
 ### Multiplication
-* Multiplication - I have these 4 things 10 times. 
-```{r} 
-4+4+4+4+4+4+4+4+4+4 
+* Multiplication - I have these 4 things 10 times.
+```{r}
+4+4+4+4+4+4+4+4+4+4
 ```
-\pause 
-Or I could just do 
+\pause
+Or I could just do
 ```{r}
 4*10
 ```
 
-### Division 
+### Division
 * Just fancy multiplication.
 \pause
 * I have these four things one of ten times.
@@ -53,9 +62,9 @@ Or I could just do
 4*(1/10)
 ```
 
-## Properties 
+## Properties
 ### Properties of Multiplication and Division
-* Communicative 
+* Communicative
     + $a*b = b*a$
 * Associative
     + $(ab)c = a(bc)$
@@ -69,14 +78,11 @@ Or I could just do
 * $a=b \longleftrightarrow b=a$ (Symmetric relationships)
 * $a = b$ and $b=c \Rightarrow a=c$ (Transitive relationships)
     + $a>b$ and $b>c \Rightarrow a>c$
-    
+
 # PEMDAS
 ### PEMDAS
-* Parentheses 
+* Parentheses
 * Exponents
 * Multiplication and division (left tor right)
 * Addition and subtraction (left to right)
 $$(10-48\div 12 * 2)^2 + 3^2 * (8-6)$$
-
-
-
