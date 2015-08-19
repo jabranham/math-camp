@@ -133,10 +133,7 @@ Find the following:
     2. $CE'$
     3. $(X + Y)'$
     4. $(CG)'$
-    5. $[(33)W]'$
-    6. $|C|$
-    7. $|C'|$
-    8. $|E'E|$
+    5. $(33W)'$
 
 4. The `mtcars` dataset comes with R and has data about cars.
     1. You can view the beginning of the data with the `head` function. Try it with `head(mtcars)`. 
