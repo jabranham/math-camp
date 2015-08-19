@@ -46,6 +46,16 @@ ggplot(my_data, aes(margin, turnout, color=fptp)) +
 ```
 
 # Means by group
+* To do this, we need to *subset* by fptp or not
+* So we need one mean for fptp systems, 
+* and another mean for non-fptp systems 
+* Subsetting in R can be done several ways
+* One way uses square brackets `[]` to subset row by column
+* Another way uses `$` to subset by variable name
+* We can combine these two types of subsetting too
+* This is how base R thinks about it: there are other (better?) ways using the `dplyr` or `data.table` packages
+
+# The code
 ```{r}
 mean_fptp <- mean(my_data$turnout[my_data$fptp==TRUE])
 mean_notfptp <- mean(my_data$turnout[my_data$fptp==FALSE])
