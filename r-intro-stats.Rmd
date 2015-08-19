@@ -54,6 +54,7 @@ ggplot(my_data, aes(margin, turnout, color=fptp)) +
 * Another way uses `$` to subset by variable name
 * We can combine these two types of subsetting too
 * This is how base R thinks about it: there are other (better?) ways using the `dplyr` or `data.table` packages
+    + Personally, I prefer `dplyr`
 
 # The code
 ```{r}
