@@ -95,6 +95,9 @@ Functions take arguments
 ```{r}
 myvector <- c(1, 5, 2, 7, 9, NA, 1)
 mean(myvector, na.rm = TRUE)
+```
+```{r, eval=FALSE}
+?rnorm
 rnorm(5, 0, 1)
 ```
 
