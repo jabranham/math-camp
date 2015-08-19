@@ -114,14 +114,15 @@ TRUE ; FALSE
 
 ### matrix
 ```{r}
-mymatrix <- matrix(c(1,2,3, 5,11,4), nrow=2, byrow=FALSE)
+mymatrix <- matrix(c(1,2,3, 5,11,4), nrow=2, byrow=TRUE)
 mymatrix
 mean(mymatrix[ , 1])
 ```
 
 ### data.frame
 ```{r}
-mydata <- data.frame(x=c(1,2,3), y=c(5,11,4))
+mydata <- data.frame(x=c(1,2,3), y=c(5,11,4), 
+                     z=c("some", "fancy", "text"))
 mydata
 mean(mydata$x)
 ```
