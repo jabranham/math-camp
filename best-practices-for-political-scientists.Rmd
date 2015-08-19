@@ -2,6 +2,8 @@
 title: "Best Practices for the Political Scientist"
 author: "J. Alexander Branham"
 date: "Fall 2015"
+header-includes: 
+  - \beamertemplatenavigationsymbolsempty
 output:
   beamer_presentation:
     incremental: true

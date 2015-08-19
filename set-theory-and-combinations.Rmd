@@ -7,6 +7,7 @@ header-includes:
    - \AtBeginSection{}
    - \AtBeginSubsection{}
    - \AtBeginSubsubsection{}
+   - \beamertemplatenavigationsymbolsempty
 output: 
   beamer_presentation:
     colortheme: beaver

@@ -6,6 +6,7 @@ header-includes:
    - \AtBeginSection{}
    - \AtBeginSubsection{}
    - \AtBeginSubsubsection{}
+   - \beamertemplatenavigationsymbolsempty
 output: 
   beamer_presentation:
     incremental: true
