@@ -63,7 +63,7 @@ library(ggplot2)
 * We can make a function that describes a line pretty easily
 * $y=mx+b$
     + $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units)
-    + $b$ is the x-intercept: the value of $y$ when $x=0$
+    + $b$ is the y-intercept: the value of $y$ when $x=0$
     
 ### Linear functions
 ```{r, fig.height=4}
