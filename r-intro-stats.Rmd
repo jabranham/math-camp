@@ -12,6 +12,10 @@ output:
     incremental: true
 fontsize: 10pt
 ---
+```{r, include=FALSE}
+library(ggplot2)
+library(foreign)
+```
 
 # Basic statistics in R
 
@@ -22,7 +26,6 @@ fontsize: 10pt
 # Data is available on this course's github page:
 # github.com/jabranham/math-camp
 # Data from Herrera et al (forthcoming, AJPS)
-library(foreign)
 my_data <- read.dta("data/herrera-data.dta")
 my_data$fptp <- as.logical(my_data$fptp)
 ```
@@ -36,7 +39,6 @@ my_data$fptp <- as.logical(my_data$fptp)
 
 # First step: Plot your data! 
 ```{r, warning=FALSE}
-library(ggplot2)
 ggplot(my_data, aes(margin, turnout)) + geom_jitter()
 ```
 
@@ -59,14 +61,14 @@ ggplot(my_data, aes(margin, turnout, color=fptp)) +
 
 # The code
 ```{r}
-mean_fptp <- mean(my_data$turnout[my_data$fptp==TRUE])
-mean_notfptp <- mean(my_data$turnout[my_data$fptp==FALSE])
+mean_fptp <- with(my_data, mean(turnout[fptp==TRUE]))
+mean_notfptp <- with(my_data, mean(turnout[fptp==FALSE]))
 c(mean_fptp, mean_notfptp)
 ```
 
 # Maybe we want uncertainty too...
 ```{r}
-sd_fptp <- sd(my_data$turnout[my_data$fptp==TRUE])
+sd_fptp <- with(my_data, sd(turnout[fptp==TRUE]))
 sd_notfptp <- sd(my_data$turnout[my_data$fptp==FALSE])
 c(sd_fptp, sd_notfptp)
 ```
@@ -78,6 +80,3 @@ c(sd_fptp, sd_notfptp)
 t.test(my_data$turnout[my_data$fptp==TRUE],
   my_data$turnout[my_data$fptp==FALSE])
 ```
-
-
-
