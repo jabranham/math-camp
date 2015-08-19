@@ -139,6 +139,7 @@ Find the following:
     8. $|E'E|$
 
 4. The `mtcars` dataset comes with R and has data about cars.
+    1. You can view the beginning of the data with the `head` function. Try it with `head(mtcars)`. 
     1. What are the names of the variables in the dataset? (hint: `?names`)
     2. How many observations (rows) are in the dataset? (hint: `?dim`)
     3. What is the average miles per gallon of a car in that dataset? (hint: `mean`)
