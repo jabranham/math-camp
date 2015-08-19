@@ -182,6 +182,7 @@ M <- matrix(c(1,0,2, 1,2,4, 2,3,2),
 L%*%M
 ```
 
+## Division
 ### Matrix Division
 \centering 
 \pause
@@ -239,7 +240,7 @@ $$
 * $A$ is full rank: $rank(A) = n$
 * $A'$ is also invertible 
 * $(A^{-1})^{-1} = A$
-* $(kA)^{-1} = k^{-1}A^{-1}$ for nonzero scalar $k$
+* $(cA)^{-1} = c^{-1}A^{-1}$ for nonzero scalar $k$
 * $(A')^{-1} = (A^{-1})'$
 
 # Special matrices
