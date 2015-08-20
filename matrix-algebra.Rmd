@@ -240,7 +240,7 @@ $$
 * $A$ is full rank: $rank(A) = n$
 * $A'$ is also invertible 
 * $(A^{-1})^{-1} = A$
-* $(cA)^{-1} = c^{-1}A^{-1}$ for nonzero scalar $k$
+* $(cA)^{-1} = c^{-1}A^{-1}$ for nonzero scalar $c$
 * $(A')^{-1} = (A^{-1})'$
 
 # Special matrices
