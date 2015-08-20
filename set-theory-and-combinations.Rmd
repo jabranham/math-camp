@@ -152,7 +152,7 @@ $$
 
 ### Repition not allowed
 * Easiest way: do permutation without repitition, then get rid of all the "same" outcomes
-* We've already figured out hte permutation part, so need to figure out the second part 
+* We've already figured out the permutation part, so need to figure out the second part 
 $$
 \dfrac{n!}{(n-r)!} * \dfrac{1}{r!} = \dfrac{n!}{r!(n-r)!} = {n \choose r}
 $$
