@@ -64,8 +64,8 @@ $$
 Pr(y_1=3, y_2=3) = \dfrac{1}{6} * \dfrac{1}{6}
 $$
 
-* Now $Y \sim Binom(2, \dfrac{1}{.6})$
-    + Generally, $Y \sim Binom(n, p)$
+* Now $Y \sim Binomial(2, \dfrac{1}{.6})$
+    + Generally, $Y \sim Binomial(n, p)$
     + n = number of trials, p = probability of success
 * PMF:
 $$
@@ -97,7 +97,7 @@ ggplot(data.frame(x = c(-2, 2)), aes(x)) +
 
 ### Probabilies and continuous distributions
 * $Pr(y=c) = 0$
-* $Pr(0<y<.5) = Pr(0\geq y \leq .5)$
+* $Pr(0<y<.5)$
 $$
 = \int_{0}^{.5} f(y) dy
 $$
