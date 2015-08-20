@@ -141,7 +141,7 @@ Find the following:
     2. How many observations (rows) are in the dataset? (hint: `?dim`)
     3. What is the average miles per gallon of a car in that dataset? (hint: `mean`)
     4. What is the mean weight (`wt`) of a car?
-    5. Produce a scatterplot with `wt` on the x-axis and `mpg` on the y-axis. (`plot` in base R or `geom_scatter` in `ggplot`)
+    5. Produce a scatterplot with `wt` on the x-axis and `mpg` on the y-axis. (`plot` in base R or `geom_point` in `ggplot`)
     6. Bonus OLS problems:
         1. The `lm` is the way to run OLS in R. It will produce a line of best fit for the data. 
         2. Run the command `with(mtcars, lm(mpg~weight))`. This will tell R to run OLS with `mpg` as the dependent variable and `wt` as the predictor variable. 
