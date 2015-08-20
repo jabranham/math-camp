@@ -33,8 +33,10 @@ $$
 
 ### Kolmogorov's Axioms 
 * First: $Pr(E)\in\mathbb{R}, Pr(E)\geq 0 \qquad \forall E\in F$
+    + where $F$ is the event space 
     + Probabilities must be non-negative
 * Second: $Pr(\Omega) = 1$
+    + Where $\Omega$ is the sample space 
     + Something has to happen
     + Probabilities sum/integrate to 1
 * Third: $Pr\left(\bigcup_{i = 1}^\infty E_i\right) = \sum_{i=1}^\infty Pr(E_i)$
@@ -50,9 +52,9 @@ $$
 
 * If one roll of the die is an "experiment"
 * We can think of a 3 as a "success"
-* And $Y \sim Bern(\dfrac{1}{6})$
-* Fair coins are $\sim Bern(.5)$ for example
-* More generally $Bern(\pi )$
+* And $Y \sim Bernoulli(\dfrac{1}{6})$
+* Fair coins are $\sim Bernoulli(.5)$ for example
+* More generally $Bernoulli(\pi )$
     + $\pi$ represents the probability of success
 
 ### Binomial distributions
