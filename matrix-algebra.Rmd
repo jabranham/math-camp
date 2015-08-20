@@ -81,7 +81,7 @@ $$
 ### Indices 
 * How do we refer to specific elements of the matrix???
 * Solution: come up with a clever indexing scheme
-* Matrix $A$ is an $mxn$ matrix where $m=n=3$.
+* Matrix $A$ is an $nxm$ matrix where $n=m=3$.
 *  More generally, matrix $B$ is an $mxn$ matrix where the elements look like this:
 $$
 B=
