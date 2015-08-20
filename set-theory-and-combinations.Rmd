@@ -108,7 +108,7 @@ $$
 ## What is it?
 ### Combinatorics - What is it? 
 * How to count things? 
-* Countabl *discrete* structures 
+* Countable *discrete* structures 
 * Let's say we have the set $R$ from above
 $$
 R = \left\{ 1,2,3,4,5,6 \right\}
@@ -146,6 +146,10 @@ $$
 $$
 
 ## Combinations
+### Combinations
+* We use combinations when the order does **not** matter
+* So 4, 3, 1 is the same as 3, 1, 4 
+
 ### Repition not allowed
 * Easiest way: do permutation without repitition, then get rid of all the "same" outcomes
 * We've already figured out hte permutation part, so need to figure out the second part 
