@@ -1,0 +1,34 @@
+---
+title: "Marginal, Joint, and Conditional Probabilities"
+author: "J. Alexander Branham"
+date: "Fall 2015"
+header-includes: 
+  - \beamertemplatenavigationsymbolsempty
+output: 
+  beamer_presentation:
+    incremental: true
+---
+
+# Marginal probability
+* The $Pr$ of an event occuring:
+    + $Pr(A)$
+* Unconditional probability
+* Probability of drawing a red card from a standard deck:
+$$Pr(red) = \dfrac{1}{2}$$
+
+# Joint probability
+* The probability of both $A$ **and** $B$
+    + $Pr(A, B)$
+* This is the intersection  of the two sets
+* $Pr(A \cap B)$
+    + Probability of drawing a red card and a 4:
+    + $Pr(red, 4) = \dfrac{2}{52} = \dfrac{1}{26}$
+
+# Conditional probability
+* The probability of some event happening **given** some other event having occured
+    + $Pr(A|B)$
+* You've drawn a red card. What's the probability it's a four?
+    +$Pr(4 | red) = \dfrac{2}{13}$
+
+# How to convert marginal, joint, and conditional probabilities
+* 
