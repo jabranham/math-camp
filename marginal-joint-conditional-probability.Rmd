@@ -57,3 +57,4 @@ $$
     + $Pr(positive | \neg drunk) = 0.05$
 * Want to know:
     + $Pr(drunk | positive) = \dfrac{Pr(drunk) Pr(positive | drunk)}{Pr(positive)}$
+* Everything known, except $Pr(positive)$
