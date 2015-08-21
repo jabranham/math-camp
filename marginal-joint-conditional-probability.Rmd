@@ -10,7 +10,7 @@ output:
 ---
 
 # Marginal probability
-* The $Pr$ of an event occuring:
+* The $Pr$ of an event occurring:
     + $Pr(A)$
 * Unconditional probability
 * Probability of drawing a red card from a standard deck:
@@ -25,7 +25,7 @@ $$Pr(red) = \dfrac{1}{2}$$
     + $Pr(red, 4) = \dfrac{2}{52} = \dfrac{1}{26}$
 
 # Conditional probability
-* The probability of some event happening **given** some other event having occured
+* The probability of some event happening **given** some other event having occurred
     + $Pr(A|B)$
 * You've drawn a red card. What's the probability it's a four?
     +$Pr(4 | red) = \dfrac{2}{13}$
@@ -34,8 +34,26 @@ $$Pr(red) = \dfrac{1}{2}$$
 $$
 Pr(A|B) = \dfrac{Pr(A,B)}{Pr(B)}
 $$
+* The conditional probability is equal to the joint probability over the probability of the condition 
 
 # Bayes' Law (Theorem)
 $$
 Pr(A|B) = \dfrac{Pr(B|A) Pr(A)}{Pr(B)} = \dfrac{Pr(B|A) Pr(A)}{Pr(B|A)Pr(A) + Pr(B|\neg A) Pr(\neg A)}
 $$
+
+# Bayes Example
+* Police set up roadblock to randomly screen for potentially drunk drivers
+* Person stopped and fails breathalyzer test
+    + Test gives positive 98 percent of the time when person is drunk
+    + Also gives positive 5 percent of the time when the person is actually sober 
+    + We think that 1 percent of people going through the checkpoint are drunk 
+* What is the probability that the man was actually drunk? 
+
+# DWI Example
+* Since he's randomly stopped, we think there is a 1 percent change he's drunk 
+    + $Pr(drunk) = 0.01$
+* Test accuracy:
+    + $Pr(positive | drunk) = 0.98$
+    + $Pr(positive | \neg drunk) = 0.05$
+* Want to know:
+    + $Pr(drunk | positive) = \dfrac{Pr(drunk) Pr(positive | drunk)}{Pr(positive)}$
