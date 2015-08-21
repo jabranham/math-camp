@@ -31,4 +31,11 @@ $$Pr(red) = \dfrac{1}{2}$$
     +$Pr(4 | red) = \dfrac{2}{13}$
 
 # How to convert marginal, joint, and conditional probabilities
-* 
+$$
+Pr(A|B) = \dfrac{Pr(A,B)}{Pr(B)}
+$$
+
+# Bayes' Law (Theorem)
+$$
+Pr(A|B) = \dfrac{Pr(B|A) Pr(A)}{Pr(B)} = \dfrac{Pr(B|A) Pr(A)}{Pr(B|A)Pr(A) + Pr(B|\neg A) Pr(\neg A)}
+$$
