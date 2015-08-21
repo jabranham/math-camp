@@ -85,7 +85,8 @@ $$
 ### Universe
 * Board examples of how to draw sets
 
-## Intersection, Disjoint, unions
+## Intersections and Unions
+### Intersection, Disjoint, unions
 * Intersections: $A \cap B$ includes all the common elements of $A$ and $B$
     + If $A \cap B = \emptyset$, then they are **disjoint**
 * Unions: $A \cup B$ contains all the elements of both $A$ and $B$
@@ -95,20 +96,19 @@ $$
     + $n(x \cup Y) = n(X) + n(Y) - n(X \cap Y)$
     + Have to subtract the last term, otherwise we'd double-count elements in the intersection of the two sets
     
-## Properties of Unions, Intersections
 ### Properties
 * $A \cup B = B \cup A$
 * $A \cap B = B \cap A$
 * $(A \cup B) \cup C = A \cup (B \cup C)$
 * $(A \cap B) \cap C = A \cap (B \cap C)$
 * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
-* $A \cup (C \cap C) = (A \cup B) \cap (A \cup C)$
+* $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
 
 # Combinatorics 
 ## What is it?
 ### Combinatorics - What is it? 
 * How to count things? 
-* Countabl *discrete* structures 
+* Countable *discrete* structures 
 * Let's say we have the set $R$ from above
 $$
 R = \left\{ 1,2,3,4,5,6 \right\}
@@ -146,9 +146,13 @@ $$
 $$
 
 ## Combinations
+### Combinations
+* We use combinations when the order does **not** matter
+* So 4, 3, 1 is the same as 3, 1, 4 
+
 ### Repition not allowed
 * Easiest way: do permutation without repitition, then get rid of all the "same" outcomes
-* We've already figured out hte permutation part, so need to figure out the second part 
+* We've already figured out the permutation part, so need to figure out the second part 
 $$
 \dfrac{n!}{(n-r)!} * \dfrac{1}{r!} = \dfrac{n!}{r!(n-r)!} = {n \choose r}
 $$
