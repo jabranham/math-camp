@@ -10,6 +10,9 @@ output:
 ---
 
 # Why best practices?
+* Traditionally, scholars have separated data analysis and the documentation describing the results and findings
+* This makes updating work inefficient and reproduction difficult or impossible 
+* Why best practices? 
 * To solve many recurring issues with research
     + DIfficulty recreating a particular method
     + Difficulty recreating a figure
