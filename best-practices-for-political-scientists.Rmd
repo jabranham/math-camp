@@ -9,6 +9,18 @@ output:
     incremental: true
 ---
 
+# Why best practices?
+* To solve many recurring issues with research
+    + DIfficulty recreating a particular method
+    + Difficulty recreating a figure
+    + Difficulty recreating a table
+    + Steps taken in code not reported in paper
+        + Example: dropping oversamples
+* Solution: **Reproducible research**
+    + Helps future people trying to extend your work
+    + Helps coauthors see what you're doing
+    + Helps you in six months (or tomorrow)
+
 # A Quick Overview...
 1. Write using plain text
 2. Code well
