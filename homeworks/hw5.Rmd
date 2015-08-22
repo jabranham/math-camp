@@ -9,10 +9,10 @@ output: pdf_document
     2. Use set notation to denote the size of $A$. 
     3. Use set notation to denote whether $(3,1)$ is in $A$ or not
     
-2. Consider the folowing sets and find the following:
+2. Consider the following sets and find the following:
 $$P = \left\{ \text{UT GOV faculty members} \right\} \qquad n(P) = 70$$
 $$T = \left\{ \text{ UT GOV faculty with tenure} \right\} \qquad n(T) = 35$$
-$$F = \left\{ \text{Female UT GOV faculty memers} \right\} \qquad n(F) = 15$$
+$$F = \left\{ \text{Female UT GOV faculty members} \right\} \qquad n(F) = 15$$
 $$M = \left\{ \text{Male UT GOV faculty members} \right\} \qquad n(M) = 55$$
 $$X = \left\{ \text{Female UT GOV faculty members with tenure} \right\} \qquad n(X) = 10$$
 $$Y = \left\{ \text{Male UT GOV faculty members with tenure} \right\} \qquad n(Y) = 25$$
@@ -20,14 +20,14 @@ $$Y = \left\{ \text{Male UT GOV faculty members with tenure} \right\} \qquad n(Y
     2. $n(F \cup M)$
     3. $n(T \cap M)$
     4. $n(F \cup T)$
-    5. $F^C \cup F$ - to which set is this equivilent? 
-    6. $X \cup Y$ - to which set is thie equivilent? 
+    5. $F^C \cup F$ - to which set is this equivalent? 
+    6. $X \cup Y$ - to which set is this equivalent? 
 
 3. Let $X$ and $Y$ be two sets, where $n(X) =14$ and $n(Y) =25$. If there are twice as many objects in $X \cup Y$ as there are in $X \cap Y$, how many objects are in *both* $X$ and $Y$?
 
 4. Let's learn more about R!
     1. Using R, simulate 100 flips from a fair coin. Store these in an object called `flips`. (hint: `?rbinom`)
-        1. If you're feeling particularly savy, you can use the `set.seed` function to make your "random" draws reproducible. 
+        1. If you're feeling particularly savvy, you can use the `set.seed` function to make your "random" draws reproducible. 
     2. Let's assume a `1` denotes heads, and a `0` denotes tails. How many heads did you get? 
     3. If we were uncertain of whether the coin is fair or not, we can estimate the probability of getting a heads. One way of doing so is to take the number of heads we got divided by the number of trials. Using R, calculate this number. 
     4. The number you got probably isn't exactly 0.5, even though that's the parameter we used to simulate these flips (in part 1). Why is this? Does this mean that the coin isn't fair? If so, why? If not, why not? 
