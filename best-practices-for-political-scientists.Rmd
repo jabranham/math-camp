@@ -104,7 +104,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 * Word conflates two parts of creating a paper:
     + Writing the actual document
     + Typesetting
-    + We want to only focus on the latter (especially in the early stages!)
+    + We want to only focus on the former (especially in the early stages!)
 * You also tend to end up with many versions of the same project
     + ((show example paper))
 
