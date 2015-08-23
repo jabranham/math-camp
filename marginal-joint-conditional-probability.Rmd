@@ -28,7 +28,7 @@ $$Pr(red) = \dfrac{1}{2}$$
 * The probability of some event happening **given** some other event having occurred
     + $Pr(A|B)$
 * You've drawn a red card. What's the probability it's a four?
-    +$Pr(4 | red) = \dfrac{2}{13}$
+    + $Pr(4 | red) = \dfrac{2}{26}$
 
 # How to convert marginal, joint, and conditional probabilities
 $$
