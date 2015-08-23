@@ -14,7 +14,7 @@ output:
 * This makes updating work inefficient and reproduction difficult or impossible 
 * Why best practices? 
 * To solve many recurring issues with research
-    + DIfficulty recreating a particular method
+    + Difficulty recreating a particular method
     + Difficulty recreating a figure
     + Difficulty recreating a table
     + Steps taken in code not reported in paper
@@ -35,9 +35,12 @@ output:
 * How did we make Figure 1?
 * Non-plain text files may be unusable 20 years from now
 * Word processors (like MS Word) are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
+* Bonus: plain text files are usually *much* smaller than their Word/pdf counterparts
 
 # Code well - DO NOT CLICK A MOUSE
 * All results should be replicable from a source file
+    + And these should be named in a manner that tells you what they are
+    + e.g. `fig1.R` and not `messing-around-with-figs.R`
 * These source files (for example, .R for R scripts or .do for Stat do-files) should be liberally commented
 * Comments explain what you are doing to your future self, collaborators, and others
 
@@ -55,8 +58,8 @@ ggsave("fig/fig1.pdf")
 
 # Literate programming and reproducible research
 * Previous example - have two files for one plot in a paper
-    + The paper itself (document.tex or similar)
-    + the script to create the figure (fig1.R or similar)
+    + The paper itself (`document.tex` or similar)
+    + the script to create the figure (`fig1.R` or similar)
 * What if we could combine these to have everything in one easy-to-read file?
     + This is what literate programming is all about!
 
@@ -68,7 +71,7 @@ This is an example paragraph, written in \LaTeX.
 Using knitr, we can include R code in the following manner.
 I can reference the figure number by calling ref:
 Figure \ref{fig:mpg-and-weight}.
-% NTS - updating that figure with squared x doesn't change it
+% NOTE: updating that figure with x^2 doesn't change it
 \begin{figure}
 \centering
 <<fig1plot>>=  # Starts R code, labels it `fig1plot`
@@ -86,7 +89,10 @@ ggplot(mtcars, aes(mpg, wt)) +
 # Version Control
 * **YOU NEED TO USE VERSION CONTROL!!!!!**
 * This can be as simple as putting things in Dropbox, which enables you to recover previous file versions automatically
+    + Though I've had issues with this, so definitely wouldn't suggest it
 * Word's "track changes" feature...
+    + This is usually used poorly
+    + Requires saving a new file each time you edit
 
 # Pathologies of the Dropbox/Word approach:
 * Assumes they're both going to be around (in the same form(ish)) in the future
@@ -98,7 +104,7 @@ ggplot(mtcars, aes(mpg, wt)) +
 * Word conflates two parts of creating a paper:
     + Writing the actual document
     + Typesetting
-    + We want to only focus on the latter (especially in the early stages!)
+    + We want to only focus on the former (especially in the early stages!)
 * You also tend to end up with many versions of the same project
     + ((show example paper))
 
