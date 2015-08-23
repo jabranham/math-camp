@@ -28,7 +28,7 @@ $$Pr(red) = \dfrac{1}{2}$$
 * The probability of some event happening **given** some other event having occurred
     + $Pr(A|B)$
 * You've drawn a red card. What's the probability it's a four?
-    + $Pr(4 | red) = \dfrac{2}{26}$
+    + $Pr(4 | red) = \dfrac{2}{26} = \dfrac{1}{13}$
 
 # How to convert marginal, joint, and conditional probabilities
 $$
@@ -89,9 +89,13 @@ $$
 * WLOG assume Monty opens door $B$
 * Then: $Pr(B_{Monty}|A) = \dfrac{1}{2}$ and $Pr(B_{Monty}|B=0)$ and $Pr(C_{Monty}|C) = 1$
 
+\pause
+
 $$Pr(B_{Monty}, A) = Pr(B_{Monty}|A)Pr(A) = \dfrac{1}{2}* \dfrac{1}{3} = \dfrac{1}{6}$$
 $$Pr(B_{Monty}, B) = Pr(B_{Monty}|B)Pr(B) = 0* \dfrac{1}{3} = 0$$
 $$Pr(B_{Monty}, C) = Pr(B_{Monty}|C)Pr(C) = 1* \dfrac{1}{3} = \dfrac{1}{3}$$
+
+\pause
 
 * Note that $Pr(B_{Monty})= Pr(B_{Monty}, A) + Pr(B_{Monty}, B) + Pr(B_{Monty}, C) = \dfrac{1}{6} + 0 + \dfrac{1}{3} = \dfrac{1}{2}$
 
