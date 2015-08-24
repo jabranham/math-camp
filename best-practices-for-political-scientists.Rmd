@@ -63,10 +63,10 @@ ggsave("fig/fig1.pdf")
 * What if we could combine these to have everything in one easy-to-read file?
     + This is what literate programming is all about!
 
-# Literate programming example (using `knitr`)
+# Literate programming example (using `knitr` and \LaTeX )
 
 ```
-\begin{section}
+\section{Introduction to Literate Programming}
 This is an example paragraph, written in \LaTeX.
 Using knitr, we can include R code in the following manner.
 I can reference the figure number by calling ref:
@@ -74,7 +74,7 @@ Figure \ref{fig:mpg-and-weight}.
 % NOTE: updating that figure with x^2 doesn't change it
 \begin{figure}
 \centering
-<<fig1plot>>=  # Starts R code, labels it `fig1plot`
+<<fig1plot, echo=FALSE>>=  # Starts R code, labels it `fig1plot`
 # I use the mtcars dataset (included with R)
 library(ggplot2)
 ggplot(mtcars, aes(mpg, wt)) +
