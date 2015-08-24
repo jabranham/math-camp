@@ -63,10 +63,10 @@ ggsave("fig/fig1.pdf")
 * What if we could combine these to have everything in one easy-to-read file?
     + This is what literate programming is all about!
 
-# Literate programming example (using `knitr`)
+# Literate programming example (using `knitr` and \LaTeX )
 
 ```
-\begin{section}
+\section{Introduction to Literate Programming}
 This is an example paragraph, written in \LaTeX.
 Using knitr, we can include R code in the following manner.
 I can reference the figure number by calling ref:
