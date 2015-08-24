@@ -87,7 +87,7 @@ $$
 * $Pr(A) = Pr(B) = Pr(C) = \dfrac{1}{3}$ (prior belief about where the car is)
 * WLOG assume contestent picks door $A$
 * WLOG assume Monty opens door $B$
-* Then: $Pr(B_{Monty}|A) = \dfrac{1}{2}$ and $Pr(B_{Monty}|B=0)$ and $Pr(C_{Monty}|C) = 1$
+* Then: $Pr(B_{Monty}|A) = \dfrac{1}{2}$ and $Pr(B_{Monty}|B=0)$ and $Pr(B_{Monty}|C) = 1$
 
 \pause
 
