@@ -76,6 +76,7 @@ c(sd_fptp, sd_notfptp)
 # There's a formal test
 * Tests whether the mean is statistically different from each other
 * LOTS more of this in Stats I
+
 ```{r}
 t.test(my_data$turnout[my_data$fptp==TRUE],
   my_data$turnout[my_data$fptp==FALSE])
