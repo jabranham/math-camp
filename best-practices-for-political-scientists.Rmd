@@ -160,7 +160,7 @@ my_mean(mean_of_zero)
     + Office: [odfWeave](https://cran.r-project.org/web/packages/odfWeave/index.html)
 * For Stata:
     + [StatWeave](http://homepage.cs.uiowa.edu/~rlenth/StatWeave/)
-    + Google "Sweave for Stata" or "reproducable research and Stata"
+    + Google "Sweave for Stata" or "reproducible research and Stata"
 
 # For further reading - version control systems
 * Git
