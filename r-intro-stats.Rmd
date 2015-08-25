@@ -12,6 +12,7 @@ output:
     incremental: true
 fontsize: 10pt
 ---
+
 ```{r, include=FALSE}
 library(ggplot2)
 library(foreign)
