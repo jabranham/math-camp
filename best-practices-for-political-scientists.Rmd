@@ -2,6 +2,7 @@
 title: "Best Practices for the Political Scientist"
 author: "J. Alexander Branham"
 date: "Fall 2015"
+
 header-includes: 
   - \beamertemplatenavigationsymbolsempty
 output:
@@ -45,7 +46,7 @@ output:
 * Comments explain what you are doing to your future self, collaborators, and others
 
 # Comment example
-```{r}
+```
 # This code creates Fig 1
 # I use the mtcars dataset (included with R)
 library(ggplot2)
