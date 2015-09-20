@@ -20,3 +20,8 @@ If you do the latter, I recommend installing whatever the "full" version is.
 It's a larger download, but well worth it in the long run.  
 
 If you want an OS-specific TeX distribution, there is [MiKTex](www.miktex.org) for Windows and [MaCTeX](https://tug.org/mactex/) for Mac.
+
+# To-do for 2015
+- [ ] add schedule to readme.md
+- [ ] slides for missing parts
+- [ ] break up Friday 
