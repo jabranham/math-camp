@@ -24,4 +24,5 @@ If you want an OS-specific TeX distribution, there is [MiKTex](www.miktex.org) f
 # To-do for 2015
 - [ ] add schedule to readme.md
 - [ ] slides for missing parts
-- [ ] break up Friday 
+- [ ] break up Friday
+- [ ] more on summation and product operators 
