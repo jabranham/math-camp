@@ -2,14 +2,11 @@
 title: "Intro to R - the Stats"
 author: "J. Alexander Branham"
 header-includes: 
-   - \AtBeginPart{}
-   - \AtBeginSection{}
-   - \AtBeginSubsection{}
-   - \AtBeginSubsubsection{}
-   - \beamertemplatenavigationsymbolsempty
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: 
   beamer_presentation:
     incremental: true
+    latex_engine: xelatex
 fontsize: 10pt
 classoption: aspectratio=169
 ---

@@ -3,17 +3,12 @@ title: "Intro to R - the Language"
 author: "J. Alexander Branham"
 date: "Fall 2015"
 header-includes: 
-   - \AtBeginPart{}
-   - \AtBeginSection{}
-   - \AtBeginSubsection{}
-   - \AtBeginSubsubsection{}
-   - \beamertemplatenavigationsymbolsempty
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: 
   beamer_presentation:
-    theme: "Warsaw"
-    colortheme: "beaver"
     slide_level: 3
     incremental: true
+    latex_engine: xelatex
 classoption: aspectratio=169
 ---
 ### 

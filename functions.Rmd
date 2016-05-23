@@ -3,18 +3,13 @@ title: "Functions"
 author: "J. Alexander Branham"
 date: "Fall 2015"
 header-includes: 
-   - \AtBeginPart{}
-   - \AtBeginSection{}
-   - \AtBeginSubsection{}
-   - \AtBeginSubsubsection{}
-   - \beamertemplatenavigationsymbolsempty
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: 
   beamer_presentation:
-    colortheme: beaver
     fig_caption: yes
     incremental: yes
     slide_level: 3
-    theme: Warsaw
+    latex_engine: xelatex
 classoption: aspectratio=169
 ---
 

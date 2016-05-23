@@ -2,19 +2,14 @@
 title: "Introduction to Math for Political Scientists"
 author: "J. Alexander Branham & Megan Moeller"
 date: "Fall 2015"
-header-includes:
-   - \AtBeginPart{}
-   - \AtBeginSection{}
-   - \AtBeginSubsection{}
-   - \AtBeginSubsubsection{}
-   - \beamertemplatenavigationsymbolsempty
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output:
   beamer_presentation:
-    colortheme: beaver
     fig_caption: yes
     incremental: yes
+    latex_engine: xelatex
     slide_level: 3
-    theme: Warsaw
 classoption: aspectratio=169
 ---
 

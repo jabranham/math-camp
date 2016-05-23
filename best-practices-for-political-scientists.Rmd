@@ -2,13 +2,12 @@
 title: "Best Practices for the Political Scientist"
 author: "J. Alexander Branham"
 date: "Fall 2015"
-
 header-includes: 
-  - \beamertemplatenavigationsymbolsempty
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output:
   beamer_presentation:
     incremental: true
-
+    latex_engine: xelatex
 classoption: aspectratio=169
 ---
 
