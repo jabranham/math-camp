@@ -4,7 +4,91 @@ This repository holds some of the documents for Introduction to Math
 for Political Scientists. This is taught in the UT-Austin government
 department for about a week prior to the fall semester.
 
-# Contributing 
+# Schedule 
+
+The first two days, math camp meets 2pm - 4:30pm. The final day, math
+camp only meets in the morning (starting at 10am). All other days,
+math camp meets 10-4:30. 
+
+|           | Morning                          | Afternoon                            |
+|-----------+----------------------------------+--------------------------------------|
+| Monday    | N/A                              | Functions & Intro to calculus        |
+| Tuesday   | N/A                              | Calculus                             |
+| Wednesday | Matrix algebra                   | Intro to scientific computing with R |
+| Thursday  | OLS                              | Scientific computing, continued      |
+| Friday    | Logic, Set theory, & Probability | Best practices                       |
+| Monday    | Statistics                       | Set theory & combinatorics           |
+| Tuesday   | Wrap-up, methods at UT           | N/A                                  |
+
+
+
+# Programs you may want to install
+
+The slides for this class are written in
+[rmarkdown](http://rmarkdown.rstudio.com/), which lets me use R code
+and Latex math to produce pdf slides. If you want to render them
+yourself, you'll need to install R and Latex. Here are instructions on
+how to do so: 
+
+## R 
+
+R is the program we'll use for statistical computing and graphics. The
+slides for this class are set in
+[rmarkdown](http://rmarkdown.rstudio.com/), which is a way of
+integrating R code with a document. Installation of R is very easy:
+
+* **Linux** users can download and install R using their package
+  manager. Ubuntu users may want to follow
+  [these instructions](https://cran.r-project.org/bin/linux/ubuntu/)
+  for a more up-to-date version of R. 
+* **Windows and Mac** users can go [here](https://cloud.r-project.org/) and follow
+  the instructions for their OS. 
+  
+### R editor 
+
+R comes with a GUI that is not the greatest. Here's a short list of
+other R editors. All of these work in Linux, Mac, and Windows. Try
+them out and use the one you like most. Rstudio is probably the most
+popular out of these, at least among our department. 
+
+* Emacs (with ESS)
+* [Rstudio](https://www.rstudio.com/products/RStudio/)
+* Sublime text (with SublimeREPL) 
+
+## Latex
+
+Latex is a program that nicely typesets pdf documents. The slides for
+this class are written in [rmarkdown](http://rmarkdown.rstudio.com/),
+which relies on Latex to convert them to pdf documents. 
+
+Latex is a rather large download, so make sure you aren't paying for
+data before downloading it.
+
+There are different Latex distributions depending on the operating
+system you use:
+
+* **Linux** uses can download and install Texlive with their package
+  manager
+* **Mac** users can download and install
+  [MacTeX](https://tug.org/mactex/)
+* **Windows** users can choose between [Miktex](http://miktex.org/)
+  and [Texlive](https://www.tug.org/texlive/acquire-netinstall.html)
+
+### Latex editor 
+
+There are a ton of different latex editors out there. Here are a few,
+all of which work on Linux, Mac, and Windows. There's a great list
+[on StackExchange](http://tex.stackexchange.com/questions/339/latex-editors-ides/)
+that lists many more. People can also vote on their favorites (emacs
+with AuCTeX currently has the most votes). 
+
+* Emacs (with AuCTeX)
+* Sublime text (with Latexing (costs $) or Latextools)
+* Texmaker
+* Texstudio1
+* Texworks
+
+# Contributing
 
 Feel free to suggest changes (small or large) using
 either the [issues](https://guides.github.com/features/issues/) tab
@@ -14,26 +98,5 @@ the file(s) you want changed, and submit a
 [pull request](https://help.github.com/articles/using-pull-requests/).
 
 If you want to use Github with your own work, you can sign up for a
-[free "micro" account](https://education.github.com/), which will let
-you have five private repos.
-
-
-# .Rmd files
-
-You can compile .Rmd files in Rstudio. Open them and click the "Knit
-PDF" button. Note that you'll need a LaTeX distribution installed to
-do this. If you aren't using Rstudio, you can can convert the files to
-pdf by running `render()` from the `rmarkdown` package. 
-
-# LaTeX Distributions
-
-Linux users should download [TeXLive](https://www.tug.org/texlive/).
-There is [MiKTex](www.miktex.org) for Windows and
-[MaCTeX](https://tug.org/mactex/) for Mac.
-
-# To-do for 2015
-- [ ] add schedule to readme.md
-- [ ] slides for missing parts
-- [ ] break up Friday
-- [ ] more on summation and product operators
-- [ ] add gov-r utlist sign up
+[free student account](https://education.github.com/), which will let
+you have unlimited private repos.
