@@ -14,6 +14,7 @@ output:
     colortheme: "beaver"
     slide_level: 3
     incremental: true
+classoption: aspectratio=169
 ---
 ### 
 > If you wanted to do foundational research in statistics in the mid-twentieth century, you had to be bit of a mathematician, whether you wanted to or not\ldots if you want to do statistical research at the turn of the twenty-first century,

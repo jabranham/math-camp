@@ -11,6 +11,7 @@ output:
   beamer_presentation:
     incremental: true
 fontsize: 10pt
+classoption: aspectratio=169
 ---
 
 ```{r, include=FALSE}
