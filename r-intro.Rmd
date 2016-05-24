@@ -1,7 +1,7 @@
 ---
 title: "Intro to R - the Language"
 author: "J. Alexander Branham"
-date: "Fall 2015"
+date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: 

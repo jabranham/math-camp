@@ -1,7 +1,7 @@
 ---
 title: "Introduction to Math for Political Scientists"
-author: "J. Alexander Branham & Megan Moeller"
-date: "Fall 2015"
+author: "J. Alexander Branham"
+date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output:
