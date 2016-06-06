@@ -1,0 +1,69 @@
+---
+title: "Introduction to Math for Political Scientists"
+subtitle: "AKA Math Camp"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+mainfont: Linux Libertine
+linkcolor: "blue"
+urlcolor: "blue"
+output:
+    pdf_document:
+        latex_engine: xelatex
+        toc: false
+---
+
+Welcome to the Department of Government at the University of Texas!
+I'm looking forward to meeting everyone. I'll be your instructor for
+Introduction to Math for Political Scientists, otherwise known as Math
+Camp. In the past our incoming students have told us their math skills
+are rusty and they would like to be better prepared for the Stats I
+class that is required of all Government Department graduate students.
+Math Camp will give you an opportunity to brush up on your
+quantitative skills, provide an introduction to some of the
+statistical software you'll be using next year, and is great chance to
+get to know your fellow first-year students.
+
+This year, we're meeting August 15th through the 23rd. Classes
+at UT start August 24th. There is a full (tentative) schedule for the
+class [on the class's website](https://jabranham.com/math-camp). 
+
+Here is a checklist of items that you should review before your
+arrival:
+
+* Review what math knowledge is assumed 
+    + Complete the exercises in that section to refresh your memory if
+      needed 
+* Install R and an editor on your computer
+  [instructions](https://jabranham.com/math-camp/README.html#programs-you-may-want-to-install) 
+    + Complete the exercises below to get acquainted with R
+
+# Assumed math knowledge 
+
+Students come to the department with a wide range of comfort with and
+exposure to math. I assume a very minimal exposure to math, certainly
+nothing beyond what was on the GRE. The following material is
+knowledge that I assume you are familiar with. 
+
+## Arithmetic
+
+### Arithmetic exercises
+
+## Basic algebra
+
+### Algebra exercises
+
+## Basic geometry
+
+### Geometry exercises 
+
+# Programs 
+
+If you have a personal laptop, please install R and an
+editor (RStudio is the most popular in the department). R is free and
+open-source software. Installation of both programs is simple;
+instructions are on the class website. Please email me if you run into
+any problems.
+
+## R Exercises 
+
+
