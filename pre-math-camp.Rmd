@@ -28,7 +28,7 @@ at UT start August 24th. There is a full (tentative) schedule for the
 class [on the class's website](https://jabranham.com/math-camp). 
 
 Here is a checklist of items that you should review before your
-arrival:
+arrival. Please feel free to email me with any problems you run into.
 
 * Review what math knowledge is assumed 
     + Complete the exercises in that section to refresh your memory if
@@ -42,28 +42,106 @@ arrival:
 Students come to the department with a wide range of comfort with and
 exposure to math. I assume a very minimal exposure to math, certainly
 nothing beyond what was on the GRE. The following material is
-knowledge that I assume you are familiar with. 
+knowledge that I assume you are familiar with. Odds are that you've
+seen all of this before; I suggest you read through and do the
+exercises anyway to refamiliarize yourself with math, especially if
+it's been a while since you've dealt with it.
 
 ## Arithmetic
 
+I assume you have a working knowledge of arithmetic (addition,
+subtraction, multiplication, division). I also assume that you know
+the standard order of operations (PEMDAS - parentheses, exponents,
+multiplication/division, addition/subtraction). I assume you are
+comfortable with some of the various properties of arithmetic - that
+addition, subtraction, multiplication, and division are communicative
+and associative, and that multiplication and division are distributive
+as well. Finally, I assume that you understand that equalities are
+symmetric and transitive. For a review of any of this, I have
+[several slides that should bring you up to speed](/math-camp/slides/arithmetic.pdf)
+
 ### Arithmetic exercises
 
+1. Simplify the following expression to a single real number:
+
+$$(1 + 3)^2 - 4 + \left(\frac{3}{4} * \frac{16}{3} \right)$$
+
+2. Is the following statement true or false: 
+   We know that $y>x$ and we know that $x <z$ therefore we know that
+   $y>z$. 
+   
 ## Basic algebra
+
+A basic understanding of high school level algebra is assumed. That
+is, you understand the basics of using symbols in math to denote
+variables or unknowns (in fact, you used this in one of the above
+questions already!). I also assume that you know and understand how to
+solve for a variable in a given equality (e.g. $4x=3$, find $x$). No
+need to memorize the quadratic formula or anything complicated. 
 
 ### Algebra exercises
 
+1. Find $x$:
+
+$$(1+3)^2 + 4x - 16 = 173$$
+
+2. Find $y$:
+
+$$y(2+7) + 7(y-3) = 21 $$
+
+3. Find $z$:
+
+$$z + (16-7)^{\frac{1}{2}}= 201$$
+
+4. Find $x$ and $y$:
+
+$$4x + 2y + 7 = 49$$
+
+$$-10x + 2y + 3 = 10$$
+
+5. Solve for $z$:
+
+$$z^{-2} + 3(1 - 2) = 2$$
+
 ## Basic geometry
+
+Geometry is used much less than the above math skills in our
+coursework. I assume a very basic familiarity with geometry, like how
+to calculate the are of a rectangle. 
 
 ### Geometry exercises 
 
+1. You are given a rectangle and told that its area is 1 square mile
+   and that its width is 3 miles. What is its length? 
+
 # Programs 
 
-If you have a personal laptop, please install R and an
-editor (RStudio is the most popular in the department). R is free and
-open-source software. Installation of both programs is simple;
+If you have a personal laptop, please install R and an editor (RStudio
+is probably the most popular in the department). R is free and
+open-source software. Installation of both programs is straightforward;
 instructions are on the class website. Please email me if you run into
 any problems.
 
 ## R Exercises 
 
 
+# Answers
+
+## Math
+
+### Arithmetic 
+
+1. 16
+2. False 
+
+### Algebra
+
+1. $x=\frac{173}{4}$
+2. $y=0$
+3. $z=198$
+4. $x=\frac{7}{2}\qquad y=84$
+5. $z = \sqrt{\frac{1}{3}}$
+
+### Geometry
+
+1. $\frac{1}{3}$
