@@ -85,7 +85,7 @@ with AuCTeX currently has the most votes).
 * Emacs (with AuCTeX)
 * Sublime text (with Latexing (costs $) or Latextools)
 * Texmaker
-* Texstudio1
+* Texstudio
 * Texworks
 
 # Contributing
