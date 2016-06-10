@@ -13,42 +13,29 @@ output:
 classoption: aspectratio=169
 ---
 
-### Welcome to UT!
-* Welcome to UT!
-* And to Math Camp!
-
-### Math Camp (tentative) schedule
-* Today: Arithmetic, functions
-* Tomorrow: Functions (cntd), Calculus
-* Wednesday: Derivatives, optimization, OLS
-* Thursday: Matrix algebra (morning), intro to R (afternoon)
-* Friday: Logic, set theory, intro to probability, integration
-* Monday: More probability, research best practices (morning), intro to Stata (afteroon)
-* Tuesday: Wrap up (and catch-up), student panel, pizza par-tay
-
 # Arithmatic
 ## Addition and Subtraction
 ### Let's start real slow...
 * So we all know that
-$$2+2 =4$$
-* But addition and subtraction have some cool (grool?) rules
+$$2 + 2 = 4$$
+* But addition and subtraction have some rules
 
 ### Properties of Addition and subtraction
 * Communiciative:
-    + $a\pm b = b \pm a$
+    + $a \pm b = b \pm a$
 * Associative
-    + $(a\pm b) \pm c = a \pm (b\pm c)$
+    + $(a \pm b) \pm c = a \pm (b\pm c)$
 
 ## Multiplication and Division
 ### Multiplication
 * Multiplication - I have these 4 things 10 times.
 ```{r}
-4+4+4+4+4+4+4+4+4+4
+4 + 4 + 4 + 4 + 4 + 4 + 4 + 4 + 4 + 4
 ```
 \pause
 Or I could just do
 ```{r}
-4*10
+4 * 10
 ```
 
 ### Division
@@ -56,19 +43,18 @@ Or I could just do
 \pause
 * I have these four things one of ten times.
 ```{r}
-4*(1/10)
+4 * (1 / 10)
 ```
 
 ## Properties
 ### Properties of Multiplication and Division
 * Communicative
-    + $a*b = b*a$
+    + $a * b = b * a$
 * Associative
     + $(ab)c = a(bc)$
 * Distributive
     + $a(b+c) = ab + ac$
-    + Note that this works for division: $\dfrac{a+b}{c} = \dfrac{a}{c} + \dfrac{b}{c}$
-
+    + Note that this works for division: $\frac{a+b}{c} = \frac{a}{c} + \frac{b}{c}$
 
 # Properties of Equalities
 ### Relationships that hold with (real) numbers
