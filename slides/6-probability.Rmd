@@ -1,15 +1,130 @@
 ---
-title: "Marginal, Joint, and Conditional Probabilities"
+title: "Introduction to Probability & Conditionality"
 author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
-  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis} 
 output: 
   beamer_presentation:
-    incremental: true
+    fig_caption: yes
     latex_engine: xelatex
+    incremental: yes
+    slide_level: 3
 classoption: aspectratio=169
 ---
+
+```{r, include=FALSE}
+library(ggplot2)
+```
+
+
+# What is probability?
+### Probability
+* Frequency with which an event occurs
+* Typically:
+$$
+Pr(A) = P(A) = \pi(A) = \dfrac{\text{Number of ways an event can occur}}{\text{Total number of possible outcomes}}
+$$
+* There are other ways of thinking about probability, but we'll stick with this one
+
+### Kolmogorov's Axioms 
+* First: $Pr(E)\in\mathbb{R}, Pr(E)\geq 0 \qquad \forall E\in F$
+    + where $F$ is the event space 
+    + Probabilities must be non-negative
+* Second: $Pr(\Omega) = 1$
+    + Where $\Omega$ is the sample space 
+    + Something has to happen
+    + Probabilities sum/integrate to 1
+* Third: $Pr\left(\bigcup_{i = 1}^\infty E_i\right) = \sum_{i=1}^\infty Pr(E_i)$
+    + The probability of disjoint (mutually exclusive) sets is equal to their sums 
+
+# Probability Distributions
+## Discrete
+### Discrete probabilities 
+* What's the probability that we'll roll a 3 on one die roll:
+$$
+Pr(y=3) = \dfrac{1}{6}
+$$
+
+* If one roll of the die is an "experiment"
+* We can think of a 3 as a "success"
+* And $Y \sim Bernoulli(\dfrac{1}{6})$
+* Fair coins are $\sim Bernoulli(.5)$ for example
+* More generally $Bernoulli(\pi )$
+    + $\pi$ represents the probability of success
+
+### Binomial distributions
+* Before we ran the experiment just once
+* What happens if we run it multiple times?
+$$
+Pr(y_1=3, y_2=3) = \dfrac{1}{6} * \dfrac{1}{6}
+$$
+
+* Now $Y \sim Binomial(2, \dfrac{1}{.6})$
+    + Generally, $Y \sim Binomial(n, p)$
+    + n = number of trials, p = probability of success
+* PMF:
+$$
+{n \choose k} p^k (1-p)^{n-k}
+$$
+
+## Continuous distributions
+### The basics
+* What happens when our outcome is continous
+* Much harder to think about... 
+* There are infinity possible outcomes
+* Makes the denominator of our fraction difficult to work with 
+* What's the probability that you make $15,293.19/year? 
+* Probability of the whole space must equal 1
+* Even if all events equally likely, $\dfrac{1}{\infty} =0$ 
+    + Kinda...
+    
+### Continuous distributions - Normal
+```{r, fig.height=2.25, fig.width=3}
+ggplot(data.frame(x = c(-5, 5)), aes(x)) + 
+  stat_function(fun = dnorm)
+```
+
+### Continuous distributions - Uniform 
+```{r, fig.height=2.25, fig.width=3}
+ggplot(data.frame(x = c(-2, 2)), aes(x)) + 
+  stat_function(fun = dunif)
+```
+
+### Probabilies and continuous distributions
+* $Pr(y=c) = 0$
+* $Pr(0<y<.5)$
+$$
+= \int_{0}^{.5} f(y) dy
+$$
+
+* For uniform from previous slide, $Pr(0<y<.5) = 0.5$
+
+## Cumulative probabilities
+### CDF
+* CDF = Cumulative Distribution Function
+* $F_X(x) = Pr(X\leq x)$
+
+### Discrete
+* $Y \sim Binom(10, .5)$
+* What's the probability that $y<5$ ?
+* $$\sum_{y_i < y} Pr(Y=y_i)$$
+
+### $Pr(y\leq 5)$
+$$
+\begin{split}
+{10 \choose 1} .5^1 (1-.5)^{10-1} + \\
+{10 \choose 2} .5^2 (1-.5)^{10-2} + \\
+{10 \choose 3} .5^3 (1-.5)^{10-3} + \\
+{10 \choose 4} .5^4 (1-.5)^{10-4} + \\
+{10 \choose 5} .5^5 (1-.5)^{10-5}
+\end{split}
+$$
+
+### Continous 
+* We can't sum probabilities for continuous distributions (remember the 0 problem)
+* Solution: integration
+* $F_Y(y) = \int_{-\infty}^{y} f(y) dy$
 
 # Marginal probability
 * The $Pr$ of an event occurring:

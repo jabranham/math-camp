@@ -1,0 +1,18 @@
+---
+title: "Ordinary Least Squares"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+---
+
+```{r, echo=FALSE}
+library(ggplot2)
+```

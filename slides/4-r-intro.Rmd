@@ -1,0 +1,243 @@
+---
+title: "Intro to R"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    slide_level: 3
+    incremental: true
+    latex_engine: xelatex
+classoption: aspectratio=169
+---
+
+```{r, include=FALSE}
+library(ggplot2)
+library(foreign)
+```
+
+
+### 
+
+> If you wanted to do foundational research in statistics in the
+    mid-twentieth century, you had to be bit of a mathematician, whether
+    you wanted to or not\ldots if you want to do statistical research at
+    the turn of the twenty-first century, you have to be a computer
+    programmer. - Andrew Gelman
+
+# What is R?
+## Intro
+### What is R? 
+* R is a language and environment for statistical computing and graphics.
+    + From R's website
+* Note that it is a **language**
+    + Those of you who have learned a foreign language know how slow and frustrating that process is... 
+
+## Why use R?
+### Advantages of R
+* It's free, open-source, and available on every platform
+    + Stata is between $55/year and $1000/year for students, depending on what you need 
+* Unparalleled in the number of statistical packages (groups of
+  functions)
+    + More than 8,500 on CRAN as of June 2016
+* Great community help (e.g. stackoverflow.com, R-bloggers)
+* You can combine documents and r code together (rmarkdown or knitr)
+    + For example, this presentation is written in rmarkdown
+
+## Installation 
+### R
+* Go to https://cloud.r-project.org/index.html and follow the instructions
+* R by itself is pretty dinky, so we like to use an editor with it
+    + Rstudio
+    + Emacs with ESS
+    + Sublime Text (not free nor open-source)
+
+# RStudio Layout
+### RStudio Layout 
+* Bottom left: Console
+    + This is where you can enter R code to execute
+* Top left: editor window
+    + You can have open R scripts or rmarkdown files here to edit
+* Top right: environment, history, (git)
+    + Environment will list everything that R is "remembering"
+    + History lists all commands entered in that "project"
+* Bottom right: files, plots, packages, help
+
+### R Projects
+* You can set up different "projects" from within Rstudio
+* This will automatically change the working directory to where you put the project
+* I use a project for each paper, for example
+
+# Using R
+## The basics 
+### Calculator 
+* R is a great calculator 
+
+```{r}
+3 + 2
+1.7729 ^ 4 * (1930 / 4)
+```
+
+### Assignment
+R uses ` <- ` for assignment. 
+
+```{r}
+a <- 4
+a + 7
+a <- a + 2
+a + 7
+```
+
+`a` is now referred to as an "object." Pretty much anything R remembers is an object. 
+
+### Functions
+Functions take arguments
+
+```{r}
+myvector <- c(1, 5, 2, 7, 9, NA, 1)
+mean(myvector, na.rm = TRUE)
+```
+
+```{r, eval=FALSE}
+?rnorm
+rnorm(5, 0, 1)
+```
+
+## Data Structures
+### Basic Data Structures
+R has four basic types of data: logical, numeric, integer, and character
+```{r, eval = FALSE}
+TRUE ; FALSE
+3.27
+3L
+"character"
+```
+
+
+### matrix
+
+```{r}
+mymatrix <- matrix(c(1, 2, 3, 5, 11, 4), nrow = 2, byrow = TRUE)
+mymatrix
+mean(mymatrix[, 1])
+```
+
+### data.frame
+
+```{r}
+mydata <- data.frame(x = c(1, 2, 3), y = c(5, 11, 4), 
+                     z = c("some", "fancy", "text"))
+mydata
+mean(mydata$x)
+```
+
+### list
+
+```{r}
+mylist <- list(amatrix = mymatrix,
+               adataframe = mydata)
+mylist
+```
+
+
+## Programming tools
+### If-else
+If else statements say IF this is true, then do this. OTHERWISE, do
+that. There are two types in R: if, else (which work for scalars) and
+ifelse, which works on vectors
+
+```{r}
+x <- 1:10
+if(5 > 3){
+  x + 1
+}
+ifelse(x <= 5, x + 1, x - 4)
+```
+
+### For loops
+For loops do something a specified number of times:
+
+```{r}
+x <- numeric()
+for(i in 1:10){
+  x[i] <- rnorm(1)
+}
+x
+```
+
+# Packages
+### Packages 
+* Packages extend R's functionality
+* CRAN hosts many packages and R can install packages from CRAN
+  easily:
+  
+```{r, eval = FALSE}
+install.packages(c("rio", "ggplot2"))
+```
+
+
+# Basic statistics in R
+
+# Reading in some data
+* Let's read in some data from the internets:
+
+```{r}
+# Data is available on this course's github page:
+# github.com/jabranham/math-camp
+# Data from Herrera et al (forthcoming, AJPS)
+my_data <- read.dta("data/herrera-data.dta")
+my_data$fptp <- as.logical(my_data$fptp)
+```
+
+# What's in this data?
+* unit of observation: country-year
+* DV: turnout
+* margin: margin between candidite w/ plurality and runner-up
+* fptp: dummy for FPTP systems
+* ppi: parliamentary power index 
+
+# First step: Plot your data! 
+```{r, warning=FALSE}
+ggplot(my_data, aes(margin, turnout)) + geom_jitter()
+```
+
+# Maybe it looks different in FPTP systems?
+```{r, warning=FALSE}
+ggplot(my_data, aes(margin, turnout, color=fptp)) + 
+  geom_jitter()
+```
+
+# Means by group
+* To do this, we need to *subset* by fptp or not
+* So we need one mean for fptp systems, 
+* and another mean for non-fptp systems 
+* Subsetting in R can be done several ways
+* One way uses square brackets `[]` to subset row by column
+* Another way uses `$` to subset by variable name
+* We can combine these two types of subsetting too
+* This is how base R thinks about it: there are other (better?) ways using the `dplyr` or `data.table` packages
+    + Personally, I prefer `dplyr`
+
+# The code
+```{r}
+mean_fptp <- with(my_data, mean(turnout[fptp==TRUE]))
+mean_notfptp <- with(my_data, mean(turnout[fptp==FALSE]))
+c(mean_fptp, mean_notfptp)
+```
+
+# Maybe we want uncertainty too...
+```{r}
+sd_fptp <- with(my_data, sd(turnout[fptp==TRUE]))
+sd_notfptp <- sd(my_data$turnout[my_data$fptp==FALSE])
+c(sd_fptp, sd_notfptp)
+```
+
+# There's a formal test
+* Tests whether the mean is statistically different from each other
+* LOTS more of this in Stats I
+
+```{r}
+t.test(my_data$turnout[my_data$fptp==TRUE],
+  my_data$turnout[my_data$fptp==FALSE])
+```
