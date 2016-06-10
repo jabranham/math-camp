@@ -37,6 +37,9 @@ arrival. Please feel free to email me with any problems you run into.
   [instructions](https://jabranham.com/math-camp/README.html#programs-you-may-want-to-install) 
     + Complete the exercises below to get acquainted with R
 
+Other than that, welcome to Texas and the the Government Department!
+I'm looking forward to meeting everyone on August 15th! 
+
 # Assumed math knowledge 
 
 Students come to the department with a wide range of comfort with and
@@ -111,18 +114,96 @@ to calculate the are of a rectangle.
 
 ### Geometry exercises 
 
-1. You are given a rectangle and told that its area is 1 square mile
-   and that its width is 3 miles. What is its length? 
+1. You are given a rectangle and told that its area is 1 square kilometers
+   and that its width is 3 kilometers. What is its length? 
 
 # Programs 
 
 If you have a personal laptop, please install R and an editor (RStudio
-is probably the most popular in the department). R is free and
-open-source software. Installation of both programs is straightforward;
-instructions are on the class website. Please email me if you run into
-any problems.
+is probably the most popular in the department, I use emacs). R is
+free and open-source software. Installation of both programs is
+straightforward; instructions are on the class website. Please email
+me if you run into any problems.
 
 ## R Exercises 
+
+No familiarity with R is assumed before math camp starts, so you are
+not obligated to do these exercices, though they might help you get
+familiar with the basics of how R works. If you run into any issues,
+feel free to email me. 
+
+R can be used as a calculator. Open up R and try adding 2 and 2. I've
+included what R will print out after two Oglethorpe's (`##`):
+
+```{r}
+2 + 2
+```
+
+R does that and prints the output, 4 in this case. Don't worry for now
+about the [1].
+
+R also understands the standard order of operations. As an example,
+you can see what this statement evaluates to:
+
+```{r}
+(3 / 4) + 2 * (1 + 3)
+```
+
+Once R prints out `8.75`, it "forgets" the result. If you wanted to
+save the result to access later, you can assign the result of that
+statement to an object. `<-` is called the "assignment operator" and
+it assigns the right side to the left side.[^3] So this tells R to
+make `x` hold the value of the mathematical expression on the right:
+
+```{r}
+x <- (3 / 4) + 2 * (1 + 3)
+```
+
+If all goes well, `x` now holds the result of that expression (which
+we know is `8.75`). Notice that R doesn't print anything out. If you
+want to see what `x` is, you can just type it into R:
+
+```{r}
+x
+```
+
+Of course, we're oftentimes working with data where each row is an
+observation and each column is a variable. R refers to this type of
+data as a `data.frame`. R includes several `data.frame`s as toy
+examples. One famous one is the `mtcars` dataset, which we can look at
+with the following command (`head` will list the first 6 observations.
+If you want to look at the whole thing, just type `mtcars` and R will
+print out the whole dataset). 
+
+```{r}
+head(mtcars)
+```
+
+We might be interested in the average fuel efficiency of these cars.
+To get that information, we use the `mean` function and give it the
+mpg data that we're interest in. This is how to do that in R:
+
+```{r}
+mean(mtcars$mpg)
+```
+
+The `$` symbol tells R to look inside the object on the left for the
+object on the right. In our case, this means that R will look inside
+`mtcars` for `mpg`. Since it finds it, it then calls the `mean`
+function and prints the mean mpg (about 20mpg in this case). 
+
+R can also produce publication-quality figures. We'll go over the
+basics of this, and here's an example.[^2]
+
+```{r}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = mpg, y = wt)) +
+  geom_point() +
+  geom_smooth() +
+  labs(x = "Miles per Gallon",
+       y = "Weight")
+```
 
 
 # Answers
@@ -145,3 +226,13 @@ any problems.
 ### Geometry
 
 1. $\frac{1}{3}$
+
+[^2]: If you try to do this on your computer, you'll have to install
+    the `ggplot2` package with `install.packages("ggplot2")`
+    beforehand. Don't worry about what this means --- we'll cover it
+    in math camp. 
+
+[^3]: If you have experience with programming in other languages (like
+    python), this symbol may look a little strange to use for
+    assignment. Many other languages use the equals sign (`=`). You
+    can do that in R, but it's not considered best practices
