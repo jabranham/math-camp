@@ -16,7 +16,7 @@ math camp meets 10-4:30.
 | Tuesday   | N/A                              | Calculus                             |
 | Wednesday | Matrix algebra                   | Intro to scientific computing with R |
 | Thursday  | OLS                              | Scientific computing, continued      |
-| Friday    | Logic, Set theory, & Probability | Best practices                       |
+| Friday    | Probability & Conditionality     | Best practices                       |
 | Monday    | Statistics                       | Set theory & combinatorics           |
 | Tuesday   | Wrap-up, methods at UT           | N/A                                  |
 
