@@ -41,15 +41,15 @@ $$a^0=1$$
 ### Properties of exponents (continued)
 $$a^{1/n} = \sqrt[n]{a}$$
 \pause
-$$\left( \dfrac{a}{b} \right)^n = \dfrac{a^n}{b^n} = a^nb^{-n} \qquad
+$$\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n} = a^nb^{-n} \qquad
 \forall b\neq 0$$
 \pause
-$$\left( \dfrac{a}{b} \right)^{-n} = \left( \dfrac{b}{a} \right)^n \qquad \forall a,b\neq 0$$
+$$\left( \frac{a}{b} \right)^{-n} = \left( \frac{b}{a} \right)^n \qquad \forall a,b\neq 0$$
 
 ### Properties of logs
 $$\log_x(ab) = \log_xa + \log_xb $$
 \pause
-$$\log_x(\dfrac{a}{b}) = \log_xa - \log_xb$$
+$$\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb$$
 \pause 
 $$\log_xa^b = b \log_x a$$
 \pause
