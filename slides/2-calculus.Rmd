@@ -11,8 +11,143 @@ output:
     slide_level: 3
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 ```{r, echo=FALSE}
 library(ggplot2)
 ```
+# Limits
+
+### Limits
+The limit of $f(x)$ as $x \rightarrow a$ is the value that $f(x)$
+approaches as $x$ gets arbitrarily close to $a$
+
+$$\lim_{x \to a}f(x) = L$$
+
+### Limit example
+
+Consider the following function:
+
+$$f(x) = \frac{x^2-1}{x-1}$$
+
+What is $f(1)$? 
+
+### Limit example
+
+$f(1)$ is undefined
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(0, 2)), aes(x)) +
+  stat_function(fun = function(x) (x ^ 2 - 1) / (x - 1))
+```
+
+### Limits and infinity
+
+$$\lim_{x \to \infty}x^2$$
+
+## Limits and infinity 
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(0, 100000)), aes(x)) +
+  stat_function(fun = function(x) x ^ 2)
+```
+
+
+### You try! 
+
+$$\lim_{x \to -\infty}\frac{1}{x}$$
+
+### You try! 
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(-10000, -1)), aes(x)) +
+  stat_function(fun = function(x) ifelse(x != 0, 1 / x, NA)) 
+```
+
+### Sided limits
+
+What is 
+
+$$\lim_{x \to 0} \frac{1}{x}$$
+
+### Sided limits
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(-1, 1)), aes(x)) +
+  stat_function(fun = function(x) ifelse(x != 0, 1 / x, NA)) 
+```
+
+### Sided limits
+
+Here, we can take two different limits: the limit as $x$ approaches
+$0$ from the left and then from the right
+
+$$\lim{x\to 0^{-}} \qquad \text{from the left}$$
+$$\lim{x\to 0^{+}} \qquad \text{from the right}$$
+
+
+### Sided limits
+The limit does not exist! 
+
+\pause
+
+For a limit to exist, both sides must exist *and* they must be equal
+
+### You try! 
+
+Find both one sided limits and the two sided limit as $x \to 1$ of $f(x)$
+
+$$f(x) = \begin{cases}
+x^2 & \text{if } x < 1 \\
+x-3 & \text{if } x \geq 1\\
+\end{cases}$$
+
+
+### Properties of limits
+
+$$\lim_{x\to a} c = c$$
+
+\pause
+
+$$\lim_{x\to a} x=a$$
+
+\pause
+
+$$\lim_{x\to a}\left(f(x) \pm g(x) \right) = \lim_{x\to a} f(x) \pm
+\lim_{x\to a} g(x)$$
+
+### Properties of limits, continued
+
+$$\lim_{x\to a}\left( \frac{\lim_{x\to a} f(x)}{g(x)} \right) =
+\frac{\lim_{x\to a} f(x)}{\lim_{x\to a} g(x)} \qquad \text{iff }
+\lim_{x\to a}g(x) \neq 0 $$
+
+\pause
+
+$$\lim_{x\to a}\left( c f(x)\right) = c \lim_{x\to a}$$
+
+\pause
+
+$$\lim_{x\to a}\left( f(x)^n \right) = \left(\lim_{x\to
+a}f(x)\right)^n \qquad \text{iff } \lim_{x\to a}f(x) > 0$$
+
+# Derivatives 
+## Derivatives 
+
+### Derivatives
+Derivatives calculate the instantaneous slope (rate of change) of a
+function at every point on its domain
+
+$$\frac{dy}{dx} = \frac{d}{dx}f(x) = f'(x) = \lim_{h\to 0 }
+\frac{f(x+h)-f(x)}{h}$$
+
+### The one derivative rule to rule them all 
+
+$$\frac{dy}{dx} x^n = nx^{n-1}$$
+
+## Optimization
+
+## Partial derivatives
+
+# Integrals 
