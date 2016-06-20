@@ -51,6 +51,90 @@ $$
 = d
 $$
 
+### Operations on vectors:
+
+The **summation operator** $\sum$ lets us perform an operation (sum)
+on a sequence of numbers (often but not always a vector):
+
+$$\sum_{i=1}^{5} i$$
+
+
+### Summation operator
+Let:
+
+$$x_i = \begin{bmatrix}
+12 & 7 & -2 & 0 & 1
+\end{bmatrix}$$
+
+Find: 
+
+$$
+\sum_{i=1}^3 x_i
+$$
+
+### Summation operator
+
+```{r}
+x <- c(12, 7, -2, 0, 1)
+sum(x[1:3])
+```
+### You try! 
+Let 
+$$ y = \begin{bmatrix} 
+1 & 0 & -1 & 4
+\end{bmatrix} $$
+
+Find: 
+
+$$\sum_{i = 1}^\infty y^2$$
+
+### You try (answer)
+```{r}
+y <- c(1, 0, -1, 4)
+sum(y ^ 2)
+```
+
+### Product operator
+We might want to multiply instead of add, in which case we can use the
+product operator $\prod$
+
+### Product operator
+Let: 
+$$\begin{bmatrix}
+z = 6 & -2 & 0 & 1
+\end{bmatrix}$$
+
+Find: 
+
+$$
+\prod_{i=1}^{2} z_i
+$$
+
+### Product operator
+
+```{r}
+z <- c(6, -2, 0, 1)
+prod(z[1:2])
+```
+
+### You try!
+Let:
+
+$$\begin{bmatrix}
+a = 1 & 2 & 3 & 4 & 5 & 4 & 3 & 2 & 1
+\end{bmatrix}$$
+
+Find:
+
+$$\prod_{i=1}^{3} a^2 -2a + 3$$
+
+### You try (answer)
+
+```{r}
+a <- c(1, 2, 3, 4, 5, 4, 3, 2, 1)
+prod(a[1:3] ^ 2 - 2 * a[1:3] + 3)
+```
+
 ## Matrices
 
 ### Matrix
