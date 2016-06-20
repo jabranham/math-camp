@@ -207,6 +207,33 @@ a_{31}\pm b_{31} & a_{32}\pm b_{32} & a_{33}\pm b_{33}
 \end{bmatrix}
 $$
 
+### You try! 
+
+Let
+
+$$ A= \begin{bmatrix}
+1 & 4 & 2 \\
+-2 & -1 & 0 \\
+0 & -1 & 3
+\end{bmatrix}
+B = \begin{bmatrix}
+5 & 1 & 0 \\
+2 & -1 & 0 \\
+7 & 1 & 2
+\end{bmatrix}$$
+
+Find $A + B$
+
+### You try (answers)
+
+```{r}
+A <- matrix(c(1, 4, 2, -2, -1, 0, 0, -1, 3),
+            byrow = TRUE, nrow = 3)
+B <- matrix(c(5, 1, 0, 2, -1, 0, 7, 1, 2),
+            byrow = TRUE, nrow = 3)
+A + B
+```
+
 ## Multiplication
 
 ### Scalar multiplication
@@ -219,6 +246,12 @@ ca_{21} & ca_{22} & ca_{23}\\
 ca_{31} & ca_{32} & ca_{33}
 \end{bmatrix}
 $$
+
+### Scalar multiplication
+```{r}
+A
+3 * A
+```
 
 ### Matrix multiplication
 * Requirement: the two matrices must be *conformable*
@@ -247,20 +280,25 @@ L =
 1 & 4 & 3 
 \end{bmatrix}
 $$
+
 * **ONLY** $LM$ and **NOT** $ML$
 * The dimensions will be $2x3$
 
 ### How to actually do this? 
 * Multiply each row by each column
 * (Board examples)
+
 \pause 
+
 ```{r}
-L <- matrix(c(6,5,-1, 1,4,3),
-            nrow=2, byrow=TRUE)
-M <- matrix(c(1,0,2, 1,2,4, 2,3,2), 
-            nrow=3, byrow=TRUE)
-L%*%M
+L <- matrix(c(6, 5, -1, 1, 4, 3),
+            nrow = 2, byrow = TRUE)
+M <- matrix(c(1, 0, 2, 1, 2, 4, 2, 3, 2),
+            nrow = 3, byrow = TRUE)
+L %*% M
 ```
+
+
 
 ## Division
 ### Matrix Division
@@ -282,9 +320,13 @@ L%*%M
 # Transposition
 ## What is it? 
 ### Qu'est-ce que c'est?
+
 * Switch the rows and columns
 * So a $nxm$ matrix becomes $mxn$
 * Typically denoted $L'$ or $L^T$
+
+### Transposition 
+
 ```{r}
 L
 t(L)
@@ -292,11 +334,53 @@ t(L)
 
 ## Properties 
 ### Properties of transposing
-* Matrix is *always* conformable for multiplication with its transpose in both directions
+* Matrix is *always* conformable for multiplication with its transpose
+  in both directions
 * $(A\pm B)' = A' \pm B'$
 * $A'' = A$
 * $(AB)' = B'A'$
 * $(cA)' = cA'$ where $c$ is a scalar
+* $AA'$ and $A'A$ will always result in a symmetric matrix
+
+### You try!
+Let: 
+
+$$
+A = \begin{bmatrix}
+2 & 4 \\
+3 & 1
+\end{bmatrix}
+B = \begin{bmatrix}
+2 & 3 & 4 \\
+-1 & 0 & 1
+\end{bmatrix}
+$$
+
+Find: 
+
+1. $A'A$
+2. $AB$
+3. $BA$
+
+### You try (answers)
+
+```{r} 
+A <- matrix(c(2, 4, 3, 1), byrow = TRUE, nrow = 2)
+B <- matrix(c(2, 3, 4, -1, 0, 1), byrow = TRUE, nrow = 2)
+A %*% t(A)
+```
+
+### You try (answers)
+
+```{r}
+A %*% B
+```
+
+### You try (answers)
+
+```{r, error = TRUE}
+B %*% A
+```
 
 # Matrix Inverse
 ## What is it? 
