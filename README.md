@@ -10,15 +10,15 @@ The first two days, math camp meets 2pm - 4:30pm. The final day, math
 camp only meets in the morning (starting at 10am). All other days,
 math camp meets 10-4:30. 
 
-|           | Morning                          | Afternoon                            |
-|-----------+----------------------------------+--------------------------------------|
-| Monday    | N/A                              | Functions & Intro to calculus        |
-| Tuesday   | N/A                              | Calculus                             |
-| Wednesday | Matrix algebra                   | Intro to scientific computing with R |
-| Thursday  | OLS                              | Scientific computing, continued      |
-| Friday    | Probability & Conditionality     | Best practices                       |
-| Monday    | Statistics                       | Set theory & combinatorics           |
-| Tuesday   | Wrap-up, methods at UT           | N/A                                  |
+|           | Morning                    | Afternoon                       |
+|-----------+----------------------------+---------------------------------|
+| Monday    | N/A                        | Functions & Intro to calculus   |
+| Tuesday   | N/A                        | Calculus                        |
+| Wednesday | Matrix algebra             | Scientific computing with R     |
+| Thursday  | Set theory & combinatorics | Best practices                  |
+| Friday    | Probability                | Scientific computing, continued |
+| Monday    | Statistics                 | OLS                             |
+| Tuesday   | Wrap-up, methods at UT     | N/A                             |
 
 
 
