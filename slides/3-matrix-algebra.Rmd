@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Matrix Algebra"
+title: " Matrix Algebra"
 author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
@@ -100,8 +100,8 @@ product operator $\prod$
 
 ### Product operator
 Let: 
-$$\begin{bmatrix}
-z = 6 & -2 & 0 & 1
+$$z = \begin{bmatrix}
+6 & -2 & 0 & 1
 \end{bmatrix}$$
 
 Find: 
@@ -120,8 +120,8 @@ prod(z[1:2])
 ### You try!
 Let:
 
-$$\begin{bmatrix}
-a = 1 & 2 & 3 & 4 & 5 & 4 & 3 & 2 & 1
+$$a = \begin{bmatrix}
+1 & 2 & 3 & 4 & 5 & 4 & 3 & 2 & 1
 \end{bmatrix}$$
 
 Find:
@@ -135,8 +135,8 @@ a <- c(1, 2, 3, 4, 5, 4, 3, 2, 1)
 prod(a[1:3] ^ 2 - 2 * a[1:3] + 3)
 ```
 
+# Matrices 
 ## Matrices
-
 ### Matrix
 We can put multiple vectors together to get a *matrix*:
 $$
@@ -455,7 +455,7 @@ $$
 $$
 
 ### Identity matrix
-* A scalar matrix where the diagonal elements are 1. 
+A scalar matrix where the diagonal elements are 1. 
 $$
 \begin{bmatrix}
 1 & 0 & 0\\
