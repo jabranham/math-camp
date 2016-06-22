@@ -29,7 +29,7 @@ $$
 * We usually use variables or units of observation 
 
 ### Elements in or not
-* We can say whether an object is in a set or not:
+* We can say whether an object is in a set:
 $$
 s_{13} \in S
 $$
@@ -74,7 +74,7 @@ $$
 ### Compliments
 * A *compliment* is that together, they contain all the elements of the relevant universe 
 $$
-E = O^C \qquad ; \qquad O = E^C
+E = O^C \qquad \qquad O = E^C
 $$
 
 ## Graphical representation
@@ -99,6 +99,26 @@ $$
 * $(A \cap B) \cap C = A \cap (B \cap C)$
 * $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
 * $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
+### You try!
+1. Define the universe of cards in a standard 52-card deck --- $\Omega$
+2. Define the set containing all the spades --- $S$ --- the set
+   containing the black cards --- $B$ --- and the set of queens $Q$
+3. What is $n(B)$
+4. What is $S \cup B$? 
+5. What is $B \cap Q$? 
+6. What is $B \cap (Q \cup S)$? 
+7. Is $Q \subset S$?
+
+### You try (answers)
+1. $\Omega$ is a set with 52 elements, one for each card
+2. $S$ is a set with 13 elements, one for each spade. $B$ has 26
+   elements (the black cards) and $Q$ has just four - the queens
+3. $n(B) = 26$
+4. $S \cup B = B$ 
+5. $B \cap Q$ is the queen of spades and clubs
+6. $B \cap (Q \cup S) = B$
+7. No
 
 # Combinatorics 
 ## What is it?
@@ -160,3 +180,19 @@ $$
 $$
 {n+r-1 \choose r} = \dfrac{(n+r-1)!}{r!(n-1)!}
 $$
+
+### You try!
+Using a standard 52-card deck:
+
+1. How many different 3-card hands exist? 
+2. How many ways are there to get dealt the queen of spades, then the
+   king of diamonds, then the eight of spades? 
+
+### You try (answers)
+
+```{r}
+# 1
+choose(52, 3)
+
+# 2 - one
+```
