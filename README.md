@@ -2,9 +2,10 @@
 
 This repository holds some of the documents for Introduction to Math
 for Political Scientists. This is taught in the UT-Austin government
-department for about a week prior to the fall semester.
+department for about a week prior to the fall semester. The website is
+[accessible through my website](https://jabranham.com/math-camp)
 
-# Contributing 
+# Contributing
 
 Feel free to suggest changes (small or large) using
 either the [issues](https://guides.github.com/features/issues/) tab
