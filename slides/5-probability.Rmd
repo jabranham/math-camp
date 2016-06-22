@@ -1,5 +1,5 @@
 ---
-title: "Introduction to Probability & Conditionality"
+title: " Probability"
 author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
