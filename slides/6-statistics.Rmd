@@ -59,4 +59,18 @@ ggplot(data.frame(x = -6:6), aes(x)) +
 ```
 
 ### Variance 
-*Variance* measures how spread out a distribution is
+*Variance* measures how spread out a distribution is. One way to
+calculate it is like so:
+
+$$s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2$$
+
+That measures the sum of the squared average deviation from the mean 
+
+### Standard deviation
+"Squared average deviation from the mean" is a bit weird, though, so
+oftentimes we use standard deviations instead, which is just the
+squared root of the variance:
+
+$$s_x = \sqrt{s^2_x}$$
+
+
