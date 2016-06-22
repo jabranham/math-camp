@@ -14,5 +14,49 @@ classoption: aspectratio=169
 ---
 
 ```{r, echo=FALSE}
+library(dplyr)
 library(ggplot2)
 ```
+
+# Statistics
+### Statistics
+*Statistics* allow us to learn from data
+
+### Data
+Observations of a *variable*: 
+
+$$x = \begin{bmatrix}
+1 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0\\ 0 \\ 0 \\ 1
+\end{bmatrix}$$
+
+## Univariate statistics
+### Univariate statistics
+A **statistic** summarizes data. You're already familiar with some
+common statistics, like averages. 
+
+We oftentimes want to find the "center" of the data --- this describes
+typical values
+
+### Central tendency
+$$x = \begin{bmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \end{bmatrix}$$
+The *mean* ($\bar{x}$) is calculated by summing the data, then dividing by the
+number of observations:
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i$$
+\pause
+The *median* is found by ordering the observations from highest to
+lowest and finding the one in the middle:
+\pause 
+The *mode* is the most common number
+
+### Variance
+Finding central tendency is good, but we might go a step further.
+Consider these two distributions:
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(data.frame(x = -6:6), aes(x)) +
+  stat_function(fun = dnorm) +
+  stat_function(fun = dnorm, args = list(sd = 3), color = "red")
+```
+
+### Variance 
+*Variance* measures how spread out a distribution is
