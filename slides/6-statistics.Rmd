@@ -13,14 +13,16 @@ output:
 classoption: aspectratio=169
 ---
 
-```{r, echo=FALSE}
+```{r, echo = FALSE, results = "hide"}
 library(dplyr)
 library(ggplot2)
 ```
 
 # Statistics
 ### Statistics
-*Statistics* allow us to learn from data
+*Statistics* allow us to learn from data.
+
+A good first rule: **always plot your data**
 
 ### Data
 Observations of a *variable*: 
@@ -29,6 +31,7 @@ $$x = \begin{bmatrix}
 1 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0\\ 0 \\ 0 \\ 1
 \end{bmatrix}$$
 
+# Univariate statistics
 ## Univariate statistics
 ### Univariate statistics
 A **statistic** summarizes data. You're already familiar with some
@@ -74,3 +77,116 @@ squared root of the variance:
 $$s_x = \sqrt{s^2_x}$$
 
 
+# Bivariate statistics
+## Bivariate statistics
+### Bivariate statistics 
+Thus far, we've focused on statistics that summarize just one
+variable. But we're oftentimes interested in relationships between
+different variables. This can be hard to see with the raw data, though:
+
+### Data
+
+What's the relationship between `mpg` and `wt`? 
+
+```{r}
+head(mtcars, 9)
+```
+
+### Always plot your data!!!
+```{r, fig.height = 4}
+ggplot(mtcars) +
+  geom_point(aes(wt, mpg))
+```
+
+### Covariance
+*Covariance* measures the direction of a relationship:
+
+```{r}
+with(mtcars, cov(wt, mpg))
+```
+
+### Correlation
+*Correlation* (pearson's $r$) captures the direction and strength of a
+linear relationship between two variables.
+
+Ranges from $-1$ to $1$
+
+```{r}
+with(mtcars, cor(wt, mpg))
+```
+```{r, echo = FALSE}
+# returns a data frame of two variables which correlate with a population correlation of rho
+# If desired, one of both variables can be fixed to an existing variable by specifying x
+getBiCop <- function(n, rho, mar.fun=rnorm, x = NULL, ...) {
+     if (!is.null(x)) {X1 <- x} else {X1 <- mar.fun(n, ...)}
+     if (!is.null(x) & length(x) != n) warning("Variable x does not have the same length as n!")
+
+     C <- matrix(rho, nrow = 2, ncol = 2)
+     diag(C) <- 1
+
+     C <- chol(C)
+
+     X2 <- mar.fun(n)
+     X <- cbind(X1,X2)
+
+     # induce correlation (does not change X1)
+     df <- X %*% C
+
+     ## if desired: check results
+     #all.equal(X1,X[,1])
+     #cor(X)
+
+     return(as.data.frame(df))
+}
+```
+### Correlation 
+```{r, echo = FALSE, fig.height = 5}
+nhi <- getBiCop(100, -0.9) %>%
+  mutate(sign = "neg",
+         level = "hi")
+nmed <- getBiCop(100, -0.5) %>%
+  mutate(sign = "neg",
+         level = "med")
+nlo <- getBiCop(100, -0.2) %>%
+  mutate(sign = "neg",
+         level = "lo")
+lo <- getBiCop(100, 0.2) %>%
+  mutate(sign = "pos",
+         level = "lo")
+med <- getBiCop(100, 0.5) %>%
+  mutate(sign = "pos",
+         level = "med")
+hi <- getBiCop(100, 0.9) %>%
+  mutate(sign = "pos",
+         level = "hi")
+
+fake_data <- rbind(nhi, nmed, nlo, lo, med, hi) %>%
+  mutate(level = factor(level, levels = c("lo", "med", "hi"), 
+                        ordered = TRUE))
+
+textdata <- data_frame(sign = c(rep("neg", 3), rep("pos", 3))) %>%
+  mutate(level = rep(c("lo", "med", "hi"), 2),
+         text = c("r=-0.2", "r=-0.5", "r=-0.9",
+                  "r=0.2", "r=0.5", "r=0.9"),
+         V1 = -2, V2 = 2.75,
+         level = factor(level, levels = c("lo", "med", "hi"), 
+                        ordered = TRUE))
+
+ggplot(fake_data, aes(V1, V2)) +
+  geom_text(aes(label = text), data = textdata,
+            color = "red", size = 8) + 
+  geom_point() +
+  facet_grid(sign ~ level) +
+  theme_minimal()
+
+```
+
+### Correlation
+```{r}
+data_frame(x = seq(-3, 3, .1)) %>%
+  mutate(y = x ^ 2 - 9,
+         ny = -x ^ 2 + 9) %>%
+  ggplot() +
+  geom_jitter(aes(x, y), width = 0.5, height = 0.5) +
+  geom_jitter(aes(x, ny), width = 0.7, height = 0.7)
+```
