@@ -14,46 +14,56 @@ classoption: aspectratio=169
 
 ```{r, include=FALSE}
 library(ggplot2)
-library(foreign)
+library(rio)
 ```
 
-
-### 
-
-> If you wanted to do foundational research in statistics in the
-    mid-twentieth century, you had to be bit of a mathematician, whether
-    you wanted to or not\ldots if you want to do statistical research at
-    the turn of the twenty-first century, you have to be a computer
-    programmer. - Andrew Gelman
+###
+![The R Logo](https://www.r-project.org/logo/Rlogo.png)
 
 # What is R?
+### R is a computer programming language
+![R in a terminal](../images/r-terminal.png)
+
 ## Intro
 ### What is R? 
-* R is a language and environment for statistical computing and graphics.
-    + From R's website
-* Note that it is a **language**
-    + Those of you who have learned a foreign language know how slow and frustrating that process is... 
+* R is a language and environment for statistical computing and
+  graphics.
+* Derived from S, designed at Bell Laboratories
+    + S first appeared in 1976!
+* Full language, but flexible and (can be) simple
 
-## Why use R?
+### 
+```{r}
+mtcars
+```
+
+###
+```{r}
+mean(mtcars$mpg)
+summary(mtcars$mpg)
+table(mtcars$cyl)
+```
+
+###
+```{r, fig.height = 5}
+ggplot(mtcars, aes(wt, mpg)) + geom_point()
+```
+
 ### Advantages of R
-* It's free, open-source, and available on every platform
-    + Stata is between $55/year and $1000/year for students, depending on what you need 
-* Unparalleled in the number of statistical packages (groups of
+* It's free, open-source, and available on nearly every platform
+    + Stata is between $55/year and $235/year for students, depending on what you need 
+* Unparalleled in the number of  packages (groups of
   functions)
-    + More than 8,500 on CRAN as of June 2016
-* Great community help (e.g. stackoverflow.com, R-bloggers)
+  + More than 8,500 packages on CRAN as of June 2016, 
+* Great community help (e.g. #rstats on twitter, stackoverflow.com, R-bloggers)
 * You can combine documents and r code together (rmarkdown or knitr)
     + For example, this presentation is written in rmarkdown
 
-## Installation 
-### R
-* Go to https://cloud.r-project.org/index.html and follow the instructions
-* R by itself is pretty dinky, so we like to use an editor with it
-    + Rstudio
-    + Emacs with ESS
-    + Sublime Text (not free nor open-source)
+### R Editors
+* No one likes using R in a terminal, so everyone uses an editor
+* Most popular is probably RStudio
+* Emacs with ESS also very good choice
 
-# RStudio Layout
 ### RStudio Layout 
 * Bottom left: Console
     + This is where you can enter R code to execute
@@ -72,11 +82,28 @@ library(foreign)
 # Using R
 ## The basics 
 ### Calculator 
-* R is a great calculator 
+R is a great calculator 
 
 ```{r}
 3 + 2
 1.7729 ^ 4 * (1930 / 4)
+```
+
+### Algebra & functions
+R can do algebra and functions
+```{r}
+a <- 1
+b <- 2
+a + b
+A <- 3
+a + b - A
+factorial(3)
+```
+
+### You try!
+What will be the output of:
+```{r, eval = FALSE}
+round(round(2.391) + 7.21)
 ```
 
 ### Assignment
@@ -89,7 +116,8 @@ a <- a + 2
 a + 7
 ```
 
-`a` is now referred to as an "object." Pretty much anything R remembers is an object. 
+`a` is now referred to as an "object." Pretty much anything R
+remembers is an object. 
 
 ### Functions
 Functions take arguments
@@ -103,10 +131,35 @@ mean(myvector, na.rm = TRUE)
 ?rnorm
 rnorm(5, 0, 1)
 ```
+# Data structures
+## Scalar, vectors, and matricies
+### Scalars
+
+```{r}
+12
+```
+
+### Vectors
+Created with `c` (create) function:
+```{r}
+c(1, 4, 2, -1)
+```
+
+### Matricies
+created with the `matrix` function:
+```{r}
+matrix(c(1, 2, 3, 4, 2, 1), nrow = 3)
+```
 
 ## Data Structures
+### You try! 
+What kinds of data exist here?
+```{r}
+head(mtcars)
+```
+
 ### Basic Data Structures
-R has four basic types of data: logical, numeric, integer, and character
+We'll talk about four kinds of data
 ```{r, eval = FALSE}
 TRUE ; FALSE
 3.27
@@ -186,7 +239,7 @@ install.packages(c("rio", "ggplot2"))
 # Data is available on this course's github page:
 # github.com/jabranham/math-camp
 # Data from Herrera et al (forthcoming, AJPS)
-my_data <- read.dta("data/herrera-data.dta")
+my_data <- import("../data/herrera-data.dta")
 my_data$fptp <- as.logical(my_data$fptp)
 ```
 
