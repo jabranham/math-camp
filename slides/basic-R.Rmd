@@ -1,5 +1,5 @@
 ---
-title: "Intro to R"
+title: "R Basics"
 author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
@@ -9,19 +9,23 @@ output:
     slide_level: 3
     incremental: true
     latex_engine: xelatex
+    fig_width: 8
+    fig_height: 3
+    fig_caption: false
 classoption: aspectratio=169
 ---
 
-```{r, include=FALSE}
+```{r, include = FALSE}
 library(ggplot2)
-library(rio)
 ```
 
 ###
+\centering
 ![The R Logo](https://www.r-project.org/logo/Rlogo.png)
 
 # What is R?
 ### R is a computer programming language
+\centering
 ![R in a terminal](../images/r-terminal.png)
 
 ## Intro
@@ -51,7 +55,8 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 
 ### Advantages of R
 * It's free, open-source, and available on nearly every platform
-    + Stata is between $55/year and $235/year for students, depending on what you need 
+    + Stata, the main competitor with R in our department, is between
+      $55/year and $235/year for students, depending on what you need
 * Unparalleled in the number of  packages (groups of
   functions)
   + More than 8,500 packages on CRAN as of June 2016, 
@@ -78,6 +83,12 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 * You can set up different "projects" from within Rstudio
 * This will automatically change the working directory to where you put the project
 * I use a project for each paper, for example
+
+### Working directory
+* What is a directory?
+* What is a working directory?
+* Run `getwd()` in R. What does it return?
+    + This is where R will save/load files from 
 
 # Using R
 ## The basics 
@@ -131,8 +142,8 @@ mean(myvector, na.rm = TRUE)
 ?rnorm
 rnorm(5, 0, 1)
 ```
-# Data structures
-## Scalar, vectors, and matricies
+# Scalars, vectors, and matrices 
+## Scalar, vectors, and matrices
 ### Scalars
 
 ```{r}
@@ -145,13 +156,14 @@ Created with `c` (create) function:
 c(1, 4, 2, -1)
 ```
 
-### Matricies
+### Matrices 
 created with the `matrix` function:
 ```{r}
 matrix(c(1, 2, 3, 4, 2, 1), nrow = 3)
 ```
 
-## Data Structures
+# Data Types
+## Data types
 ### You try! 
 What kinds of data exist here?
 ```{r}
@@ -160,20 +172,93 @@ head(mtcars)
 
 ### Basic Data Structures
 We'll talk about four kinds of data
-```{r, eval = FALSE}
-TRUE ; FALSE
-3.27
-3L
-"character"
-```
 
-
-### matrix
+### Logical
+Something that is (TRUE) or isn't (FALSE)
 
 ```{r}
-mymatrix <- matrix(c(1, 2, 3, 5, 11, 4), nrow = 2, byrow = TRUE)
-mymatrix
-mean(mymatrix[, 1])
+4 == 6
+class(TRUE)
+```
+
+### Numeric
+A number
+```{r}
+class(7.12)
+a <- 2.192
+class(a)
+```
+
+### Character
+Character data is R's way of remembering letters
+
+```{r}
+"My name is Alex"
+class("3.218")
+class("TRUE")
+```
+
+### Factor
+
+Factors are R's way of remembering categories and labels
+
+```{r}
+myfactor <- factor(c("a", "b", "c", "c", "b", "A"))
+myfactor
+```
+
+### You try!
+What class are the following:
+
+```
+x <- 3.18
+
+"x"
+x
+```
+
+Make a vector that contains a number, a letter, and FALSE. What's the
+class of the vector?
+
+### Coercion 
+
+* Anything can get coerced to a character
+* Coercing logical to numeric means TRUE = 1, FALSE = 0
+
+### You try
+What type will result:
+
+```
+c(5, "a")
+c(TRUE, "FALSE")
+TRUE + 7
+```
+
+### Matrices 
+A matrix can have only one data type:
+
+```{r}
+matrix(c(1, 2, 3, "a", "b", "c", TRUE, FALSE, TRUE), ncol = 3)
+```
+
+## Lists and data frames
+### Lists and data frames
+Lists and data frames allow for multiple data types
+
+### lists
+A list is a one-dimensional group of objects:
+
+```{r}
+mylist <- list(1, "r", FALSE)
+class(mylist)
+length(mylist)
+```
+
+### Lists
+Elements in a list can be anything - including vectors and lists:
+
+```{r}
+list(c(1, 2, 3), TRUE, list(c(4, 5, 6), FALSE))
 ```
 
 ### data.frame
@@ -182,42 +267,24 @@ mean(mymatrix[, 1])
 mydata <- data.frame(x = c(1, 2, 3), y = c(5, 11, 4), 
                      z = c("some", "fancy", "text"))
 mydata
+```
+
+###
+
+```{r}
 mean(mydata$x)
+mean(mydata[, 1])
+mean(mydata[, "x"])
 ```
 
-### list
+## Types and dimensions
+### Types and Dimensions
 
-```{r}
-mylist <- list(amatrix = mymatrix,
-               adataframe = mydata)
-mylist
-```
-
-
-## Programming tools
-### If-else
-If else statements say IF this is true, then do this. OTHERWISE, do
-that. There are two types in R: if, else (which work for scalars) and
-ifelse, which works on vectors
-
-```{r}
-x <- 1:10
-if(5 > 3){
-  x + 1
-}
-ifelse(x <= 5, x + 1, x - 4)
-```
-
-### For loops
-For loops do something a specified number of times:
-
-```{r}
-x <- numeric()
-for(i in 1:10){
-  x[i] <- rnorm(1)
-}
-x
-```
+|    | Single type | Multiple types |
+|----+-------------+----------------|
+| 1D | Vector      | List           |
+| 2D | Matrix      | Data frame     |
+| nD | Array       |                |
 
 # Packages
 ### Packages 
@@ -226,71 +293,5 @@ x
   easily:
   
 ```{r, eval = FALSE}
-install.packages(c("rio", "ggplot2"))
-```
-
-
-# Basic statistics in R
-
-# Reading in some data
-* Let's read in some data from the internets:
-
-```{r}
-# Data is available on this course's github page:
-# github.com/jabranham/math-camp
-# Data from Herrera et al (forthcoming, AJPS)
-my_data <- import("../data/herrera-data.dta")
-my_data$fptp <- as.logical(my_data$fptp)
-```
-
-# What's in this data?
-* unit of observation: country-year
-* DV: turnout
-* margin: margin between candidite w/ plurality and runner-up
-* fptp: dummy for FPTP systems
-* ppi: parliamentary power index 
-
-# First step: Plot your data! 
-```{r, warning=FALSE}
-ggplot(my_data, aes(margin, turnout)) + geom_jitter()
-```
-
-# Maybe it looks different in FPTP systems?
-```{r, warning=FALSE}
-ggplot(my_data, aes(margin, turnout, color=fptp)) + 
-  geom_jitter()
-```
-
-# Means by group
-* To do this, we need to *subset* by fptp or not
-* So we need one mean for fptp systems, 
-* and another mean for non-fptp systems 
-* Subsetting in R can be done several ways
-* One way uses square brackets `[]` to subset row by column
-* Another way uses `$` to subset by variable name
-* We can combine these two types of subsetting too
-* This is how base R thinks about it: there are other (better?) ways using the `dplyr` or `data.table` packages
-    + Personally, I prefer `dplyr`
-
-# The code
-```{r}
-mean_fptp <- with(my_data, mean(turnout[fptp==TRUE]))
-mean_notfptp <- with(my_data, mean(turnout[fptp==FALSE]))
-c(mean_fptp, mean_notfptp)
-```
-
-# Maybe we want uncertainty too...
-```{r}
-sd_fptp <- with(my_data, sd(turnout[fptp==TRUE]))
-sd_notfptp <- sd(my_data$turnout[my_data$fptp==FALSE])
-c(sd_fptp, sd_notfptp)
-```
-
-# There's a formal test
-* Tests whether the mean is statistically different from each other
-* LOTS more of this in Stats I
-
-```{r}
-t.test(my_data$turnout[my_data$fptp==TRUE],
-  my_data$turnout[my_data$fptp==FALSE])
+install.packages("ggplot2")
 ```

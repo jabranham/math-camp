@@ -1,0 +1,49 @@
+---
+title: "Dealing with Data with R"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    slide_level: 3
+    incremental: true
+    latex_engine: xelatex
+    fig_width: 8
+    fig_height: 3
+    fig_caption: false
+classoption: aspectratio=169
+---
+
+
+# Data transformation 
+### Data transformation
+
+Next up: data transformation. We'll be working with the `flights` data
+frame from the `nycflights13` package, so make sure it's installed
+then load it:
+```{r, include = FALSE}
+library(dplyr)
+```
+
+```{r}
+## install.packages("nycflights13")
+library(dplyr) # for data transformation
+library(nycflights13) # example data to work with
+```
+
+### The data
+```{r}
+flights
+```
+
+### dplyr verbs
+* keep only certain variables -`select`
+* reorder - `filter`
+* reorder rows - `arrange`
+* create new variables - `mutate`
+* collapse data into summary statistics - `summarize`
+
+* perform the above actions by groups - `group_by`
+* Can also `summarize_all` or `mutate_all`
+
