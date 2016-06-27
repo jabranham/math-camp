@@ -7,6 +7,7 @@ header-includes:
 output: 
   beamer_presentation:
     fig_caption: yes
+    fig_height: 3
     incremental: yes
     slide_level: 3
     latex_engine: xelatex
@@ -16,6 +17,78 @@ classoption: aspectratio=169
 ```{r, echo=FALSE}
 library(ggplot2)
 ```
+
+# Introduction to Ordinary Least Squares
+### OLS
+* Ordinary least squares regression (OLS) is probably the most
+  widely-used model in political science 
+* At its core, it's all about drawing a line through data
+* This allows us to asses the effect of $x$ on $y$
+* Dependent variable $y$ must be continuous 
+    + OLS makes other assumptions you'll learn about in stats II
+
+### 
+```{r, echo = FALSE}
+p <- ggplot(mpg, aes(displ, hwy)) +
+  geom_point()
+p
+```
+
+### How to decide on a line?
+```{r}
+p <- p +  geom_abline(slope = -4, intercept = 37)
+p
+```
+
+### How to decide
+```{r}
+p <- p +  geom_abline(slope = 4, intercept = 10, linetype = "dashed")
+p
+```
+
+### how to decide
+```{r}
+p +  geom_smooth(method = "lm", se = FALSE, color = "red")
+```
+
+### OLS in R
+
+```{r}
+lm(hwy ~ displ, data = mpg) 
+```
+
+### Interpretation of coefficients
+* Intercept - predicted $y$ when $x=0$
+* Slope - a one unit change in $x$ leads to a (slope) unit change in
+  $y$, on average 
+
+
+  
+### Residuals
+* Notice that our line doesn't fit our data perfectly - we always make
+  some error with our prediction
+* That's referred to as the *residual*
+* If we refer to our predicted value as $\hat{y}$, then we can
+  calculate the residual for each observation with $e_i = y_i - \hat{y}_i$
+
+### Fitting the best line
+* OLS determines the "best" line by minimizing the sum of squared
+  residuals
+* How to find this?
+* One option: Plug in all the values for the slope & intercept and
+  calculate the sum of squared residuals for these infinity
+  combinations
+* That's problematic... 
+
+### Multiple variables
+* What if as years pass, engine size increases *and* fuel efficiency
+  increases?
+* Then the relationship we just observed might be *spurious*
+
+```{r}
+lm(hwy ~ displ + year, data = mpg) 
+```
+
 
 # OLS in Matrix Form
 ## Notation
