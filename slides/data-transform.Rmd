@@ -201,3 +201,20 @@ gapminder %>%
   geom_smooth()
 ```
 
+### Summarize all 
+We can use `summarize_all` to summarize multiple variables:
+
+```{r}
+gapminder %>%
+  group_by(year) %>%
+  summarize_all(mean)
+```
+
+### Summarize if
+`summarize_if` allows us to do conditional summaries:
+
+```{r}
+gapminder %>%
+  group_by(year) %>%
+  summarize_if(is.numeric, mean)
+```   
