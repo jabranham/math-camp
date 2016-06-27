@@ -19,31 +19,155 @@ classoption: aspectratio=169
 # Data transformation 
 ### Data transformation
 
-Next up: data transformation. We'll be working with the `flights` data
-frame from the `nycflights13` package, so make sure it's installed
+Next up: data transformation. We'll be working with the `gapminder` data
+frame from the `gapmidner` package, so make sure it's installed
 then load it:
 ```{r, include = FALSE}
 library(dplyr)
 ```
 
 ```{r}
-## install.packages("nycflights13")
+## install.packages("gapminder")
 library(dplyr) # for data transformation
-library(nycflights13) # example data to work with
+library(gapminder) # example data to work with
 ```
 
 ### The data
 ```{r}
-flights
+gapminder
 ```
 
 ### dplyr verbs
+* keep only certain observations - `filter`
 * keep only certain variables -`select`
-* reorder - `filter`
 * reorder rows - `arrange`
 * create new variables - `mutate`
 * collapse data into summary statistics - `summarize`
 
 * perform the above actions by groups - `group_by`
 * Can also `summarize_all` or `mutate_all`
+
+### dplyr verbs
+* Usage for all of these is the same
+    + Name of the data frame
+    + What to do with the data frame
+    + Result is always a data frame
+
+### filter
+How to get only countries in Africa?
+
+```{r}
+filter(gapminder, continent == "Africa")
+```
+
+### You try! 
+Get a data frame of all the countries in Europe in 1997
+
+### You try (answer)
+```{r}
+filter(gapminder, continent == "Europe", year == 1997)
+```
+
+### Comparisons
+R supports several logical comparisons:
+
+* Equal `==`
+* Not equal `!=`
+* Greater than `>` (or equal to `>=`)
+* Less than `<` (or equal to `<=`)
+
+### And, or, and %in%
+* `filter` automatically joins multiple arguments with `&`
+* You can use `|` instead, which means "or"
+* Try to get all the countries in Europe or Africa
+
+### and, or, and %in%
+```{r, error = TRUE}
+filter(gapminder, continent == "Europe" |  "Africa")
+```
+
+### and, or, and %in% 
+
+```{r}
+filter(gapminder, continent %in% c("Europe", "Africa"))
+```
+
+### What's or used for?
+
+```{r}
+filter(gapminder, continent == "Asia" | country == "Turkey")
+```
+
+### Select
+Sometimes you'll want to keep only the columns you're interested in.
+`select` lets you do that:
+
+```{r}
+select(gapminder, country, year, pop)
+```
+
+### Select helper functions
+`select` has some helper functions: `starts_with` and `ends_with` are
+among the most useful:
+
+```{r}
+select(gapminder, starts_with("c"), pop)
+```
+
+### Rename
+You can use `select` to rename variables, but since it drops
+everything that it doesn't return, it oftentimes isn't good at that.
+`rename` does what you want it to, though:
+
+```{r}
+rename(gapminder, population = pop)
+```
+
+### Arrange
+```{r}
+arrange(gapminder, year)
+```
+
+### Mutate
+`mutate` allows you to create new variables:
+
+```{r}
+mutate(gapminder, gdp = pop * gdpPercap)
+```
+
+### Mutate
+We can create multiple variables at once:
+
+```{r}
+mutate(gapminder,
+       gdp = pop * gdpPercap,
+       gdp_in_billions = gdp / 1000000)
+```
+
+### Summarize
+`summarize` (or `summarise` if you prefer) creates summary statistics:
+
+```{r}
+summarize(gapminder, mean_life = mean(lifeExp))
+```
+
+### group_by
+`group_by` allows us to perform operations by groups:
+
+```{r}
+by_year <- group_by(gapminder, year)
+summarize(by_year, mean_life = mean(lifeExp))
+```
+
+### Piping
+The pipe operator `%>%` pipes the output of the left side to the first
+argument of the right side:
+
+```{r}
+gapminder %>%
+  group_by(continent, year) %>%
+  summarize(mean_life = mean(lifeExp),
+            n = n())
+```
+
 
