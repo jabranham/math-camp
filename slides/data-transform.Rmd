@@ -20,7 +20,7 @@ classoption: aspectratio=169
 ### Data transformation
 
 Next up: data transformation. We'll be working with the `gapminder` data
-frame from the `gapmidner` package, so make sure it's installed
+frame from the `gapminder` package, so make sure it's installed
 then load it:
 ```{r, include = FALSE}
 library(dplyr)
@@ -170,4 +170,34 @@ gapminder %>%
             n = n())
 ```
 
+### You try! 
+
+* What is the mean life expectancy in Europe in 1997?
+* What is the total population of Asia in 1992?
+* Create a plot with year along the x-axis and average life expectancy
+by continent along the y-axis. 
+  
+### You try (answers)
+```{r}
+gapminder %>%
+  filter(year == 1997, continent == "Europe") %>%
+  summarize(mean_life = mean(lifeExp))
+```
+
+### You try (answers)
+```{r}
+gapminder %>%
+  filter(continent == "Asia", year == 1992) %>%
+  summarize(total_pop = sum(as.numeric(pop)))
+```
+
+### You try (answers)
+```{r}
+gapminder %>%
+  group_by(year, continent) %>%
+  summarize(mean_life = mean(lifeExp)) %>%
+  ggplot(aes(year, mean_life, color = continent)) +
+  geom_point() + 
+  geom_smooth()
+```
 
