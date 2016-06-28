@@ -13,7 +13,7 @@ output:
 classoption: aspectratio=169
 ---
 
-```{r, echo = FALSE, results = "hide"}
+```{r, include = FALSE}
 library(dplyr)
 library(ggplot2)
 ```
@@ -83,6 +83,27 @@ ggplot(data.frame(x = -6:6), aes(x)) +
   stat_function(fun = dnorm, args = list(sd = 3), color = "red")
 ```
 
+### You try!
+
+Here are the average high's from a previous year's math camp:
+
+| Day  |  M |  Tu |   W | Th |  F |   M |  Tu |
+|------+----+-----+-----+----+----+-----+-----|
+| High | 95 | 103 | 100 | 97 | 39 | 108 | 112 | 
+
+Find the mean, median, and mode.
+
+\pause
+
+What's weird with this data? 
+
+### You try (answers)
+```{r}
+x <- c(95, 103, 100, 97, 39, 108, 112)
+mean(x)
+median(x)
+```
+
 ### Variance 
 *Variance* measures how spread out a distribution is. One way to
 calculate it is like so:
@@ -97,6 +118,20 @@ oftentimes we use standard deviations instead, which is just the
 squared root of the variance:
 
 $$s_x = \sqrt{s^2_x}$$
+
+### you try!
+
+I flipped a coin 4 times, one of which was a heads. What's the
+mean of the data? What's the variance? The standard deviation? 
+
+### You try (answers)
+
+```{r}
+x <- c(1, 1, 1, 1, 0, 0, 0, 0, 0, 0)
+mean(x)
+var(x)
+sd(x)
+```
 
 
 # Bivariate statistics
