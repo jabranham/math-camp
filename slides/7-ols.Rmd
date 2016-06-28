@@ -57,13 +57,23 @@ p +  geom_smooth(method = "lm", se = FALSE, color = "red")
 lm(hwy ~ displ, data = mpg) 
 ```
 
+###
+```{r, echo = FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
 ### Interpretation of coefficients
-* Intercept - predicted $y$ when $x=0$
-* Slope - a one unit change in $x$ leads to a (slope) unit change in
+$$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_{i}$$
+
+\pause
+
+* Intercept ($\hat{\beta_0}$) - predicted $y$ when $x=0$
+* Slope ($\hat{\beta_1}$) - a one unit change in $x$ leads to a (slope) unit change in
   $y$, on average 
 
-
-  
 ### Residuals
 * Notice that our line doesn't fit our data perfectly - we always make
   some error with our prediction
@@ -79,6 +89,94 @@ lm(hwy ~ displ, data = mpg)
   calculate the sum of squared residuals for these infinity
   combinations
 * That's problematic... 
+
+### 
+How do we find the minimum sum of squared residuals? 
+
+### Solution: Use calculus 
+Turns out we already know the solution - we learned it when we talked
+about *optimization*. We just need to *minimize* the sum of squared
+residuals with respect to the two coefficients:
+
+$$\sum_{i=1}^n e_i^2$$
+
+### OLS Optimization
+Rearrange above equation in terms of $e_i$:
+
+$$e_i = y_i - \hat{\beta_0} + \hat{\beta_1} x_i$$
+
+\pause
+
+Substitute:
+
+$$\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1}
+x_i)^2$$
+
+### Derivatives
+To find the minimum, we'll need to take the derivative with respect to
+$\hat{\beta_0}$ and $\hat{\beta_1}$. Starting with $\hat{\beta_0}$:
+
+\pause
+
+$$\frac{\partial}{\partial \hat{\beta_0}}
+\left[ \sum_{i=1}^n (e_i = y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+$$\sum_{i=1}^n
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+### Derivatives
+$$\sum_{i=1}^n
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+The next step is to use the **chain rule** to take the derivative of
+the quantity in parentheses:
+
+\pause 
+
+$$\sum_{i=1}^n[-2(y_i - \hat{\beta_0}-b_1 x_i)]$$
+
+\pause
+
+$$-2 \sum_{i=1}^n(y_i - \hat{\beta_0}-b_1 x_i)$$
+
+### Derivative for slope
+Now let's take the partial derivative with respect to the slope
+($\hat{\beta_1}$): 
+
+\pause 
+
+$$\frac{\partial}{\partial \hat{\beta_1}}
+\left[ \sum_{i=1}^n (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2 \right]$$
+
+$$\sum_{i=1}^n \left[ \frac{\partial}{\partial \hat{\beta_1}}
+  (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+Using the chain rule again, we get:
+
+$$-2 \sum_{i=1}^n x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i)$$
+
+### Minimization
+
+How to find the *minimum* now that we have the partial derivatives of
+the sum of squared residuals? 
+
+\pause
+
+$$\frac{\partial}{\partial \hat{\beta_0}} = -2 \sum_{i=1}^n(y_i -
+\hat{\beta_0}-b_1 x_i) = 0$$
+
+$$\frac{\partial}{\partial \hat{\beta_1}} = -2 \sum_{i=1}^n
+x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
+
+\pause
+
+((Solutions on board))
 
 ### Multiple variables
 * What if as years pass, engine size increases *and* fuel efficiency
