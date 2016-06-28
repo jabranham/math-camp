@@ -117,8 +117,8 @@ $$
 
 ### Discrete
 * $Y \sim Binom(10, .5)$
-* What's the probability that $y<5$ ?
-* $$\sum_{y_i < y} Pr(Y=y_i)$$
+* What's the probability that $y\leq5$ ?
+* $$\sum_{i=1}^5 Pr(Y=y_i)$$
 
 ### $Pr(y\leq 5)$
 $$
