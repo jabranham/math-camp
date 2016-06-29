@@ -1,5 +1,6 @@
 ---
-title: "Dealing with Data with R"
+title: "Dealing with Data in R"
+subtitle: "How to Use dplyr"
 author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
@@ -24,10 +25,11 @@ frame from the `gapminder` package, so make sure it's installed
 then load it:
 ```{r, include = FALSE}
 library(dplyr)
+library(ggplot2)
 ```
 
 ```{r}
-## install.packages("gapminder")
+## install.packages(c("gapminder", "dplyr"))
 library(dplyr) # for data transformation
 library(gapminder) # example data to work with
 ```
@@ -44,8 +46,9 @@ gapminder
 * create new variables - `mutate`
 * collapse data into summary statistics - `summarize`
 
-* perform the above actions by groups - `group_by`
-* Can also `summarize_all` or `mutate_all`
+\pause 
+
+Perform the above actions by groups - `group_by`
 
 ### dplyr verbs
 * Usage for all of these is the same
@@ -55,6 +58,7 @@ gapminder
 
 ### filter
 How to get only countries in Africa?
+\pause 
 
 ```{r}
 filter(gapminder, continent == "Africa")
@@ -197,8 +201,7 @@ gapminder %>%
   group_by(year, continent) %>%
   summarize(mean_life = mean(lifeExp)) %>%
   ggplot(aes(year, mean_life, color = continent)) +
-  geom_point() + 
-  geom_smooth()
+  geom_point() + geom_smooth()
 ```
 
 ### Summarize all 
