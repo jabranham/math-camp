@@ -1,3 +1,7 @@
+---
+layout: default
+---
+
 # Math Camp
 
 Welcome to "Math for Political Scientists," affectionately known as
