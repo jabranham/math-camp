@@ -119,7 +119,7 @@ $\hat{\beta_0}$ and $\hat{\beta_1}$. Starting with $\hat{\beta_0}$:
 \pause
 
 $$\frac{\partial}{\partial \hat{\beta_0}}
-\left[ \sum_{i=1}^n (e_i = y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+\left[ \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
 
 \pause
 
@@ -169,7 +169,7 @@ the sum of squared residuals?
 \pause
 
 $$\frac{\partial}{\partial \hat{\beta_0}} = -2 \sum_{i=1}^n(y_i -
-\hat{\beta_0}-b_1 x_i) = 0$$
+\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
 
 $$\frac{\partial}{\partial \hat{\beta_1}} = -2 \sum_{i=1}^n
 x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
@@ -182,6 +182,8 @@ x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
 * What if as years pass, engine size increases *and* fuel efficiency
   increases?
 * Then the relationship we just observed might be *spurious*
+
+\pause 
 
 ```{r}
 lm(hwy ~ displ + year, data = mpg) 
