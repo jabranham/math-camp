@@ -16,6 +16,9 @@ output:
 classoption: aspectratio=169
 ---
 
+```{r, echo=FALSE}
+source("r-setup.R")
+```
 
 # Data transformation 
 ### Data transformation
@@ -23,11 +26,6 @@ classoption: aspectratio=169
 Next up: data transformation. We'll be working with the `gapminder` data
 frame from the `gapminder` package, so make sure it's installed
 then load it:
-```{r, include = FALSE}
-library(dplyr)
-library(ggplot2)
-```
-
 ```{r}
 ## install.packages(c("gapminder", "dplyr"))
 library(dplyr) # for data transformation

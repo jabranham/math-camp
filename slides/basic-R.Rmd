@@ -15,8 +15,8 @@ output:
 classoption: aspectratio=169
 ---
 
-```{r, include = FALSE}
-library(ggplot2)
+```{r, echo=FALSE}
+source("r-setup.R")
 ```
 
 ###

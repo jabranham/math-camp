@@ -16,7 +16,7 @@ classoption: aspectratio=169
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(fig.align='center')
+source("r-setup.R")
 ```
 
 # Data visualization 
@@ -30,9 +30,6 @@ knitr::opts_chunk$set(fig.align='center')
 
 ```{r, eval = FALSE}
 install.packages("ggplot2")
-```
-
-```{r, results = "hide"}
 library(ggplot2)
 ```
 

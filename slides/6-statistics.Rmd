@@ -12,10 +12,8 @@ output:
     latex_engine: xelatex
 classoption: aspectratio=169
 ---
-
-```{r, include = FALSE}
-library(dplyr)
-library(ggplot2)
+```{r, echo=FALSE}
+source("r-setup.R")
 ```
 
 # Statistics

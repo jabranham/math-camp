@@ -14,7 +14,7 @@ classoption: aspectratio=169
 ---
 
 ```{r, echo=FALSE}
-library(ggplot2)
+source("r-setup.R")
 ```
 
 # Exponents and Logarithms 

@@ -14,7 +14,8 @@ output:
 classoption: aspectratio=169
 ---
 
-```{r, echo=FALSE}
+```{r, include = FALSE}
+library(dplyr)
 library(ggplot2)
 ```
 

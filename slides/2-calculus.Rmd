@@ -13,9 +13,8 @@ output:
 classoption: aspectratio=169
 fontsize: bigger
 ---
-
 ```{r, echo=FALSE}
-library(ggplot2)
+source("r-setup.R")
 ```
 # Limits
 

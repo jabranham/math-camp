@@ -12,6 +12,9 @@ output:
     latex_engine: xelatex
 classoption: aspectratio=169
 ---
+```{r, echo=FALSE}
+source("r-setup.R")
+```
 
 # Set Theory
 ## What is it?
