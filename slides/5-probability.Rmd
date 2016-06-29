@@ -11,12 +11,12 @@ output:
     incremental: yes
     slide_level: 3
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 ```{r, echo=FALSE}
 source("r-setup.R")
 ```
-
 
 # What is probability?
 ### Probability
@@ -75,7 +75,7 @@ $$
 
 ### You try (answers)
 1. $$\frac{1}{52}$$
-2. $${6 \choose 6} \frac{1}{6}^6 \left(1 - \frac{1}{6}\right)^6-6 \approx 0.00002$$
+2. $${6 \choose 6} \frac{1}{6}^6 \left(1 - \frac{1}{6}\right)^{6-6} \approx 0.00002$$
 
 # Continuous distributions
 ## Continuous distributions

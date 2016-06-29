@@ -13,6 +13,7 @@ output:
     fig_width: 6
     fig_caption: false
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 ```{r setup, include=FALSE}
@@ -100,14 +101,6 @@ ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
   geom_smooth()
 ```
 
-### Combining geoms 
-We can layer multiple geoms on top of each other:
-
-```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
-  geom_point() + geom_smooth()
-```
-
 ### Smooth - SE's
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
@@ -131,6 +124,14 @@ ggplot(data = diamonds, mapping = aes(x = carat)) +
 ```{r}
 ggplot(data = diamonds, mapping = aes(x = cut)) +
   geom_bar()
+```
+
+### Combining geoms 
+We can layer multiple geoms on top of each other:
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+  geom_point() + geom_smooth()
 ```
 
 ### You try!

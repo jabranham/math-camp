@@ -11,6 +11,7 @@ output:
     latex_engine: xelatex
     slide_level: 3
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 # Arithmatic

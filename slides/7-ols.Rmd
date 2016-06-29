@@ -12,6 +12,7 @@ output:
     slide_level: 3
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 ```{r, include = FALSE}

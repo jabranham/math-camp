@@ -10,6 +10,7 @@ output:
     incremental: true
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 ```{r, echo=FALSE}
 source("r-setup.R")
@@ -54,6 +55,7 @@ $$
 = d
 $$
 
+# Operators
 ### Operations on vectors:
 
 The **summation operator** $\sum$ lets us perform an operation (sum)
@@ -169,10 +171,10 @@ $$
 $$
 B=
 \begin{bmatrix}
-b_{11} & b_{12} & b_{13} & \ldots & b_{1m} \\
-b_{21} & b_{22} & b_{23} & \ldots & b_{2m} \\
+b_{11} & b_{12} & b_{13} & \ldots & b_{1n} \\
+b_{21} & b_{22} & b_{23} & \ldots & b_{2n} \\
 \vdots & \vdots & \vdots & \ldots & \vdots \\
-b_{n1} & b_{n2} & b_{n3} & \ldots & b_{nm}
+b_{m1} & b_{m2} & b_{m3} & \ldots & b_{mn}
 \end{bmatrix}
 $$
 

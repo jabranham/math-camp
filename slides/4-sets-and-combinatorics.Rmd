@@ -11,6 +11,7 @@ output:
     slide_level: 3
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 ```{r, echo=FALSE}
 source("r-setup.R")
@@ -66,7 +67,7 @@ $$
 * We can talk about how subsets fill a certain **universe** of possibilities
 * For example:
 $$
-R = {1,2,3,4,5,6}
+R = \left\{1,2,3,4,5,6\right\}
 $$
 * $R$ represents all the possibilities of a (single) roll of a die 
 * We can define sets for the even possibilities and the odd possibilities
@@ -92,7 +93,7 @@ $$
     + Two sets unions can't be empty (unless both sets are empty to begin with)
 * Size: $n(R)=6$ tells us that there are 6 elements in $R$
 * Sizes of unions
-    + $n(x \cup Y) = n(X) + n(Y) - n(X \cap Y)$
+    + $n(X \cup Y) = n(X) + n(Y) - n(X \cap Y)$
     + Have to subtract the last term, otherwise we'd double-count elements in the intersection of the two sets
     
 ### Properties

@@ -7,165 +7,126 @@ header-includes:
 output:
   beamer_presentation:
     incremental: true
+    slide_level: 3
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
-# Why best practices?
-* Traditionally, scholars have separated data analysis and the documentation describing the results and findings
-* This makes updating work inefficient and reproduction difficult or impossible 
-* Why best practices? 
-* To solve many recurring issues with research
-    + Difficulty recreating a particular method
-    + Difficulty recreating a figure
-    + Difficulty recreating a table
-    + Steps taken in code not reported in paper
-        + Example: dropping oversamples
-* Solution: **Reproducible research**
-    + Helps future people trying to extend your work
-    + Helps coauthors see what you're doing
-    + Helps you in six months (or tomorrow)
-
-# A Quick Overview...
-1. Write using plain text
-2. Code well
-3. Use a version control system
-
-# Write using plain text!
-* What if we write an article now that gets famous?
-* 20 years later, some grad student wants to extend our work
-* How did we make Figure 1?
-* Non-plain text files may be unusable 20 years from now
-* Word processors (like MS Word) are [stupid and inefficient](http://ricardo.ecn.wfu.edu/~cottrell/wp.html)
-* Bonus: plain text files are usually *much* smaller than their Word/pdf counterparts
-
-# Code well - DO NOT CLICK A MOUSE
-* All results should be replicable from a source file
-    + And these should be named in a manner that tells you what they are
-    + e.g. `fig1.R` and not `messing-around-with-figs.R`
-* These source files (for example, .R for R scripts or .do for Stat do-files) should be liberally commented
-* Comments explain what you are doing to your future self, collaborators, and others
-
-# Comment example
-```
-# This code creates Fig 1
-# I use the mtcars dataset (included with R)
-library(ggplot2)
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  geom_smooth(method="lm") # Adds OLS line with SEs
-ggsave("fig/fig1.pdf")
-```
-* Save this code snippit as `fig1.R` (or similar)
-
-# Literate programming and reproducible research
-* Previous example - have two files for one plot in a paper
-    + The paper itself (`document.tex` or similar)
-    + the script to create the figure (`fig1.R` or similar)
-* What if we could combine these to have everything in one easy-to-read file?
-    + This is what literate programming is all about!
-
-# Literate programming example (using `knitr` and \LaTeX )
-
-```
-\section{Introduction to Literate Programming}
-This is an example paragraph, written in \LaTeX.
-Using knitr, we can include R code in the following manner.
-I can reference the figure number by calling ref:
-Figure \ref{fig:mpg-and-weight}.
-% NOTE: updating that figure with x^2 doesn't change it
-\begin{figure}
-\centering
-<<fig1plot, echo=FALSE>>=  # Starts R code, labels it `fig1plot`
-# I use the mtcars dataset (included with R)
-library(ggplot2)
-ggplot(mtcars, aes(mpg, wt)) +
-  geom_point() +
-  geom_smooth(method="lm") # Adds OLS line with SEs
-@ % closes R code
-\caption{Miles per gallon and weight}
-\label{fig:mpg-and-weight}
-\end{figure}
+```{r, echo=FALSE}
+source("r-setup.R")
 ```
 
-# Version Control
-* **YOU NEED TO USE VERSION CONTROL!!!!!**
-* This can be as simple as putting things in Dropbox, which enables you to recover previous file versions automatically
-    + Though I've had issues with this, so definitely wouldn't suggest it
-* Word's "track changes" feature...
-    + This is usually used poorly
-    + Requires saving a new file each time you edit
+# Intro
+### Welcome to grad school
+* We're going to talk about things that aren't taught or talked about very often
+* How are you going to organize and manage your work?
+* Academic writing is messy
+    + Keep track of the paper, figures, tables, references, cross-references, analysis, appendix, etc
 
-# Pathologies of the Dropbox/Word approach:
-* Assumes they're both going to be around (in the same form(ish)) in the future
-    + Remember computers 20 years ago???
-* Word is expensive; not everyone has it
-* You can "clobber" work (save over good work)
-* Must tell coauthors not to touch files while you're working on them
-    + Though this may be changing...
-* Word conflates two parts of creating a paper:
-    + Writing the actual document
-    + Typesetting
-    + We want to only focus on the former (especially in the early stages!)
-* You also tend to end up with many versions of the same project
-    + ((show example paper))
+### 
+* You want a system that keeps a record of your actions as you:
+    + Edit text
+    + Analyze data
+    + Present results
+    + Do the above *reproducibly* 
+* We'll focus on free, open-source tools that enable this behavior and work on Linux, Mac, and Windows
 
+# Record
+### Version control
+* You can use **version control** to keep track of changes to a file/folder/project
+* The best version control systems let you easily see what has changed, when it changed, and who changed it
+    + Word's "track changes" feature on steroids
+* Gets rid of `paper.doc`, `paper2.doc`, `paper-commented.doc`, `paper-FINAL.doc`, `paper-FINALFINAL.doc`
+* git is the best version-control system - it combines the benefits of "track changes" with that of backups
 
-# Git
+### Git
 * Git is a formal *distributed version control system*
-    + There are others (Subversion and Mercurial are the big two), but we're going to focus on git
 * It is an easy way to keep track of all the revisions you have saved
-* It enables easy collaborating between many different people, without the need to email files back and forth or tell them when you're working on something
 * You only have *one* version of a file at any one time
 * You can see the entire history of a file easily
 * You can see exactly what changed in each new commit
 * There are *many* different GUIs so you don't have to deal with the command line
-    + I like Sourcetree (for Windows) and SmartGit (for Linux)
     + Rstudio can also do most things 
 * ((show example git history))
 
-# Github
+### Why use git?
+* Makes it easy to collaborate - no emailing files back and forth, no need to send an email so that you don't clobber coauthor's changes in dropbox
+* But mainly for yourself!
+* You'll generate a documented record of your actions that is also a backup of your project (dissertation?) at every stage of development
+* When you return to your code six months from now, you won't have to wonder what it is or what you were thinking 
+
+### Github
 * Github is the most popular online git service
-    + There are many others, such as BitBucket
+    + There are many others, such as Gitlab
 * Each project gets a repository ("repo")
 * Each repo is version-controlled (using git)
 * Default is open-source (public)
-* You can make repos private (for a fee - students get 5 for free)
-* This file is a part of my "math-camp" repo [here](www.github.com/jabranham/math-camp)
+* You can make repos private (for a fee - students for free, though)
+* This file is a part of my "math-camp" repo [here](https://github.com/jabranham/math-camp)
     + Feel free to fork-edit-pull request any changes!
-    + I included the PDFs, which is unusual since they aren't plain text
 
-# Bonus best practice - Test your code!
-* If you write your own function, it is important to test it to make sure it does what you want it to do!
-```{r}
-my_mean <- function(dat){
-  the_sum <- numeric()
-  N <- length(dat)
-  for (i in 1:N){
-    if(i==1){the_sum <- dat[1]}
-    else{
-    the_sum <- the_sum * dat[i]
-  }}
-  my_mean <- the_sum / N
-  my_mean
-}
-mean_of_zero <- c(-2, -1, 1, 2)
-my_mean(mean_of_zero)
+# Edit text
+## Plain text
+### Write using plain text!
+* What if we write an article now that gets famous?
+* 20 years later, some grad student wants to extend our work
+* How did we make Figure 1?
+* Non-plain text files may be unusable 20 years from now
+* Bonus: plain text files are usually *much* smaller than their Word/pdf counterparts
+
+### Editor
+* If you write using plain text, you'll want an editor
+* I recommend emacs, but it can be a hassle to get set up
+    + Working with R use ESS, rmarkdown use poly-mode
+* Other alternatives:
+    + Sublime Text
+    + Vim
+    + RStudio (for R analysis)
+
+### Markdown
+
+``` 
+# Markdown 
+
+You can use markdown to write plain text that
+[contain links](https://google.com). Markdown can also manage your
+references and bibliography [@wlezien1995].
+
 ```
 
-# For further reading - Literate data analysis
-* For R:
-    + CRAN has a webpage dedicated to [just this](https://cran.r-project.org/web/views/ReproducibleResearch.html)
-    + Markdown: [rmarkdown](http://www.rmarkdown.rstudio.com)
-    + LaTeX: [knitr](http://yihui.name/knitr/)
-    + WYSIWYM: [Lyx + knitr](www.lyx.org)
-    + Office: [odfWeave](https://cran.r-project.org/web/packages/odfWeave/index.html)
-* For Stata:
-    + [StatWeave](http://homepage.cs.uiowa.edu/~rlenth/StatWeave/)
-    + Google "Sweave for Stata" or "reproducible research and Stata"
+### Markdown - math
+```
 
-# For further reading - version control systems
-* Git
-    + Nice tutorial [here](https://try.github.io/levels/1/challenges/1)
-    + Here's [more than you need to know about git](https://www.atlassian.com/git/tutorials)
-    + Using [GitFlow](http://nvie.com/posts/a-successful-git-branching-model/)
+As a quick aside, we can also write really nice math in markdown.
+Inline math goes between single dollar signs: ($\beta = 3$) and
+display math uses double dollar signs:
+
+$$\frac{1}{3} x = \pi$$
+```
+# Reproduce
+### Reproducible research
+* It's hard to reproduce a lot of research
+* You'll sometimes have to modify a table in a paper months (years) later due to a reviewer or whatever
+* How did you produce that figure/table the first time?
+* Solution: Integrate code and paper with rmarkdown
+
+### Rmarkdown
+Rmarkdown lets you put code inside your markdown document like so:
+
+    `r ''````{r}
+    x <- c(1, 2, 3)
+    mean(x)
+    ```
+### Overview
+* Run data analysis in R, write with r/markdown, track with git, etc
+* It's complicated but
+* Everything is free
+* Everything is open-source and runs on Linux, Mac, and Windows
+* Your work can be done in a portable, documented, reproducible way
+* These programs work well with each other
+
+### Setup
+How to install and setup this stuff? 
+\pause
+![](../images/draw-owl.jpg)

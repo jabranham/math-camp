@@ -13,11 +13,13 @@ output:
     fig_height: 3
     fig_caption: false
 classoption: aspectratio=169
+fontsize: bigger
 ---
 
 ```{r, echo=FALSE}
 source("r-setup.R")
 ```
+
 
 ###
 \centering
@@ -289,6 +291,12 @@ Return the vector (4, 5, 6) from this list:
 
 ```{r, eval = FALSE}
 mylist2 <- list(c(1, 2, 3), TRUE, list(c(4, 5, 6), FALSE))
+```
+
+### You try (answer)
+
+```{r}
+mylist2[[3]][[1]]
 ```
 
 ### Names

@@ -11,6 +11,7 @@ output:
     slide_level: 3
     latex_engine: xelatex
 classoption: aspectratio=169
+fontsize: bigger
 ---
 ```{r, echo=FALSE}
 source("r-setup.R")
@@ -20,7 +21,6 @@ source("r-setup.R")
 ### Statistics
 *Statistics* allow us to learn from data.
 
-A good first rule: **always plot your data**
 
 ### Data
 Observations of a *variable*: 
@@ -125,7 +125,7 @@ mean of the data? What's the variance? The standard deviation?
 ### You try (answers)
 
 ```{r}
-x <- c(1, 1, 1, 1, 0, 0, 0, 0, 0, 0)
+x <- c(1, 0, 0, 0)
 mean(x)
 var(x)
 sd(x)
