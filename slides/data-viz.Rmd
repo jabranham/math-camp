@@ -9,8 +9,8 @@ output:
     slide_level: 3
     incremental: true
     latex_engine: xelatex
-    fig_width: 8
-    fig_height: 3
+    fig_height: 2
+    fig_width: 6
     fig_caption: false
 classoption: aspectratio=169
 ---
@@ -25,6 +25,8 @@ knitr::opts_chunk$set(fig.align='center')
 * Plots are (usually) easier to interpret than tables and numbers
 * We'll use `ggplot2` to visualize data in R. Make sure you have it
   installed (only the first time) and loaded (every time):
+
+\pause
 
 ```{r, eval = FALSE}
 install.packages("ggplot2")
