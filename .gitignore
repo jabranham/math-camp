@@ -10,3 +10,5 @@
 *.toc
 *.vrb
 *.sublime-workspace
+*_cache/
+*_files/
