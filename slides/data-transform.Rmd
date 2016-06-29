@@ -207,7 +207,7 @@ gapminder %>%
 ### Summarize all 
 We can use `summarize_all` to summarize multiple variables:
 
-```{r}
+```{r, warnings = FALSE}
 gapminder %>%
   group_by(year) %>%
   summarize_all(mean)
