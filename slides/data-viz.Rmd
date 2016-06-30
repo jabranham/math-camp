@@ -1,0 +1,177 @@
+---
+title: "Data visualization with R"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    slide_level: 3
+    incremental: true
+    latex_engine: xelatex
+    fig_height: 2
+    fig_width: 6
+    fig_caption: false
+classoption: aspectratio=169
+fontsize: bigger
+---
+
+```{r setup, include=FALSE}
+source("r-setup.R")
+```
+
+# Data visualization 
+## Data visualization
+### Data visualization 
+* Plots are (usually) easier to interpret than tables and numbers
+* We'll use `ggplot2` to visualize data in R. Make sure you have it
+  installed (only the first time) and loaded (every time):
+
+\pause
+
+```{r, eval = FALSE}
+install.packages("ggplot2")
+library(ggplot2)
+```
+
+### Data visualization 
+We'll be working with the `diamonds` dataset, provided by `ggplot2`.
+Check out its documentation with `?diamonds`:
+
+1. How many diamonds are in the dataset?
+2. What is the name of the variable for the weight of the diamond?
+3. What is the code for the worst color of diamond?
+
+### Scatterplots
+
+```{r}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price))
+```
+
+# Aesthetics
+## Aesthetics
+### Color 
+```{r}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price, color = cut))
+```
+
+### Shape
+```{r}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price, shape = cut))
+```
+
+### Size
+```{r, warning = FALSE}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price, size = cut))
+```
+
+
+### Alpha
+```{r}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price, alpha= cut))
+```
+
+### You try!
+Use the `mpg` dataset from `ggplot2` to:
+
+1. Make a scatterplot with displ on the x-axis and hwy on the y-axis
+2. Add color, size, and shape aesthetics 
+
+# Facets
+### Facets
+Can make facets by adding `facet_grid`:
+```{r}
+ggplot(data = diamonds) +
+  geom_point(mapping = aes(x = carat, y = price)) + facet_grid(. ~ cut)
+```
+
+# Geoms
+### Geoms
+There are other kinds of graphs than scatterplots. `geom_` takes care
+of this for ggplot2 ("geometric object"):
+
+### Smooth
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
+  geom_smooth()
+```
+
+### Smooth - SE's
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
+  geom_smooth(se = FALSE) 
+```
+
+### Smooth - OLS
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
+  geom_smooth(se = FALSE, method = "lm") 
+```
+
+### Histogram
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat)) +
+  geom_histogram(binwidth = .25)
+```
+
+### Bar charts
+```{r}
+ggplot(data = diamonds, mapping = aes(x = cut)) +
+  geom_bar()
+```
+
+### Combining geoms 
+We can layer multiple geoms on top of each other:
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+  geom_point() + geom_smooth()
+```
+
+### You try!
+Make a boxplot with color on the x-axis and price on the y-axis
+
+### You try (answers)
+
+```{r}
+ggplot(data = diamonds, mapping = aes(x = color, y = price)) +
+  geom_boxplot()
+```
+
+### Bar charts (extended)
+Fill vs color
+
+What do you expect this to do:
+
+```{r, eval = FALSE}
+ggplot(data = diamonds, mapping = aes(x = cut, color = cut)) +
+  geom_bar()
+```
+
+### Use fill for bar charts
+
+```{r, FALSE}
+ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
+  geom_bar()
+```
+
+### 
+Try to make this plot
+
+```{r, echo = FALSE}
+ggplot(data = diamonds, mapping = aes(x = color, fill = cut)) +
+  geom_bar(position = "dodge")
+```
+
+### Positions
+```{r, eval = FALSE}
+ggplot(data = diamonds, mapping = aes(x = color, fill = cut)) +
+  geom_bar(position = "dodge")
+```
+There's "stack", "dodge", "identity", "fill" - try them all out!

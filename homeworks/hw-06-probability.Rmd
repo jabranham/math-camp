@@ -1,0 +1,30 @@
+---
+title: "Homework 6"
+author: "Math Camp"
+date: "Fall 2015"
+output: pdf_document
+---
+
+1. What is the marginal probability of drawing a four and then a three
+   from a standard deck of cards?
+
+2. What is the conditional probability of drawing a queen given that
+   you've drawn a heart?
+
+3. What's the probability of drawing a seven given that you've drawn a
+   six?
+
+4. What's the probability of drawing a red four?
+
+5. What's the probability of drawing a seven on the first draw and a
+   three on the second draw?
+
+6. What's the probability of drawing a three on the second draw given
+   you drew a seven on the first draw?
+
+7. It rains 88 days of the year on average in Austin. The
+   weatherperson in Austin is not totally reliable, but they've called
+   for rain tomorrow. When it rains, they correctly forecast rain 80
+   percent of the time. However, when it is dry, they also predict
+   rain 15 percent of the time. What is the probability that it will
+   rain tomorrow?

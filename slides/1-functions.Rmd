@@ -1,0 +1,140 @@
+---
+title: "Functions"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+fontsize: bigger
+---
+
+```{r, echo=FALSE}
+source("r-setup.R")
+```
+
+# Exponents and Logarithms 
+## What are they?
+### Exponents and Logarithms
+* Exponents tell you to multiply that thing by its base x times:
+    + $3^4 = 3*3*3*3 =$
+* Logarithms ask how many times you must raise the base to get x:
+    + $\log_3(81) = 4$
+    + Note that logarithms with negative arguments are undefined 
+    + Sometimes $\log(n)$ means $\log_{10}(n)$
+    + Othertimes, it means $\log_e(n) = ln(n)$
+    
+## Properties
+### Properties of exponents
+$$a^ma^n = a^{m+n}$$
+\pause
+$$\frac{a^m}{a^n}  = a^{m-n}$$
+\pause
+$$(a^m)^n = a^{mn}$$
+\pause
+$$a^0=1$$
+
+### Properties of exponents (continued)
+$$a^{1/n} = \sqrt[n]{a}$$
+\pause
+$$\left( \frac{a}{b} \right)^n = \frac{a^n}{b^n} = a^nb^{-n} \qquad
+\forall b\neq 0$$
+\pause
+$$\left( \frac{a}{b} \right)^{-n} = \left( \frac{b}{a} \right)^n \qquad \forall a,b\neq 0$$
+
+### Properties of logs
+$$\log_x(ab) = \log_xa + \log_xb $$
+\pause
+$$\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb$$
+\pause 
+$$\log_xa^b = b \log_x a$$
+\pause
+$$\log_x 1 = 0$$
+\pause
+$$m^{\log_m(a)} = a$$
+\pause
+$$\dfrac{\log_x n}{\log_x m} = \log_m n$$
+
+### You try!
+$$2^4$$
+$$\log(100)$$
+$$a^3 \times a^7$$
+$$\log_{10}(10z)$$
+
+# Functions
+## The Basics
+### What's a function?
+* Anything that takes input and gives one output
+* In math, this usually looks something like $f(x,z) = y$
+    + $x$ and $z$ are the *arguments* that the function takes
+    + $y$ is the *output* from the function
+    
+### Function machine 
+![](../images/Function_machine.jpg){height=70%}
+
+## Functional Forms
+### Linear functions
+* We can make a function that describes a line pretty easily
+* $y=mx+b$
+    + $m$ is the slope (for every one unit increase in $x$, $y$ increases $m$ units)
+    + $b$ is the y-intercept: the value of $y$ when $x=0$
+    
+### Linear functions
+```{r, fig.height=4}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = function(x) -2 * x + 3, geom = "line")  +
+  stat_function(fun = function(x) (1 / 2) * x + 1)
+```
+
+
+
+### Quadratics
+* These lines have one curve
+* $y=ax^2 + bx + c$
+
+### Quadratics
+```{r, warning=FALSE, fig.height=3}
+ggplot(data.frame(x = c(-3, 4)), aes(x)) +
+  stat_function(fun = function(x) x ^ 2, color = "green") +
+  stat_function(fun = function(x) 2 * x ^ 2, color = "red") +
+  stat_function(fun = function(x) -2 * x ^ 2 + 6 * x - 4) +
+  ylim(c(-5, 5))
+```
+
+### Exponential
+* General form: $y = a * b^{kx} + k$
+```{r, fig.height=3.5}
+ggplot(data.frame(x = c(-1, 5)), aes(x)) +
+  stat_function(fun = function(x) exp(x)) +
+  stat_function(fun = function(x) 2 * exp(x), color = "red")
+```
+
+### Logs
+* General form: $y= a*\log(bx) + k$
+```{r, fig.height=3}
+ggplot(data.frame(x = c(0, 5)), aes(x)) +
+  stat_function(fun = function(x) log(x)) +
+  stat_function(fun = function(x) log10(x), color = "red") +
+  stat_function(fun = function(x) 2 * log(x), color = "green")
+```
+
+### Logs and Exponents
+* The log and exponent charts are obviously related
+* In fact, these functions are each others "inverse" function
+    + Plug in $y$ to find $x$
+* Exponents have horizontal asymptote
+* Logs have vertical asymptote
+
+### You try!
+What function describes this line?
+
+```{r, echo = FALSE, fig.height=5}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = function(x) (1 / 3) * x + 0.5, geom = "line") +
+  coord_cartesian(ylim = c(-1, 1))
+```

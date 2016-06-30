@@ -1,0 +1,369 @@
+---
+title: "Calculus"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+fontsize: bigger
+---
+```{r, echo=FALSE}
+source("r-setup.R")
+```
+# Limits
+
+### Limits
+The limit of $f(x)$ as $x \rightarrow a$ is the value that $f(x)$
+approaches as $x$ gets arbitrarily close to $a$
+
+$$\lim_{x \to a}f(x) = L$$
+
+### Limits
+Let $f(x)$ be $x+3$. Find:
+
+$$\lim_{x\to 3}f(x)$$
+
+### Limits
+```{r, fig.height = 4}
+ggplot(data.frame(x = c(-1, 5)), aes(x)) +
+  stat_function(fun = function(x) x + 3) +
+  geom_vline(xintercept = 3, linetype = "dashed")
+```
+
+### Limit example
+
+Consider the following function:
+
+$$f(x) = \frac{x^2-1}{x-1}$$
+
+What is $f(1)$? 
+
+### Limit example
+
+$f(1)$ is undefined
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(0, 2)), aes(x)) +
+  stat_function(fun = function(x) (x ^ 2 - 1) / (x - 1))
+```
+
+### Limits and infinity
+
+$$\lim_{x \to \infty}x^2$$
+
+## Limits and infinity 
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(0, 100000)), aes(x)) +
+  stat_function(fun = function(x) x ^ 2)
+```
+
+
+### You try! 
+
+$$\lim_{x \to -\infty}\frac{1}{x}$$
+
+### You try! 
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(-10000, -1)), aes(x)) +
+  stat_function(fun = function(x) ifelse(x != 0, 1 / x, NaN)) 
+```
+
+### Sided limits
+
+What is 
+
+$$\lim_{x \to 0} \frac{1}{x}$$
+
+### Sided limits
+
+```{r, fig.height=4}
+ggplot(data.frame(x = c(-1, 1)), aes(x)) +
+  stat_function(fun = function(x) ifelse(x != 0, 1 / x, NaN)) 
+```
+
+### Sided limits
+
+Here, we can take two different limits: the limit as $x$ approaches
+$0$ from the left and then from the right
+
+$$\lim{x\to 0^{-}} \qquad \text{from the left}$$
+$$\lim{x\to 0^{+}} \qquad \text{from the right}$$
+
+
+### Sided limits
+The limit does not exist! 
+
+\pause
+
+For a limit to exist, both sides must exist *and* they must be equal
+
+### You try! 
+
+Find both one sided limits and the two sided limit as $x \to 1$ of $f(x)$
+
+$$f(x) = \begin{cases}
+x^2 & \text{if } x < 1 \\
+x-3 & \text{if } x \geq 1\\
+\end{cases}$$
+
+### You try (answers)
+
+```{r, fig.height = 3, warning = FALSE}
+ggplot(data.frame(x = -3:5), aes(x)) +
+  stat_function(fun = function(x) ifelse(x < 1, x ^ 2, NA)) +
+  stat_function(fun = function(x) ifelse(x >= 1, x - 3, NA)) +
+  geom_vline(xintercept = 1, linetype = "dashed")
+```
+
+### Properties of limits
+
+$$\lim_{x\to a} c = c$$
+
+\pause
+
+$$\lim_{x\to a} x=a$$
+
+\pause
+
+$$\lim_{x\to a}\left(f(x) \pm g(x) \right) = \lim_{x\to a} f(x) \pm
+\lim_{x\to a} g(x)$$
+
+### Properties of limits, continued
+
+$$\lim_{x\to a}\left( \frac{\lim_{x\to a} f(x)}{g(x)} \right) =
+\frac{\lim_{x\to a} f(x)}{\lim_{x\to a} g(x)} \qquad \text{iff }
+\lim_{x\to a}g(x) \neq 0 $$
+
+\pause
+
+$$\lim_{x\to a}\left( c f(x)\right) = c \lim_{x\to a} f(x)$$
+
+\pause
+
+$$\lim_{x\to a}\left( f(x)^n \right) = \left(\lim_{x\to
+a}f(x)\right)^n \qquad \text{iff } \lim_{x\to a}f(x) > 0$$
+
+# Derivatives 
+## Derivatives 
+
+### Derivatives
+Derivatives calculate the instantaneous slope (rate of change) of a
+function at every point on its domain
+
+Can think of this like so:
+
+$$\lim_{\Delta x \to 0} \frac{\Delta y}{\Delta x}$$
+
+### Derivatives - notation 
+
+$$\frac{dy}{dx} = \frac{d}{dx}f(x) = f'(x) = \lim_{h\to 0 }
+\frac{f(x+h)-f(x)}{h}$$
+
+### Other derivatives 
+
+$$\frac{dy}{dx}c = 0$$
+\pause
+$$\frac{d}{dx}e^x = e^x$$
+\pause
+$$\frac{d}{dx}\log_e(x) = \frac{1}{x}$$
+
+
+### The one derivative rule to rule them all 
+The **power rule**
+
+$$\frac{dy}{dx} x^n = nx^{n-1}$$
+
+### Other derivative rules
+$$\frac{d}{dx}cf(x) = cf'(x)$$
+\pause 
+$$(f(x) \pm g(x))' = f'(x) \pm g'(x)$$
+\pause 
+$$(f(x)g(x)) = f(x)g'(x) + f'(x)g(x)$$
+
+### The chain rule
+$$\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$$
+
+### Higher-order derivatives
+The "second derivative" is just the derivative of the derivative:
+
+$$f''(x) = \frac{d^2}{dx}$$
+
+You can take the third derivative and so on as well
+
+### You try!
+
+Find the following:
+
+1. $\frac{d}{dx} x^2$
+2. $\frac{d}{dx} x^3 + x^2 + 2x - 1$
+3. $\frac{d^2}{dx} x^4 + x^3$
+
+## Optimization
+### Optimization
+Sometimes we want to find the maximum (or minimum) value a function
+takes. **Optimization** lets us do this!
+
+### Optimization
+The derivative of a function gives rate of change, so when that is
+zero, the function has usually reached a (local) maximum or minimum.
+Why? 
+
+So we can find the local maxima and/or minima of a function by taking the
+derivative, setting it equal to zero, and solving for $x$ (or
+whatever)
+
+### Optimization
+**BUT** we don't know if we've found a maximum or minimum. 
+
+The second derivative gives us the rate of change *of the rate of
+change* of the original function. So it tells us whether the slope is
+getting larger or smaller. 
+
+$$f(x) = x^2$$
+$$f'(x) = 2x$$
+$$f''(x) = 2$$
+
+So a *positive* second derivative indicates a *minimum* and a
+*negative* second derivative indicates a *maximum*
+
+### Local vs global optimization
+To find the max/min on some interval you have to compare the local
+max/min to the value of the function at the interval's endpoints. To
+find global max/min you must check the function's limits as it
+approaches positive and negative $\infty$
+
+### You try!
+Find the global minimum for the following function:
+$$f(x) = x^2 - 2x + 7$$
+
+### You try (answer)
+Find first derivative:
+$$f'(x) = 2x - 2$$
+\pause
+Set it equal to zero
+$$2x - 2 = 0$$
+$$x = 1$$
+\pause 
+Check the second derivative to see if this is a maximum or minimum:
+$$f''(x) = 2$$
+It's positive, so this is a *minimum*.
+\pause
+Check the "endpoints"
+$$\lim_{x\to -\infty}f(x) = \infty$$
+$$\lim_{x\to \infty}f(x) = \infty$$
+
+
+### You try (answer)
+```{r, fig.height=3}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = function(x) x ^ 2 - (2 * x) + 7) +
+  geom_vline(xintercept = 1, linetype = "dashed")
+```
+
+## Partial derivatives
+### Partial derivatives
+Some functions have more than one variable (e.g. $f(x,z) = x^2 +2xz +
+z^2$). In this case, we have to be very clear with respect to which we
+are differentiating. We can only do one at a time and when we do so w
+treat all the other variables as constants. The notation is:
+
+$$\frac{\partial f(x,z)}{\partial x}$$
+
+### Partial derivatives 
+Example: $y = 3x^2w-4w$
+\pause
+$$\frac{\partial y}{\partial x} = 6xw$$
+\pause 
+$$\frac{\partial y}{\partial w} = -4$$
+
+
+# Integrals 
+## Integrals
+### Geometry
+
+Sometimes (pretty often, turns out) we might be interested in
+obtaining the **area under a curve**
+
+This is sometimes super easy. What is the area under the curve between
+$x = -1$ and $x = 1$? 
+
+$$
+f(x) = \begin{cases}
+    \frac{1}{3} & \text{for } x \in [0, 3] \\
+    0 & \text{otherwise} \end{cases}
+$$
+
+### Geometry 
+
+$$A = \ell w$$
+
+```{r, echo = FALSE, fig.height = 3, warning = FALSE}
+ggplot(data.frame(x = -1:4), aes(x)) +
+  stat_function(fun = function(x) ifelse(x > 0 & x < 3, (1 / 3), NaN)) +
+  stat_function(fun = function(x) ifelse(x < 0 | x > 3, 0, NaN)) +
+  geom_rect(aes(xmin = 0, xmax = 1,
+                ymin = 0, ymax = (1 / 3)), fill = "grey", alpha = 0.3) +
+  coord_cartesian(ylim = c(-1, 1))
+```
+
+### Integration
+
+This is the basic question motivating integration. If we wanted to
+find the area under the curve of $f(x)$ from $x=0$ to $x=4.5$, this is
+the notation:
+
+$$\int_{x=0}^{4.5} f(x) \, dx$$
+
+\pause
+
+How do we do this? 
+
+### Finding integrals 
+
+Consider: $f(x) = -x^2 + 7$
+
+```{r, fig.height = 4}
+ggplot(data.frame(x = -5:5), aes(x)) +
+  stat_function(fun = function(x) -x ^ 2 + 7)
+```
+
+How to find the area between 0 and 2?
+
+### Riemann Integrals
+\centering
+((Board examples))
+
+### Integration rules
+Where $a$ is a constant:
+
+$$\int a \, dx = ax + C$$
+
+\pause 
+
+$$\int af(x) \, dx = a \int f(x) \, dx$$
+
+\pause 
+
+$$\int (f(x) + g(x)) \, dx = \int f(x) \, dx + \int g(x) \, dx$$
+
+### Integration rules
+
+$$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq 0$$
+
+
+$$\int x^{-1} \, dx = \ln |x| + C$$
+
+### You try!
+Find the integral:
+
+1. $\int x^2 \, dx$
+2. $\int 3x^2 \, dx$
+3. $\int 3x^2 + 2x - 7 \, dx$

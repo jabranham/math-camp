@@ -36,7 +36,9 @@ math camp meets 10-4:30.
 * [Statistics](/math-camp/slides/6-statistics.pdf)
 * [Regression](/math-camp/slides/7-ols.pdf)
 * [Best Practices](/math-camp/slides/best-practices.pdf)
-* [Scientific Computing](/math-camp/slides/scientific-computing.pdf)
+* [Data visualization](/math-camp/slides/data-viz.pdf)
+* [Basics of R](/math-camp/slides/basic-R.pdf)
+* [Working with Data in R](/math-camp/slides/data-transform.pdf)
 
 
 # Programs you may want to install

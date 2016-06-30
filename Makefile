@@ -1,5 +1,9 @@
-all:
-	bundle exec jekyll serve
+slides = $(wildcard slides/*.Rmd)
+
+slides:
+	$(foreach file, $(slides), (Rscript -e "rmarkdown::render('$(file)')") && ) :
 
 clean:
-	rm -r _site/
+	rm *.pdf
+
+.PHONY: slides

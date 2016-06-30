@@ -1,0 +1,202 @@
+---
+title: "Set Theory & Combinations"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+fontsize: bigger
+---
+```{r, echo=FALSE}
+source("r-setup.R")
+```
+
+# Set Theory
+## What is it?
+### Intro to Set Theory
+* What is set theory?
+* A branch of mathematics 
+* Collects objects into *sets* and studies the properties 
+
+### What's a set? 
+* A **set** is a collection of objects 
+$$
+S = \left\{ s_1, s_2, s_3, ... s_n \right\}
+$$
+* The objects can be anything
+* We usually use variables or units of observation 
+
+### Elements in or not
+* We can say whether an object is in a set:
+$$
+s_{13} \in S
+$$
+* Or not:
+$$
+q_{1} \notin S
+$$
+
+## Subsets
+### Subsets
+* We can divide sets into *subsets*
+$$
+M \subset S
+$$
+* $M$ is a *proper subset* of $S$ iff all elements of $M$ are in $S$ but not all elements of $S$ are in $M$. 
+* We can also define non-proper subsets:
+$$
+L \subseteq S
+$$
+
+## Set universes
+### Empty sets
+* Some sets contain no elements
+* For example, cities on Earth with average temperatures of greater than 1000 degrees
+  + Though Austin might be close... 
+$$
+Z = \left\{ \emptyset \right\}
+$$
+
+### Set Universes
+* We can talk about how subsets fill a certain **universe** of possibilities
+* For example:
+$$
+R = \left\{1,2,3,4,5,6\right\}
+$$
+* $R$ represents all the possibilities of a (single) roll of a die 
+* We can define sets for the even possibilities and the odd possibilities
+$$
+E = \left\{ 2,4,6 \right\} \qquad O = \left\{ 1,3,5 \right\}
+$$
+
+### Compliments
+* A *compliment* is that together, they contain all the elements of the relevant universe 
+$$
+E = O^C \qquad \qquad O = E^C
+$$
+
+## Graphical representation
+### Universe
+* Board examples of how to draw sets
+
+## Intersections and Unions
+### Intersection, Disjoint, unions
+* Intersections: $A \cap B$ includes all the common elements of $A$ and $B$
+    + If $A \cap B = \emptyset$, then they are **disjoint**
+* Unions: $A \cup B$ contains all the elements of both $A$ and $B$
+    + Two sets unions can't be empty (unless both sets are empty to begin with)
+* Size: $n(R)=6$ tells us that there are 6 elements in $R$
+* Sizes of unions
+    + $n(X \cup Y) = n(X) + n(Y) - n(X \cap Y)$
+    + Have to subtract the last term, otherwise we'd double-count elements in the intersection of the two sets
+    
+### Properties
+* $A \cup B = B \cup A$
+* $A \cap B = B \cap A$
+* $(A \cup B) \cup C = A \cup (B \cup C)$
+* $(A \cap B) \cap C = A \cap (B \cap C)$
+* $A \cap (B \cup C) = (A \cap B) \cup (A \cap C)$
+* $A \cup (B \cap C) = (A \cup B) \cap (A \cup C)$
+
+### You try!
+1. Define the universe of cards in a standard 52-card deck --- $\Omega$
+2. Define the set containing all the spades --- $S$ --- the set
+   containing the black cards --- $B$ --- and the set of queens $Q$
+3. What is $n(B)$
+4. What is $S \cup B$? 
+5. What is $B \cap Q$? 
+6. What is $B \cap (Q \cup S)$? 
+7. Is $Q \subset S$?
+
+### You try (answers)
+1. $\Omega$ is a set with 52 elements, one for each card
+2. $S$ is a set with 13 elements, one for each spade. $B$ has 26
+   elements (the black cards) and $Q$ has just four - the queens
+3. $n(B) = 26$
+4. $S \cup B = B$ 
+5. $B \cap Q$ is the queen of spades and clubs
+6. $B \cap (Q \cup S) = B$
+7. No
+
+# Combinatorics 
+## What is it?
+### Combinatorics - What is it? 
+* How to count things? 
+* Countable *discrete* structures 
+* Let's say we have the set $R$ from above
+$$
+R = \left\{ 1,2,3,4,5,6 \right\}
+$$
+* How many different combinations of 3 dice rolls are there? 
+
+### Order
+* First thing to ask is if order matters
+* Is rolling 1, 4, 2 the same as rolling 4, 2, 1?
+* If order matters, we talk about **permutations**
+* If not, it's a **combination**
+* think "permutation" = "position"
+
+## Permutations
+### Repitition? 
+* Can we repeat things? 
+* Is rolling 3, 3, 3, permissable? 
+* If yes, we choose one die roll of six three times:
+$$
+6 * 6 * 6 = 6^3
+$$
+* more generally, $n^r$
+    + $n$ is number of things to choose from
+    + choose $r$
+    
+### Permutations without replacement
+* We need to reduce the number of things from which to choose each time
+* How many different orderings of 9 horses in a race??
+    + $9*8*7$...$=9!=362,880$
+* Alternatively, maybe we just care about the first three:
+    + $9*8*7=504$
+* More generally:
+$$
+\dfrac{n!}{(n-r)!}
+$$
+
+## Combinations
+### Combinations
+* We use combinations when the order does **not** matter
+* So 4, 3, 1 is the same as 3, 1, 4 
+
+### Repition not allowed
+* Easiest way: do permutation without repitition, then get rid of all the "same" outcomes
+* We've already figured out the permutation part, so need to figure out the second part 
+$$
+\dfrac{n!}{(n-r)!} * \dfrac{1}{r!} = \dfrac{n!}{r!(n-r)!} = {n \choose r}
+$$
+
+### Repitition allowed
+* These aren't used much
+* Also the most difficult to calculate
+* Formula:
+$$
+{n+r-1 \choose r} = \dfrac{(n+r-1)!}{r!(n-1)!}
+$$
+
+### You try!
+Using a standard 52-card deck:
+
+1. How many different 3-card hands exist? 
+2. How many ways are there to get dealt the queen of spades, then the
+   king of diamonds, then the eight of spades? 
+
+### You try (answers)
+
+```{r}
+# 1
+choose(52, 3)
+
+# 2 - one
+```

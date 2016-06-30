@@ -1,0 +1,248 @@
+---
+title: "Statistics"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+fontsize: bigger
+---
+```{r, echo=FALSE}
+source("r-setup.R")
+```
+
+# Statistics
+### Statistics
+*Statistics* allow us to learn from data.
+
+
+### Data
+Observations of a *variable*: 
+
+$$x = \begin{bmatrix}
+1 \\ 0 \\ 0 \\ 1 \\ 0 \\ 0\\ 0 \\ 0 \\ 1
+\end{bmatrix}$$
+
+# Univariate statistics
+## Univariate statistics
+### Univariate statistics
+A **statistic** summarizes data. You're already familiar with some
+common statistics, like averages. 
+
+We oftentimes want to find the "center" of the data --- this describes
+typical values
+
+### Central tendency
+$$x = \begin{bmatrix} 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 \end{bmatrix}$$
+The *mean* ($\bar{x}$) is calculated by summing the data, then dividing by the
+number of observations:
+$$\bar{x} = \frac{1}{n} \sum_{i=1}^n x_i$$
+\pause
+The *median* is found by ordering the observations from highest to
+lowest and finding the one in the middle:
+\pause 
+The *mode* is the most common number
+
+### Central tendency
+* The mean balances the value on either side
+* The median balances the number of observations on either side
+* Which is a better measure?
+
+### Mean vs median
+```{r}
+x <- c(1, 1, 2, 1, 1, 3, 2, 4, 2, 1,
+       1, 1, 5, 7, 9, 4, 5, 6, 25)
+mean(x)
+median(x)
+```
+
+### mean vs median 
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(data.frame(x), aes(x)) +
+  geom_histogram(binwidth = 2) +
+  geom_vline(xintercept = mean(x), linetype = "dashed") +
+  geom_vline(xintercept = median(x))
+```
+
+### Variance
+Finding central tendency is good, but we might go a step further.
+Consider these two distributions:
+
+```{r, echo = FALSE, fig.height = 4}
+ggplot(data.frame(x = -6:6), aes(x)) +
+  stat_function(fun = dnorm) +
+  stat_function(fun = dnorm, args = list(sd = 3), color = "red")
+```
+
+### You try!
+
+Here are the average high's from a previous year's math camp:
+
+| Day  |  M |  Tu |   W | Th |  F |   M |  Tu |
+|------+----+-----+-----+----+----+-----+-----|
+| High | 95 | 103 | 100 | 97 | 39 | 108 | 112 | 
+
+Find the mean, median, and mode.
+
+\pause
+
+What's weird with this data? 
+
+### You try (answers)
+```{r}
+x <- c(95, 103, 100, 97, 39, 108, 112)
+mean(x)
+median(x)
+```
+
+### Variance 
+*Variance* measures how spread out a distribution is. One way to
+calculate it is like so:
+
+$$s^2_x = \frac{1}{n-1} \sum_{i=1}^n (x_i - \bar{x})^2$$
+
+That measures the sum of the squared average deviation from the mean 
+
+### Standard deviation
+"Squared average deviation from the mean" is a bit weird, though, so
+oftentimes we use standard deviations instead, which is just the
+squared root of the variance:
+
+$$s_x = \sqrt{s^2_x}$$
+
+### you try!
+
+I flipped a coin 4 times, one of which was a heads. What's the
+mean of the data? What's the variance? The standard deviation? 
+
+### You try (answers)
+
+```{r}
+x <- c(1, 0, 0, 0)
+mean(x)
+var(x)
+sd(x)
+```
+
+
+# Bivariate statistics
+## Bivariate statistics
+### Bivariate statistics 
+Thus far, we've focused on statistics that summarize just one
+variable. But we're oftentimes interested in relationships between
+different variables. This can be hard to see with the raw data, though:
+
+### Data
+
+What's the relationship between `mpg` and `wt`? 
+
+```{r}
+head(mtcars, 9)
+```
+
+### Always plot your data!!!
+```{r, fig.height = 4}
+ggplot(mtcars) +
+  geom_point(aes(wt, mpg))
+```
+
+### Covariance
+*Covariance* measures the direction of a relationship:
+
+```{r}
+with(mtcars, cov(wt, mpg))
+```
+
+### Correlation
+*Correlation* (pearson's $r$) captures the direction and strength of a
+linear relationship between two variables.
+
+Ranges from $-1$ to $1$
+
+```{r}
+with(mtcars, cor(wt, mpg))
+```
+```{r, echo = FALSE}
+# returns a data frame of two variables which correlate with a population correlation of rho
+# If desired, one of both variables can be fixed to an existing variable by specifying x
+getBiCop <- function(n, rho, mar.fun=rnorm, x = NULL, ...) {
+     if (!is.null(x)) {X1 <- x} else {X1 <- mar.fun(n, ...)}
+     if (!is.null(x) & length(x) != n) warning("Variable x does not have the same length as n!")
+
+     C <- matrix(rho, nrow = 2, ncol = 2)
+     diag(C) <- 1
+
+     C <- chol(C)
+
+     X2 <- mar.fun(n)
+     X <- cbind(X1,X2)
+
+     # induce correlation (does not change X1)
+     df <- X %*% C
+
+     ## if desired: check results
+     #all.equal(X1,X[,1])
+     #cor(X)
+
+     return(as.data.frame(df))
+}
+```
+### Correlation 
+```{r, echo = FALSE, fig.height = 5}
+nhi <- getBiCop(100, -0.9) %>%
+  mutate(sign = "neg",
+         level = "hi")
+nmed <- getBiCop(100, -0.5) %>%
+  mutate(sign = "neg",
+         level = "med")
+nlo <- getBiCop(100, -0.2) %>%
+  mutate(sign = "neg",
+         level = "lo")
+lo <- getBiCop(100, 0.2) %>%
+  mutate(sign = "pos",
+         level = "lo")
+med <- getBiCop(100, 0.5) %>%
+  mutate(sign = "pos",
+         level = "med")
+hi <- getBiCop(100, 0.9) %>%
+  mutate(sign = "pos",
+         level = "hi")
+
+fake_data <- rbind(nhi, nmed, nlo, lo, med, hi) %>%
+  mutate(level = factor(level, levels = c("lo", "med", "hi"), 
+                        ordered = TRUE))
+
+textdata <- data_frame(sign = c(rep("neg", 3), rep("pos", 3))) %>%
+  mutate(level = rep(c("lo", "med", "hi"), 2),
+         text = c("r=-0.2", "r=-0.5", "r=-0.9",
+                  "r=0.2", "r=0.5", "r=0.9"),
+         V1 = -2, V2 = 2.75,
+         level = factor(level, levels = c("lo", "med", "hi"), 
+                        ordered = TRUE))
+
+ggplot(fake_data, aes(V1, V2)) +
+  geom_text(aes(label = text), data = textdata,
+            color = "red", size = 8) + 
+  geom_point() +
+  facet_grid(sign ~ level) +
+  theme_minimal()
+
+```
+
+### Correlation
+**ALWAYS PLOT YOUR DATA**
+```{r, echo = FALSE, fig.height = 4}
+data_frame(x = seq(-3, 3, .1)) %>%
+  mutate(y = x ^ 2 - 9,
+         ny = -x ^ 2 + 9) %>%
+  ggplot() +
+  geom_jitter(aes(x, y), width = 0.5, height = 0.5) +
+  geom_jitter(aes(x, ny), width = 0.7, height = 0.7)
+```

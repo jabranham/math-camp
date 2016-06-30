@@ -1,0 +1,277 @@
+---
+title: "Ordinary Least Squares"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+header-includes: 
+  - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
+output: 
+  beamer_presentation:
+    fig_caption: yes
+    fig_height: 3
+    incremental: yes
+    slide_level: 3
+    latex_engine: xelatex
+classoption: aspectratio=169
+fontsize: bigger
+---
+
+```{r, include = FALSE}
+library(dplyr)
+library(ggplot2)
+```
+
+# Introduction to Ordinary Least Squares
+### OLS
+* Ordinary least squares regression (OLS) is probably the most
+  widely-used model in political science 
+* At its core, it's all about drawing a line through data
+* This allows us to asses the effect of $x$ on $y$
+* Dependent variable $y$ must be continuous 
+    + OLS makes other assumptions you'll learn about in stats II
+
+### 
+```{r, echo = FALSE}
+p <- ggplot(mpg, aes(displ, hwy)) +
+  geom_point()
+p
+```
+
+### How to decide on a line?
+```{r}
+p <- p +  geom_abline(slope = -4, intercept = 37)
+p
+```
+
+### How to decide
+```{r}
+p <- p +  geom_abline(slope = 4, intercept = 10, linetype = "dashed")
+p
+```
+
+### how to decide
+```{r}
+p +  geom_smooth(method = "lm", se = FALSE, color = "red")
+```
+
+### OLS in R
+
+```{r}
+lm(hwy ~ displ, data = mpg) 
+```
+
+###
+```{r, echo = FALSE}
+ggplot(mpg, aes(displ, hwy)) +
+  geom_point() + 
+  geom_smooth(method = "lm")
+```
+
+
+### Interpretation of coefficients
+$$\hat{y_i} = \hat{\beta_0} + \hat{\beta_1} x_{i}$$
+
+\pause
+
+* Intercept ($\hat{\beta_0}$) - predicted $y$ when $x=0$
+* Slope ($\hat{\beta_1}$) - a one unit change in $x$ leads to a (slope) unit change in
+  $y$, on average 
+
+### Residuals
+* Notice that our line doesn't fit our data perfectly - we always make
+  some error with our prediction
+* That's referred to as the *residual*
+* If we refer to our predicted value as $\hat{y}$, then we can
+  calculate the residual for each observation with $e_i = y_i - \hat{y}_i$
+
+### Fitting the best line
+* OLS determines the "best" line by minimizing the sum of squared
+  residuals
+* How to find this?
+* One option: Plug in all the values for the slope & intercept and
+  calculate the sum of squared residuals for these infinity
+  combinations
+* That's problematic... 
+
+### 
+How do we find the minimum sum of squared residuals? 
+
+### Solution: Use calculus 
+Turns out we already know the solution - we learned it when we talked
+about *optimization*. We just need to *minimize* the sum of squared
+residuals with respect to the two coefficients:
+
+$$\sum_{i=1}^n e_i^2$$
+
+### OLS Optimization
+Rearrange above equation in terms of $e_i$:
+
+$$e_i = y_i - \hat{\beta_0} + \hat{\beta_1} x_i$$
+
+\pause
+
+Substitute:
+
+$$\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1}
+x_i)^2$$
+
+### Derivatives
+To find the minimum, we'll need to take the derivative with respect to
+$\hat{\beta_0}$ and $\hat{\beta_1}$. Starting with $\hat{\beta_0}$:
+
+\pause
+
+$$\frac{\partial}{\partial \hat{\beta_0}}
+\left[ \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+$$\sum_{i=1}^n
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+### Derivatives
+$$\sum_{i=1}^n
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+The next step is to use the **chain rule** to take the derivative of
+the quantity in parentheses:
+
+\pause 
+
+$$\sum_{i=1}^n[-2(y_i - \hat{\beta_0}-b_1 x_i)]$$
+
+\pause
+
+$$-2 \sum_{i=1}^n(y_i - \hat{\beta_0}-b_1 x_i)$$
+
+### Derivative for slope
+Now let's take the partial derivative with respect to the slope
+($\hat{\beta_1}$): 
+
+\pause 
+
+$$\frac{\partial}{\partial \hat{\beta_1}}
+\left[ \sum_{i=1}^n (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2 \right]$$
+
+$$\sum_{i=1}^n \left[ \frac{\partial}{\partial \hat{\beta_1}}
+  (y_i - \hat{\beta_0} - \hat{\beta_1} x_i)^2 \right]$$
+
+\pause
+
+Using the chain rule again, we get:
+
+$$-2 \sum_{i=1}^n x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i)$$
+
+### Minimization
+
+How to find the *minimum* now that we have the partial derivatives of
+the sum of squared residuals? 
+
+\pause
+
+$$\frac{\partial}{\partial \hat{\beta_0}} = -2 \sum_{i=1}^n(y_i -
+\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
+
+$$\frac{\partial}{\partial \hat{\beta_1}} = -2 \sum_{i=1}^n
+x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
+
+\pause
+
+((Solutions on board))
+
+### Multiple variables
+* What if as years pass, engine size increases *and* fuel efficiency
+  increases?
+* Then the relationship we just observed might be *spurious*
+
+\pause 
+
+```{r}
+lm(hwy ~ displ + year, data = mpg) 
+```
+
+
+# OLS in Matrix Form
+## Notation
+### Notation
+* Let's pretend that we know the **true** model
+    + $Y$ is $nx1$ column vector
+    + $X$ is $nxk(+1)$ matrix 
+    + $\beta$ is $kx1$ column vector
+    + $E$ is $nx1$ column vector
+* Therefore, we have:
+\pause
+
+$$
+\begin{bmatrix}
+y_1 \\
+y_2 \\
+\vdots \\
+y_n
+\end{bmatrix}
+= 
+\begin{bmatrix}
+1 & x_{11} & x_{12} & \ldots & x_{1k} \\
+1 & x_{21} & x_{22} & \ldots & x_{2k} \\
+1 & \vdots & \vdots & \ldots & \vdots \\
+1 & x_{n1} & x_{n2} & \ldots & x_{nk}
+\end{bmatrix}
+\begin{bmatrix}
+\beta_0 \\
+\beta_1 \\
+\vdots \\
+\beta_k
+\end{bmatrix}
++ 
+\begin{bmatrix}
+e_1 \\
+e_2 \\
+\vdots \\
+e_n
+\end{bmatrix}
+$$
+
+### Matrix form
+$$
+Y = X\beta + E
+$$
+
+## OLS Estimates
+### OLS **minimizes the sum of squared residuals**
+* How to do that in matrix form? 
+* First, what is sum of squared residuals?
+* The residuals:
+$$E = Y - X \hat{\beta}$$
+* Sum of squared residuals:
+$$E'E$$
+* (show why on board)
+* Alternatively, 
+$$
+\begin{split}
+E'E & = (Y - X \hat{\beta})'(Y - X \hat{\beta}) \\
+ & = Y'Y - \hat{\beta} X' Y - Y' X \hat{\beta} + \hat{\beta}' X'X \hat{\beta} \\
+ & = Y'Y - 2 \hat{\beta}' X' Y + \hat{\beta} X'X \hat{\beta}
+\end{split}
+$$
+
+### To **minimize** the sum of squares, we take the derivative
+* Remember: 
+$$E'E= Y'Y - 2 \hat{\beta}' X' Y + \hat{\beta} X'X \hat{\beta}$$
+* The first derivative with respect to $\hat{\beta}$
+$$\dfrac{\partial E'E}{\partial \hat{\beta}} = -2 X'Y + 2X'X\hat{\beta} = 0 $$
+* To check that this is a minimum, we check to make sure that the second derivative is positive
+* The second derivative is $2X'X$, which is positive definite so long as $X$ is full rank
+
+### Solve for the estimator
+* Here ya go:
+$$-2 X'Y + 2X'X\hat{\beta} = 0 $$
+* Move things around and divide by two:
+$$X'Y =  X'X \hat{\beta}$$
+* Premultiply each side by $(X'X)^{-1}$
+$$(X'X)^{-1}X'Y = (X'X)^{-1}(X'X)\hat{\beta}$$
+* We know that $(X'X)^{-1}(X'X)=I$
+$$(X'X)^{-1}X'Y = I\hat{\beta}$$
+* And $I$ is (kinda) like multiplying by 1 so :
+$$(X'X)^{-1}X'Y = \hat{\beta}$$
+

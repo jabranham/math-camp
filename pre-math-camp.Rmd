@@ -1,0 +1,238 @@
+---
+title: "Introduction to Math for Political Scientists"
+subtitle: "AKA Math Camp"
+author: "J. Alexander Branham"
+date: "Fall 2016"
+mainfont: Linux Libertine
+linkcolor: "blue"
+urlcolor: "blue"
+output:
+    pdf_document:
+        latex_engine: xelatex
+        toc: false
+---
+
+Welcome to the Department of Government at the University of Texas!
+I'm looking forward to meeting everyone. I'll be your instructor for
+Introduction to Math for Political Scientists, otherwise known as Math
+Camp. In the past our incoming students have told us their math skills
+are rusty and they would like to be better prepared for the Stats I
+class that is required of all Government Department graduate students.
+Math Camp will give you an opportunity to brush up on your
+quantitative skills, provide an introduction to some of the
+statistical software you'll be using next year, and is great chance to
+get to know your fellow first-year students.
+
+This year, we're meeting August 15th through the 23rd. Classes
+at UT start August 24th. There is a full (tentative) schedule for the
+class [on the class's website](https://jabranham.com/math-camp). 
+
+Here is a checklist of items that you should review before your
+arrival. Please feel free to email me with any problems you run into.
+
+* Review what math knowledge is assumed 
+    + Complete the exercises in that section to refresh your memory if
+      needed 
+* Install R and an editor on your computer
+  [instructions](https://jabranham.com/math-camp/README.html#programs-you-may-want-to-install) 
+    + Complete the exercises below to get acquainted with R
+
+Other than that, welcome to Texas and the the Government Department!
+I'm looking forward to meeting everyone on August 15th! 
+
+# Assumed math knowledge 
+
+Students come to the department with a wide range of comfort with and
+exposure to math. I assume a very minimal exposure to math, certainly
+nothing beyond what was on the GRE. The following material is
+knowledge that I assume you are familiar with. Odds are that you've
+seen all of this before; I suggest you read through and do the
+exercises anyway to refamiliarize yourself with math, especially if
+it's been a while since you've dealt with it.
+
+## Arithmetic
+
+I assume you have a working knowledge of arithmetic (addition,
+subtraction, multiplication, division). I also assume that you know
+the standard order of operations (PEMDAS - parentheses, exponents,
+multiplication/division, addition/subtraction). I assume you are
+comfortable with some of the various properties of arithmetic - that
+addition, subtraction, multiplication, and division are communicative
+and associative, and that multiplication and division are distributive
+as well. Finally, I assume that you understand that equalities are
+symmetric and transitive. For a review of any of this, I have
+[several slides that should bring you up to speed](/math-camp/slides/arithmetic.pdf)
+
+### Arithmetic exercises
+
+1. Simplify the following expression to a single real number:
+
+$$(1 + 3)^2 - 4 + \left(\frac{3}{4} * \frac{16}{3} \right)$$
+
+2. Is the following statement true or false: 
+   We know that $y>x$ and we know that $x <z$ therefore we know that
+   $y>z$. 
+   
+## Basic algebra
+
+A basic understanding of high school level algebra is assumed. That
+is, you understand the basics of using symbols in math to denote
+variables or unknowns (in fact, you used this in one of the above
+questions already!). I also assume that you know and understand how to
+solve for a variable in a given equality (e.g. $4x=3$, find $x$). No
+need to memorize the quadratic formula or anything complicated. 
+
+### Algebra exercises
+
+1. Find $x$:
+
+$$(1+3)^2 + 4x - 16 = 173$$
+
+2. Find $y$:
+
+$$y(2+7) + 7(y-3) = 21 $$
+
+3. Find $z$:
+
+$$z + (16-7)^{\frac{1}{2}}= 201$$
+
+4. Find $x$ and $y$:
+
+$$4x + 2y + 7 = 49$$
+
+$$-10x + 2y + 3 = 10$$
+
+5. Solve for $z$:
+
+$$z^{-2} + 3(1 - 2) = 2$$
+
+## Basic geometry
+
+Geometry is used much less than the above math skills in our
+coursework. I assume a very basic familiarity with geometry, like how
+to calculate the are of a rectangle. 
+
+### Geometry exercises 
+
+1. You are given a rectangle and told that its area is 1 square kilometers
+   and that its width is 3 kilometers. What is its length? 
+
+# Programs 
+
+If you have a personal laptop, please install R and an editor (RStudio
+is probably the most popular in the department, I use emacs). R is
+free and open-source software. Installation of both programs is
+straightforward; instructions are on the class website. Please email
+me if you run into any problems.
+
+## R Exercises 
+
+No familiarity with R is assumed before math camp starts, so you are
+not obligated to do these exercices, though they might help you get
+familiar with the basics of how R works. If you run into any issues,
+feel free to email me. 
+
+R can be used as a calculator. Open up R and try adding 2 and 2. I've
+included what R will print out after two Oglethorpe's (`##`):
+
+```{r}
+2 + 2
+```
+
+R does that and prints the output, 4 in this case. Don't worry for now
+about the [1].
+
+R also understands the standard order of operations. As an example,
+you can see what this statement evaluates to:
+
+```{r}
+(3 / 4) + 2 * (1 + 3)
+```
+
+Once R prints out `8.75`, it "forgets" the result. If you wanted to
+save the result to access later, you can assign the result of that
+statement to an object. `<-` is called the "assignment operator" and
+it assigns the right side to the left side.[^3] So this tells R to
+make `x` hold the value of the mathematical expression on the right:
+
+```{r}
+x <- (3 / 4) + 2 * (1 + 3)
+```
+
+If all goes well, `x` now holds the result of that expression (which
+we know is `8.75`). Notice that R doesn't print anything out. If you
+want to see what `x` is, you can just type it into R:
+
+```{r}
+x
+```
+
+Of course, we're oftentimes working with data where each row is an
+observation and each column is a variable. R refers to this type of
+data as a `data.frame`. R includes several `data.frame`s as toy
+examples. One famous one is the `mtcars` dataset, which we can look at
+with the following command (`head` will list the first 6 observations.
+If you want to look at the whole thing, just type `mtcars` and R will
+print out the whole dataset). 
+
+```{r}
+head(mtcars)
+```
+
+We might be interested in the average fuel efficiency of these cars.
+To get that information, we use the `mean` function and give it the
+mpg data that we're interest in. This is how to do that in R:
+
+```{r}
+mean(mtcars$mpg)
+```
+
+The `$` symbol tells R to look inside the object on the left for the
+object on the right. In our case, this means that R will look inside
+`mtcars` for `mpg`. Since it finds it, it then calls the `mean`
+function and prints the mean mpg (about 20mpg in this case). 
+
+R can also produce publication-quality figures. We'll go over the
+basics of this, and here's an example.[^2]
+
+```{r}
+library(ggplot2)
+
+ggplot(mtcars, aes(x = mpg, y = wt)) +
+  geom_point() +
+  geom_smooth() +
+  labs(x = "Miles per Gallon",
+       y = "Weight")
+```
+
+
+# Answers
+
+## Math
+
+### Arithmetic 
+
+1. 16
+2. False 
+
+### Algebra
+
+1. $x=\frac{173}{4}$
+2. $y=0$
+3. $z=198$
+4. $x=\frac{7}{2}\qquad y=84$
+5. $z = \sqrt{\frac{1}{3}}$
+
+### Geometry
+
+1. $\frac{1}{3}$
+
+[^2]: If you try to do this on your computer, you'll have to install
+    the `ggplot2` package with `install.packages("ggplot2")`
+    beforehand. Don't worry about what this means --- we'll cover it
+    in math camp. 
+
+[^3]: If you have experience with programming in other languages (like
+    python), this symbol may look a little strange to use for
+    assignment. Many other languages use the equals sign (`=`). You
+    can do that in R, but it's not considered best practices
