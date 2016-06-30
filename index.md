@@ -21,7 +21,7 @@ math camp meets 10-4:30.
 |-----------+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
 | Monday    | N/A                                                                          | [Functions](/math-camp/slides/1-functions.pdf) & Intro to calculus                             |
 | Tuesday   | N/A                                                                          | [Calculus](/math-camp/slides/2-calculus.pdf)                                                   |
-| Wednesday | [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf)                     | [Scientific](/math-camp/slides/data-vix.pdf) computing [with R](/math-camp/slides/basic-R.pdf) |
+| Wednesday | [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf)                     | [Scientific](/math-camp/slides/data-viz.pdf) computing [with R](/math-camp/slides/basic-R.pdf) |
 | Thursday  | [Set theory & combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) | [Best practices](/math-camp/slides/best-practices.pdf)                                         |
 | Friday    | [Probability](/math-camp/slides/5-probability.pdf)                           | [Scientific computing](/math-camp/slides/data-transform.pdf), continued                            |
 | Monday    | [Statistics](/math-camp/slides/6-statistics.pdf)                             | [OLS](/math-camp/slides/7-ols.pdf)                                                             |
