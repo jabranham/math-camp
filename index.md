@@ -98,8 +98,7 @@ system you use:
 There are a ton of different latex editors out there. Here are a few,
 all of which work on Linux, Mac, and Windows. There's a great list
 [on StackExchange](http://tex.stackexchange.com/questions/339/latex-editors-ides/)
-that lists many more. People can also vote on their favorites (emacs
-with AuCTeX currently has the most votes). 
+that lists many more. People can also vote on their favorites.
 
 * Emacs (with AuCTeX)
 * Sublime text (with Latexing (costs $) or Latextools)
