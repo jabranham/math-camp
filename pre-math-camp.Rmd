@@ -120,8 +120,8 @@ to calculate the are of a rectangle.
 # Programs 
 
 If you have a personal laptop, please install R and an editor (RStudio
-is probably the most popular in the department, I use emacs). R is
-free and open-source software. Installation of both programs is
+is probably the most popular in the department). R is free and
+open-source software. Installation of both programs is
 straightforward; instructions are on the class website. Please email
 me if you run into any problems.
 
