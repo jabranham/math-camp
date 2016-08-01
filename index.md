@@ -4,6 +4,8 @@ layout: default
 
 # Math Camp
 
+## Fall 2016 
+
 Welcome to "Math for Political Scientists," affectionately known as
 "math camp." This course is meant as a math refresher for incoming
 graduate students to the Department of Government. Everything for the
@@ -13,19 +15,31 @@ You may want to take a look at what is
 
 # Schedule
 
-The first two days, math camp meets 2pm - 4:30pm. The final day, math
-camp only meets in the morning (starting at 10am). All other days,
-math camp meets 10-4:30. 
+|           | Morning                    | Afternoon                       |
+|-----------+----------------------------+---------------------------------|
+| Monday    | N/A                        | Functions & Intro to calculus   |
+| Tuesday   | N/A                        | Calculus                        |
+| Wednesday | Matrix algebra             | Scientific computing with R     |
+| Thursday  | Set theory & combinatorics | Best practices                  |
+| Friday    | Probability                | Scientific computing, continued |
+| Monday    | Statistics                 | OLS                             |
+| Tuesday   | Wrap-up, methods at UT     | N/A                             |
 
-|           | Morning                                                                      | Afternoon                                                                                      |
-|-----------+------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------|
-| Monday    | N/A                                                                          | [Functions](/math-camp/slides/1-functions.pdf) & Intro to calculus                             |
-| Tuesday   | N/A                                                                          | [Calculus](/math-camp/slides/2-calculus.pdf)                                                   |
-| Wednesday | [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf)                     | [Scientific](/math-camp/slides/data-viz.pdf) computing [with R](/math-camp/slides/basic-R.pdf) |
-| Thursday  | [Set theory & combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) | [Best practices](/math-camp/slides/best-practices.pdf)                                         |
-| Friday    | [Probability](/math-camp/slides/5-probability.pdf)                           | [Scientific computing](/math-camp/slides/data-transform.pdf), continued                            |
-| Monday    | [Statistics](/math-camp/slides/6-statistics.pdf)                             | [OLS](/math-camp/slides/7-ols.pdf)                                                             |
-| Tuesday   | Wrap-up, methods at UT                                                       | N/A                                                                                            |
+# Slides
+
+* [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
+* [Functions](/math-camp/slides/1-functions.pdf)
+* [Calculus](/math-camp/slides/2-calculus.pdf)
+* [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf)
+* [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf)
+* [Probability](/math-camp/slides/5-probability.pdf)
+* [Statistics](/math-camp/slides/6-statistics.pdf)
+* [Regression](/math-camp/slides/7-ols.pdf)
+* [Best Practices](/math-camp/slides/best-practices.pdf)
+* [Data visualization](/math-camp/slides/data-viz.pdf)
+* [Basics of R](/math-camp/slides/basic-R.pdf)
+* [Working with Data in R](/math-camp/slides/data-transform.pdf)
+
 
 # Programs you may want to install
 
