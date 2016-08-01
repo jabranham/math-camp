@@ -1,15 +1,13 @@
 # Math Camp
 
+## Fall 2016 
+
 Welcome to "Math for Political Scientists," affectionately known as
 "math camp." This course is meant as a math refresher for incoming
 graduate students to the Department of Government. Everything for the
 course is hosted [on github](https://github.com/jabranham/math-camp)
 
 # Schedule
-
-The first two days, math camp meets 2pm - 4:30pm. The final day, math
-camp only meets in the morning (starting at 10am). All other days,
-math camp meets 10-4:30. 
 
 |           | Morning                    | Afternoon                       |
 |-----------+----------------------------+---------------------------------|
