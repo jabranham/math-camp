@@ -2,7 +2,7 @@ SRC = $(wildcard slides/*.Rmd)
 
 PDFS=$(SRC:.Rmd=.pdf)
 
-%.pdf: %.Rmd
+%.pdf: %.Rmd slides/r-setup.R
 	Rscript -e "rmarkdown::render('$<')"
 
 all: $(PDFS)
