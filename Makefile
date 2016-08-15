@@ -1,4 +1,4 @@
-SRC = $(wildcard slides/*.Rmd)
+SRC = $(wildcard *.Rmd)
 
 PDFS=$(SRC:.Rmd=.pdf)
 
