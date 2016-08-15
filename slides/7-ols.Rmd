@@ -4,20 +4,13 @@ author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
-output: 
-  beamer_presentation:
-    fig_caption: yes
-    fig_height: 3
-    incremental: yes
-    slide_level: 3
-    latex_engine: xelatex
+output: beamer_presentation
 classoption: aspectratio=169
 fontsize: bigger
 ---
 
 ```{r, include = FALSE}
-library(dplyr)
-library(ggplot2)
+source("r-setup.R")
 ```
 
 # Introduction to Ordinary Least Squares

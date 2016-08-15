@@ -1,0 +1,7 @@
+beamer_presentation:
+  fig_caption: true
+  fig_height: 2
+  fig_width: 6
+  incremental: yes
+  slide_level: 3
+  latex_engine: xelatex

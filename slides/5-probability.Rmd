@@ -4,12 +4,7 @@ author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis} 
-output: 
-  beamer_presentation:
-    fig_caption: yes
-    latex_engine: xelatex
-    incremental: yes
-    slide_level: 3
+output: beamer_presentation
 classoption: aspectratio=169
 fontsize: bigger
 ---
@@ -90,13 +85,13 @@ $$
     + Kinda...
     
 ### Continuous distributions - Normal
-```{r, fig.height=3}
+```{r}
 ggplot(data.frame(x = c(-5, 5)), aes(x)) + 
   stat_function(fun = dnorm)
 ```
 
 ### Continuous distributions - Uniform 
-```{r, fig.height=2.25, fig.width=3}
+```{r}
 ggplot(data.frame(x = c(-2, 2)), aes(x)) + 
   stat_function(fun = dunif)
 ```

@@ -5,14 +5,7 @@ author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
-output: 
-  beamer_presentation:
-    slide_level: 3
-    incremental: true
-    latex_engine: xelatex
-    fig_width: 8
-    fig_height: 3
-    fig_caption: false
+output: beamer_presentation
 classoption: aspectratio=169
 fontsize: bigger
 ---

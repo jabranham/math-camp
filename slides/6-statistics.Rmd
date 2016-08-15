@@ -4,12 +4,7 @@ author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
-output: 
-  beamer_presentation:
-    fig_caption: yes
-    incremental: yes
-    slide_level: 3
-    latex_engine: xelatex
+output: beamer_presentation
 classoption: aspectratio=169
 fontsize: bigger
 ---
@@ -64,7 +59,7 @@ median(x)
 
 ### mean vs median 
 
-```{r, echo = FALSE, fig.height = 4}
+```{r, echo = FALSE}
 ggplot(data.frame(x), aes(x)) +
   geom_histogram(binwidth = 2) +
   geom_vline(xintercept = mean(x), linetype = "dashed") +
@@ -75,7 +70,7 @@ ggplot(data.frame(x), aes(x)) +
 Finding central tendency is good, but we might go a step further.
 Consider these two distributions:
 
-```{r, echo = FALSE, fig.height = 4}
+```{r, echo = FALSE}
 ggplot(data.frame(x = -6:6), aes(x)) +
   stat_function(fun = dnorm) +
   stat_function(fun = dnorm, args = list(sd = 3), color = "red")
@@ -148,7 +143,7 @@ head(mtcars, 9)
 ```
 
 ### Always plot your data!!!
-```{r, fig.height = 4}
+```{r}
 ggplot(mtcars) +
   geom_point(aes(wt, mpg))
 ```
@@ -195,7 +190,7 @@ getBiCop <- function(n, rho, mar.fun=rnorm, x = NULL, ...) {
 }
 ```
 ### Correlation 
-```{r, echo = FALSE, fig.height = 5}
+```{r, echo = FALSE}
 nhi <- getBiCop(100, -0.9) %>%
   mutate(sign = "neg",
          level = "hi")
@@ -238,7 +233,7 @@ ggplot(fake_data, aes(V1, V2)) +
 
 ### Correlation
 **ALWAYS PLOT YOUR DATA**
-```{r, echo = FALSE, fig.height = 4}
+```{r, echo = FALSE}
 data_frame(x = seq(-3, 3, .1)) %>%
   mutate(y = x ^ 2 - 9,
          ny = -x ^ 2 + 9) %>%
