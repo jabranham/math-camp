@@ -90,8 +90,8 @@ ggplot(data.frame(x = c(-1, 1)), aes(x)) +
 Here, we can take two different limits: the limit as $x$ approaches
 $0$ from the left and then from the right
 
-$$\lim{x\to 0^{-}} \qquad \text{from the left}$$
-$$\lim{x\to 0^{+}} \qquad \text{from the right}$$
+$$\lim_{x\to 0^{-}} \qquad \text{from the left}$$
+$$\lim_{x\to 0^{+}} \qquad \text{from the right}$$
 
 
 ### Sided limits
