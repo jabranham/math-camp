@@ -127,8 +127,8 @@ ggplot(data.frame(x = c(0, 5)), aes(x)) +
 * The log and exponent charts are obviously related
 * In fact, these functions are each others "inverse" function
     + Plug in $y$ to find $x$
-* Exponents have horizontal asymptote
-* Logs have vertical asymptote
+* Exponents have vertical asymptote
+* Logs have horizontal asymptote
 
 ### You try!
 What function describes this line?
