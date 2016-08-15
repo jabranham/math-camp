@@ -25,6 +25,12 @@ You may want to take a look at what is
 | Monday    | Statistics                 | OLS                             |
 | Tuesday   | Wrap-up, methods at UT     | N/A                             |
 
+# Homeworks
+
+Homework problems will be uploaded here the day they're assigned.
+
+* [Homework 1](/math-camp/homeworks/hw-01-functions.pdf)
+
 # Slides
 
 * [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
