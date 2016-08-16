@@ -163,14 +163,14 @@ $$
 * How do we refer to specific elements of the matrix???
 * Solution: come up with a clever indexing scheme
 * Matrix $A$ is an $nxm$ matrix where $n=m=3$.
-*  More generally, matrix $B$ is an $mxn$ matrix where the elements look like this:
+*  More generally, matrix $B$ is an $n\timesm$ matrix where the elements look like this:
 $$
 B=
 \begin{bmatrix}
-b_{11} & b_{12} & b_{13} & \ldots & b_{1n} \\
-b_{21} & b_{22} & b_{23} & \ldots & b_{2n} \\
+b_{11} & b_{12} & b_{13} & \ldots & b_{1m} \\
+b_{21} & b_{22} & b_{23} & \ldots & b_{2m} \\
 \vdots & \vdots & \vdots & \ldots & \vdots \\
-b_{m1} & b_{m2} & b_{m3} & \ldots & b_{mn}
+b_{n1} & b_{n2} & b_{n3} & \ldots & b_{nm}
 \end{bmatrix}
 $$
 
