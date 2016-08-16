@@ -21,7 +21,7 @@ output: pdf_document
     1. $f(x) = (4x^2+7)^{-2}$
     2. $f(x) = \frac{x^4 + 3x^{-3} + 6x - 1}{x^{-2}+2x}$
     3. $f(x) = (8x^2+3x)(x^4+2)$
-    4. A scholar argues that Texas's feelings for Donald Trump in the
+4. A scholar argues that Texas's feelings for Donald Trump in the
    upcoming election can be modeled with this function:
    $$y = \beta_0 + \beta_1 x_1 + \beta_2 x_2^2 + \beta_3 x_3$$
    where $y$ represents how warmly an individual feels towards Trump,
@@ -29,7 +29,7 @@ output: pdf_document
    represents a voter's age, and $x_3$ represents their party
    identification. What is the derivative of $y$ with respect to party
    identification? What is the derivative of $y$ with respect to age? 
-4. Find all the extrema of these functions, and determine whether they
+5. Find all the extrema of these functions, and determine whether they
    are maxima or minima:
     1. $f(x) = \frac{x^3}{3} - x$
     2. $f(x) = (x-2)^2 + 2$ 
