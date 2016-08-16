@@ -15,7 +15,7 @@ output: pdf_document
    following functions:
     1. $f(x) = -89$
     2. $f(x) = 3x-2$
-    3. f(x) = 5x^3 - 2x^2 + 6
+    3. $f(x) = 5x^3 - 2x^2 + 6$
 3. Find the derivative (with respect to $x$) of the following
    functions:
     1. $f(x) = (4x^2+7)^{-2}$
