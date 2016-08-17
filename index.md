@@ -31,6 +31,7 @@ Homework problems will be uploaded here the day they're assigned.
 
 * [Homework 1](/math-camp/homeworks/hw-01-functions.pdf)
 * [Homework 2](/math-camp/homeworks/hw-02-calculus.pdf)
+* [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf)
 
 # Slides
 
