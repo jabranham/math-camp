@@ -4,13 +4,17 @@ author: "J. Alexander Branham"
 date: "Fall 2016"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
-output: beamer_presentation
+output: 
+  beamer_presentation: 
+      fig_width: 6
+      fig_height: 6
 classoption: aspectratio=169
 fontsize: bigger
 ---
 
 ```{r setup, include=FALSE}
 source("r-setup.R")
+library(gapminder)
 ```
 
 # Data visualization 
@@ -23,8 +27,17 @@ source("r-setup.R")
 \pause
 
 ```{r, eval = FALSE}
-install.packages("ggplot2")
-library(ggplot2)
+install.packages(c("ggplot2", "gapminder"))
+library(ggplot2, gapminder)
+```
+
+### Weirdness
+Kuwait has a super high GDP per cap in some years. We're just going to
+drop them for the purpose of this tutorial: 
+
+```{r}
+gapminder <- gapminder %>%
+  filter(gdpPercap < 50000)
 ```
 
 ### Data visualization 
@@ -37,50 +50,90 @@ Check out its documentation with `?diamonds`:
 
 ### Scatterplots
 
-```{r}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price))
+```{r, fig.show='hide'}
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp))
+```
+
+### Scatterplots
+
+```{r, echo=FALSE}                      
+p
 ```
 
 # Aesthetics
 ## Aesthetics
-### Color 
+### Color
+
 ```{r}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price, color = cut))
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp, color = continent))
+```                                                                                   
+
+### Color
+```{r, echo=FALSE}
+p
 ```
 
 ### Shape
+
 ```{r}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price, shape = cut))
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp, shape = continent))
+```
+
+### Shape
+
+```{r, echo=FALSE}
+p
 ```
 
 ### Size
+
 ```{r, warning = FALSE}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price, size = cut))
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp, size = continent))
 ```
+
+### Size
+
+```{r, echo=FALSE}
+p
+```
+
 
 
 ### Alpha
+
 ```{r}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price, alpha= cut))
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp, alpha= continent))
 ```
+
+### Alpha
+```{r, echo=FALSE}
+p
+````
 
 ### You try!
 Use the `mpg` dataset from `ggplot2` to:
 
 1. Make a scatterplot with displ on the x-axis and hwy on the y-axis
-2. Add color, size, and shape aesthetics 
+2. Add color, size, and shape aesthetics
 
 # Facets
 ### Facets
 Can make facets by adding `facet_grid`:
+                            
 ```{r}
-ggplot(data = diamonds) +
-  geom_point(mapping = aes(x = carat, y = price)) + facet_grid(. ~ cut)
+p <- ggplot(data = gapminder) +
+  geom_point(mapping = aes(x = gdpPercap, y = lifeExp)) + facet_grid(. ~ continent)
+```
+
+### Facets
+
+```{r, echo=FALSE}
+p
 ```
 
 # Geoms
@@ -90,81 +143,131 @@ of this for ggplot2 ("geometric object"):
 
 ### Smooth
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
+p <- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
   geom_smooth()
 ```
 
+### Smooth
+```{r, echo=FALSE}
+p
+```
+
+
 ### Smooth - SE's
+
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
-  geom_smooth(se = FALSE) 
+p <- ggplot(data = gapminder,
+            mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_smooth(se = FALSE)
+```
+
+### Smooth - SEs
+```{r, echo=FALSE}
+p
 ```
 
 ### Smooth - OLS
+
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price, color = cut)) +
-  geom_smooth(se = FALSE, method = "lm") 
+p <- ggplot(data = gapminder,
+  mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_smooth(se = FALSE, method = "lm")
+```
+
+### Smooth - OLS
+```{r, echo=FALSE}
+p
 ```
 
 ### Histogram
 
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = carat)) +
-  geom_histogram(binwidth = .25)
+p <- ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
+  geom_histogram(binwidth = 5)
 ```
 
+### Histogram
+```{r, echo=FALSE}
+p
+```
+
+
 ### Bar charts
+
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = cut)) +
+p <- ggplot(data = gapminder, mapping = aes(x = continent)) +
   geom_bar()
 ```
 
-### Combining geoms 
+### Bar charts
+
+```{r, echo=FALSE}
+p
+````
+
+
+### Combining geoms
+
 We can layer multiple geoms on top of each other:
 
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = carat, y = price)) +
+p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, y = lifeExp)) +
   geom_point() + geom_smooth()
 ```
 
+### Combining geoms
+```{r, echo=FALSE}
+p
+```
+
 ### You try!
-Make a boxplot with color on the x-axis and price on the y-axis
+
+Using the `mpg` dataset, make a boxplot with the kind of transmission
+on the x-axis and the highway mpg on the y
 
 ### You try (answers)
 
 ```{r}
-ggplot(data = diamonds, mapping = aes(x = color, y = price)) +
+ggplot(data = mpg, mapping = aes(x = trans, y = hwy)) +
   geom_boxplot()
 ```
 
 ### Bar charts (extended)
+
 Fill vs color
 
 What do you expect this to do:
 
 ```{r, eval = FALSE}
-ggplot(data = diamonds, mapping = aes(x = cut, color = cut)) +
+ggplot(data = gapminder, mapping = aes(x = gdpPercap, color = continent)) +
   geom_bar()
 ```
 
-### Use fill for bar charts
+<!-- ### Use fill for bar charts -->
 
-```{r, FALSE}
-ggplot(data = diamonds, mapping = aes(x = cut, fill = cut)) +
-  geom_bar()
-```
+<!-- ```{r, FALSE} -->
+<!-- p <- ggplot(data = gapminder, mapping = aes(x = gdpPercap, fill = continent)) + -->
+<!--   geom_bar() -->
+<!-- ``` -->
 
-### 
-Try to make this plot
+<!-- ### Fill -->
+<!-- ```{r, echo=FALSE} -->
+<!-- p -->
+<!-- ``` -->
 
-```{r, echo = FALSE}
-ggplot(data = diamonds, mapping = aes(x = color, fill = cut)) +
-  geom_bar(position = "dodge")
-```
+<!-- ###  -->
 
-### Positions
-```{r, eval = FALSE}
-ggplot(data = diamonds, mapping = aes(x = color, fill = cut)) +
-  geom_bar(position = "dodge")
-```
-There's "stack", "dodge", "identity", "fill" - try them all out!
+<!-- Try to make this plot -->
+
+<!-- ```{r, echo = FALSE} -->
+<!-- ggplot(data = gapminder, mapping = aes(x = , fill = continent)) + -->
+<!--   geom_bar(position = "dodge") -->
+<!-- ``` -->
+
+<!-- ### Positions -->
+<!-- ```{r, eval = FALSE} -->
+<!-- ggplot(data = diamonds, mapping = aes(x = color, fill = cut)) + -->
+<!--   geom_bar(position = "dodge") -->
+<!-- ``` -->
+<!-- There's "stack", "dodge", "identity", "fill" - try them all out! -->
