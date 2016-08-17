@@ -278,7 +278,7 @@ Example: $y = 3x^2w-4w$
 \pause
 $$\frac{\partial y}{\partial x} = 6xw$$
 \pause 
-$$\frac{\partial y}{\partial w} = -4$$
+$$\frac{\partial y}{\partial w} = 3x^2 -4$$
 
 
 # Integrals 
