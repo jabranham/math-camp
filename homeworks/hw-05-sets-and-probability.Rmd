@@ -1,7 +1,7 @@
 ---
 title: "Intro to Math for Political Scientists"
 author: "Homework 5"
-date: "August 21, 2015"
+date: "August 2016"
 output: pdf_document
 ---
 1. Consider a problem in which you are rolling two dice.
