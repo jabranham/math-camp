@@ -1,9 +1,17 @@
 ---
-title: "Homework 6"
+title: "Homework - Probability"
 author: "Math Camp"
-date: "Fall 2015"
+date: "Fall 2016"
 output: pdf_document
 ---
+
+Each question assumes a standard deck of cards. Between each question,
+assume that you put back whatever cards you drew in the previous and
+shuffle the deck. 
+
+For bonus points, use `rmarkdown` to output nicely-typeset
+mathematical notation. For the calculation in #7, use an R code chunk
+to get the answer. 
 
 1. What is the marginal probability of drawing a four and then a three
    from a standard deck of cards?
