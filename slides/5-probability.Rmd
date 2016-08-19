@@ -126,7 +126,7 @@ $$
 \end{split}
 $$
 
-### Continous 
+### Continuous
 * We can't sum probabilities for continuous distributions (remember the 0 problem)
 * Solution: integration
 * $F_Y(y) = \int_{-\infty}^{y} f(y) dy$
