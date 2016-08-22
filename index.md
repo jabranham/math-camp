@@ -34,6 +34,7 @@ Homework problems will be uploaded here the day they're assigned.
 * [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf)
 * [Homework 4](/math-camp/homeworks/hw-05-sets-and-probability.pdf)
 * [Homework 5](/math-camp/homeworks/hw-06-probability.pdf)
+* [Homework 6](/math-camp/homeworks/hw-statistics-ols.pdf)
 
 # Slides
 

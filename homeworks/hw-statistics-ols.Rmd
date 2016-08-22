@@ -1,0 +1,43 @@
+---
+title: HW - statistics & OLS
+author: J. Alexander Branham
+date: August 2016
+output: pdf_document
+---
+
+1. You are interested in whether people are Democrats or not. You take
+   a random sample of 100 US citizens and find that 56 are Democrats:
+     1. What's the mean and median of your sample?
+     2. What's the variance of your sample?
+     3. Define a variable $Y$ representing the distribution of whether
+        or not a person is a Democrat. Estimate all applicable
+        parameter(s).
+   
+2. Using a dataset in R (`mtcars`, `mpg`, or `gapminder`, if you
+   don't have one already in mind), calculate an ols model with one
+   independent variable and one dependent variable. 
+     1. Explain the meaning of the intercept and the number associated
+        with the variable you've chosen.
+     2. For an interesting $x$ value, calculate your predicted $y$
+        value. 
+
+3. Consider the following output from a regression with income (if 10s
+of thousands of dollars) as the dependent variable. Prestige
+represents the preciousness of a school, methodologist is an indicator
+variable for whether or not the person is a methdologist, and P*M is
+their interaction. 
+
+| Variable     | Coefficient |
+|--------------+-------------|
+| Prestige     |        10.5 |
+| Methdologist |         0.3 |
+| P*M          |         1.4 |
+
+1. Explain the substantive interpretation of all three variables. 
+
+Calculate: 
+
+2. The predicted income of a non-methodologist with a prestige score of 3
+
+3. The predicted income of a methodologist with a prestige score of 2.5
+
