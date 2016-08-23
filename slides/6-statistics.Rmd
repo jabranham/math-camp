@@ -190,7 +190,7 @@ getBiCop <- function(n, rho, mar.fun=rnorm, x = NULL, ...) {
 }
 ```
 ### Correlation 
-```{r, echo = FALSE}
+```{r, echo = FALSE, fig.height = 4, fig.width=7}
 nhi <- getBiCop(100, -0.9) %>%
   mutate(sign = "neg",
          level = "hi")
