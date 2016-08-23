@@ -155,7 +155,7 @@ What's $e^3$
 ```
 
 ### Vectors
-Created with `c` (create) function:
+Created with `c` (combine) function:
 ```{r}
 c(1, 4, 2, -1)
 ```
