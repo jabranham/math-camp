@@ -98,14 +98,14 @@ $$\sum_{i=1}^n e_i^2$$
 ### OLS Optimization
 Rearrange above equation in terms of $e_i$:
 
-$$e_i = y_i - \hat{\beta_0} + \hat{\beta_1} x_i$$
+$$e_i = y_i - (\hat{\beta_0} + \hat{\beta_1} x_i)$$
 
 \pause
 
 Substitute:
 
-$$\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1}
-x_i)^2$$
+$$\sum_{i=1}^n e_i^2 = \sum_{i=1}^n (y_i - (\hat{\beta_0} + \hat{\beta_1}
+x_i))^2$$
 
 ### Derivatives
 To find the minimum, we'll need to take the derivative with respect to
@@ -114,16 +114,16 @@ $\hat{\beta_0}$ and $\hat{\beta_1}$. Starting with $\hat{\beta_0}$:
 \pause
 
 $$\frac{\partial}{\partial \hat{\beta_0}}
-\left[ \sum_{i=1}^n (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+\left[ \sum_{i=1}^n (y_i - (\hat{\beta_0} + \hat{\beta_1} x_i))^2 \right]$$
 
 \pause
 
 $$\sum_{i=1}^n
-  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - (\hat{\beta_0} + \hat{\beta_1} x_i))^2 \right]$$
 
 ### Derivatives
 $$\sum_{i=1}^n
-  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - \hat{\beta_0} + \hat{\beta_1} x_i)^2 \right]$$
+  \left[ \frac{\partial}{\partial \hat{\beta_0}} (y_i - (\hat{\beta_0} + \hat{\beta_1} x_i))^2 \right]$$
 
 \pause
 
@@ -132,11 +132,11 @@ the quantity in parentheses:
 
 \pause 
 
-$$\sum_{i=1}^n[-2(y_i - \hat{\beta_0}-b_1 x_i)]$$
+$$\sum_{i=1}^n[-2(y_i - \hat{\beta_0}-\hat{\beta_1} x_i)]$$
 
 \pause
 
-$$-2 \sum_{i=1}^n(y_i - \hat{\beta_0}-b_1 x_i)$$
+$$-2 \sum_{i=1}^n(y_i - \hat{\beta_0}-\hat{\beta_1} x_i)$$
 
 ### Derivative for slope
 Now let's take the partial derivative with respect to the slope
@@ -184,6 +184,10 @@ x_i(y_i-\hat{\beta_0}-\hat{\beta_1} x_i) = 0$$
 lm(hwy ~ displ + year, data = mpg) 
 ```
 
+### Multiple variables
+* How to find the effect of *one* variable (e.g. `displ`) on our $y$
+  variable? 
+* Solution: partial derivatives 
 
 # OLS in Matrix Form
 ## Notation
@@ -267,4 +271,46 @@ $$(X'X)^{-1}X'Y = (X'X)^{-1}(X'X)\hat{\beta}$$
 $$(X'X)^{-1}X'Y = I\hat{\beta}$$
 * And $I$ is (kinda) like multiplying by 1 so :
 $$(X'X)^{-1}X'Y = \hat{\beta}$$
+
+
+# Interactions
+### Interactions
+* Sometimes we want to learn about the effect of $X$ on $Y$
+  *conditional* on $Z$. 
+* ((example))
+* As we go through time, GDP per capita in a country *generally*
+  increases
+* But what if this is different in different continents?
+
+### Interaction terms data & R 
+```{r}
+library(gapminder)
+library(ggplot2)
+library(dplyr)
+gapminder <- gapminder %>%
+  filter(gdpPercap < 50000)
+```
+
+### Interaction terms - PLOT
+
+```{r}
+ggplot(gapminder, aes(year, gdpPercap, color = continent)) +
+  geom_jitter()
+```
+
+### Europe?
+```{r}
+gapminder$in_europe <- gapminder$continent == "Europe"
+```
+
+### Europe?
+```{r}
+ggplot(gapminder, aes(year, gdpPercap, color = in_europe)) +
+  geom_jitter()
+```
+
+### Interaction terms
+```{r}
+summary(lm(gdpPercap ~ year * in_europe, data = gapminder))
+```
 
