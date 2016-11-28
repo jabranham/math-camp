@@ -11,7 +11,7 @@ github_username:  jabranham
 google_analytics: UA-65548469-1
 gems:
   - jekyll-sitemap
-exclude: ['homeworks/', 'slides/']
+exclude: ['homeworks/', 'slides/', 'pre-math-camp.Rmd']
   
 # Build settings
 markdown: kramdown
