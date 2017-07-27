@@ -352,7 +352,7 @@ $$\int (f(x) + g(x)) \, dx = \int f(x) \, dx + \int g(x) \, dx$$
 
 ### Integration rules
 
-$$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq 0$$
+$$\int x^n \, dx = \frac{x^{n+1}}{n+1} + C \qquad \forall n \neq -1$$
 
 
 $$\int x^{-1} \, dx = \ln |x| + C$$
