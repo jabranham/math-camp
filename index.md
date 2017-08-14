@@ -38,7 +38,7 @@ Homework problems will be uploaded here the day they're assigned.
 
 # Slides
 
-<< Under construction for 2017 >>
+**Under construction for 2017**
 
 * [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
 <!-- * [Functions](/math-camp/slides/1-functions.pdf) -->
