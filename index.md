@@ -38,18 +38,20 @@ Homework problems will be uploaded here the day they're assigned.
 
 # Slides
 
+<< Under construction for 2017 >>
+
 * [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
-* [Functions](/math-camp/slides/1-functions.pdf)
-* [Calculus](/math-camp/slides/2-calculus.pdf)
-* [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf)
-* [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf)
-* [Probability](/math-camp/slides/5-probability.pdf)
-* [Statistics](/math-camp/slides/6-statistics.pdf)
-* [Regression](/math-camp/slides/7-ols.pdf)
-* [Best Practices](/math-camp/slides/best-practices.pdf)
-* [Data visualization](/math-camp/slides/data-viz.pdf)
-* [Basics of R](/math-camp/slides/basic-R.pdf)
-* [Working with Data in R](/math-camp/slides/data-transform.pdf)
+<!-- * [Functions](/math-camp/slides/1-functions.pdf) -->
+<!-- * [Calculus](/math-camp/slides/2-calculus.pdf) -->
+<!-- * [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf) -->
+<!-- * [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) -->
+<!-- * [Probability](/math-camp/slides/5-probability.pdf) -->
+<!-- * [Statistics](/math-camp/slides/6-statistics.pdf) -->
+<!-- * [Regression](/math-camp/slides/7-ols.pdf) -->
+<!-- * [Best Practices](/math-camp/slides/best-practices.pdf) -->
+<!-- * [Data visualization](/math-camp/slides/data-viz.pdf) -->
+<!-- * [Basics of R](/math-camp/slides/basic-R.pdf) -->
+<!-- * [Working with Data in R](/math-camp/slides/data-transform.pdf) -->
 
 
 # R & Rstudio
