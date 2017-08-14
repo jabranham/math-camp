@@ -2,7 +2,7 @@
 title: "Dealing with Data in R"
 subtitle: "How to Use dplyr"
 author: "J. Alexander Branham"
-date: "Fall 2016"
+date: "Fall 2017"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: beamer_presentation

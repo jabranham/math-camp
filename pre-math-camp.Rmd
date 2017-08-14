@@ -2,7 +2,7 @@
 title: "Introduction to Math for Political Scientists"
 subtitle: "AKA Math Camp"
 author: "J. Alexander Branham"
-date: "Fall 2016"
+date: "Fall 2017"
 mainfont: Linux Libertine
 linkcolor: "blue"
 urlcolor: "blue"
@@ -23,22 +23,20 @@ quantitative skills, provide an introduction to some of the
 statistical software you'll be using next year, and is great chance to
 get to know your fellow first-year students.
 
-This year, we're meeting August 15th through the 23rd. Classes
-at UT start August 24th. There is a full (tentative) schedule for the
+This year, we're meeting August 21st through the 29th. Classes
+at UT start August 30th. There is a full (tentative) schedule for the
 class [on the class's website](https://jabranham.com/math-camp). 
 
 Here is a checklist of items that you should review before your
 arrival. Please feel free to email me with any problems you run into.
 
 * Review what math knowledge is assumed 
-    + Complete the exercises in that section to refresh your memory if
-      needed 
-* Install R and an editor on your computer
-  [instructions](https://jabranham.com/math-camp/README.html#programs-you-may-want-to-install) 
+    + Complete the exercises in that section to refresh your memory if needed 
+* Install R and Rstudio on your computer using the [instructions](https://jabranham.com/math-camp) on the website
     + Complete the exercises below to get acquainted with R
 
 Other than that, welcome to Texas and the the Government Department!
-I'm looking forward to meeting everyone on August 15th! 
+I'm looking forward to meeting everyone!
 
 # Assumed math knowledge 
 
@@ -61,7 +59,7 @@ addition, subtraction, multiplication, and division are communicative
 and associative, and that multiplication and division are distributive
 as well. Finally, I assume that you understand that equalities are
 symmetric and transitive. For a review of any of this, I have
-[several slides that should bring you up to speed](/math-camp/slides/arithmetic.pdf)
+[several slides that should bring you up to speed](/math-camp/slides/0-arithmetic.pdf)
 
 ### Arithmetic exercises
 
@@ -133,7 +131,7 @@ familiar with the basics of how R works. If you run into any issues,
 feel free to email me. 
 
 R can be used as a calculator. Open up R and try adding 2 and 2. I've
-included what R will print out after two Oglethorpe's (`##`):
+included what R will print out after two `##`:
 
 ```{r}
 2 + 2

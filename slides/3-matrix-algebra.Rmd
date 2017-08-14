@@ -1,7 +1,7 @@
 ---
 title: " Matrix Algebra"
 author: "J. Alexander Branham"
-date: "Fall 2016"
+date: "Fall 2017"
 header-includes: 
   - \usetheme[titleformat=smallcaps, progressbar=frametitle]{metropolis}
 output: beamer_presentation
@@ -163,7 +163,7 @@ $$
 * How do we refer to specific elements of the matrix???
 * Solution: come up with a clever indexing scheme
 * Matrix $A$ is an $nxm$ matrix where $n=m=3$.
-*  More generally, matrix $B$ is an $n\timesm$ matrix where the elements look like this:
+* More generally, matrix $B$ is an $n\times m$ matrix where the elements look like this:
 $$
 B=
 \begin{bmatrix}
