@@ -29,12 +29,12 @@ You may want to take a look at what is
 
 Homework problems will be uploaded here the day they're assigned.
 
-* [Homework 1](/math-camp/homeworks/hw-01-functions.pdf)
-* [Homework 2](/math-camp/homeworks/hw-02-calculus.pdf)
-* [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf)
-* [Homework 4](/math-camp/homeworks/hw-05-sets-and-probability.pdf)
-* [Homework 5](/math-camp/homeworks/hw-06-probability.pdf)
-* [Homework 6](/math-camp/homeworks/hw-statistics-ols.pdf)
+<!-- * [Homework 1](/math-camp/homeworks/hw-01-functions.pdf) -->
+<!-- * [Homework 2](/math-camp/homeworks/hw-02-calculus.pdf) -->
+<!-- * [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf) -->
+<!-- * [Homework 4](/math-camp/homeworks/hw-05-sets-and-probability.pdf) -->
+<!-- * [Homework 5](/math-camp/homeworks/hw-06-probability.pdf) -->
+<!-- * [Homework 6](/math-camp/homeworks/hw-statistics-ols.pdf) -->
 
 # Slides
 
