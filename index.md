@@ -10,8 +10,7 @@ Welcome to "Math for Political Scientists," affectionately known as
 "math camp." This course is meant as a math refresher for incoming
 graduate students to the Department of Government. Everything for the
 course is hosted [on github](https://github.com/jabranham/math-camp).
-You may want to take a look at what is
-[assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
+
 
 # Schedule
 
