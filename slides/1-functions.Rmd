@@ -50,7 +50,8 @@ $$\log_x\left(\frac{a}{b}\right) = \log_xa - \log_xb$$
 $$\log_xa^b = b \log_x a$$
 \pause
 $$\log_x 1 = 0$$
-\pause
+
+### Properties of logs (continued)
 $$m^{\log_m(a)} = a$$
 \pause
 $$\dfrac{\log_x n}{\log_x m} = \log_m n$$

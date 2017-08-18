@@ -14,7 +14,7 @@ source("r-setup.R")
 # Limits
 
 ### Limits
-The limit of $f(x)$ as $x \rightarrow a$ is the value that $f(x)$
+The limit ($L$) of $f(x)$ as $x \rightarrow a$ is the value that $f(x)$
 approaches as $x$ gets arbitrarily close to $a$
 
 $$\lim_{x \to a}f(x) = L$$
@@ -182,7 +182,7 @@ $$\frac{d}{dx}cf(x) = cf'(x)$$
 \pause 
 $$(f(x) \pm g(x))' = f'(x) \pm g'(x)$$
 \pause 
-$$(f(x)g(x)) = f(x)g'(x) + f'(x)g(x)$$
+$$(f(x)g(x))' = f(x)g'(x) + f'(x)g(x)$$
 
 ### The chain rule
 $$\frac{d}{dx}f(g(x)) = f'(g(x))g'(x)$$
@@ -211,6 +211,8 @@ takes. **Optimization** lets us do this!
 The derivative of a function gives rate of change, so when that is
 zero, the function has usually reached a (local) maximum or minimum.
 Why? 
+
+\pause
 
 So we can find the local maxima and/or minima of a function by taking the
 derivative, setting it equal to zero, and solving for $x$ (or
@@ -268,7 +270,7 @@ ggplot(data.frame(x = c(-3, 3)), aes(x)) +
 ### Partial derivatives
 Some functions have more than one variable (e.g. $f(x,z) = x^2 +2xz +
 z^2$). In this case, we have to be very clear with respect to which we
-are differentiating. We can only do one at a time and when we do so w
+are differentiating. We can only do one at a time and when we do so we
 treat all the other variables as constants. The notation is:
 
 $$\frac{\partial f(x,z)}{\partial x}$$
