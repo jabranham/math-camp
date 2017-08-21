@@ -8,7 +8,6 @@ baseurl: /math-camp/ # the subpath of your site, e.g. /blog/
 url: "https://jabranham.com" # the base hostname & protocol for your site
 twitter_username: JAlexBranham
 github_username:  jabranham
-google_analytics: UA-65548469-1
 gems:
   - jekyll-sitemap
 exclude: ['homeworks/', 'slides/', 'pre-math-camp.Rmd']
