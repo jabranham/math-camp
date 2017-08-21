@@ -28,7 +28,7 @@ course is hosted [on github](https://github.com/jabranham/math-camp).
 
 Homework problems will be uploaded here the day they're assigned.
 
-* [Homework 1](homeworks/hw-01-functions.pdf)
+* [Homework 1](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-01-functions.pdf)
 <!-- * [Homework 2](/math-camp/homeworks/hw-02-calculus.pdf) -->
 <!-- * [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf) -->
 <!-- * [Homework 4](/math-camp/homeworks/hw-05-sets-and-probability.pdf) -->
