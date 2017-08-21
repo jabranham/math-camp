@@ -9,7 +9,7 @@ twitter_username: JAlexBranham
 github_username:  jabranham
 gems:
   - jekyll-sitemap
-exclude: ['pre-math-camp.Rmd']
+exclude: ['homeworks/', 'slides/', 'pre-math-camp.Rmd']
   
 # Build settings
 markdown: kramdown
