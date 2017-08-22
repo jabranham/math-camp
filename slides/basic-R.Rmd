@@ -51,15 +51,13 @@ ggplot(mtcars, aes(wt, mpg)) + geom_point()
 ### Advantages of R
 * It's free, open-source, and available on nearly every platform
     + Stata, the main competitor with R in our department, is between
-      $55/year and $235/year for students, depending on what you need
+      $89/year and $545/year for students, depending on what you need
 * Unparalleled in the number of  packages (groups of
   functions)
-  + More than 8,500 packages on CRAN as of June 2016, 
+  + More than 11,250 packages on CRAN as of August 2017, 
 * Great community help (e.g. #rstats on twitter, stackoverflow.com,
   R-bloggers)
     + `gov-r@utlists.utexas.edu` - departmental R listserv
-* You can combine documents and r code together (rmarkdown or knitr)
-    + For example, this presentation is written in rmarkdown
 
 ### R Editors
 * No one likes using R in a terminal, so everyone uses an editor
