@@ -42,7 +42,7 @@ Homework problems will be uploaded here the day they're assigned.
 
 * [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
 * [Functions](/math-camp/slides/1-functions.pdf)
-* [Calculus](slides/2-calculus.pdf)
+* [Calculus]({{site.baseurl}}/slides/2-calculus.pdf)
 <!-- * [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf) -->
 <!-- * [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) -->
 <!-- * [Probability](/math-camp/slides/5-probability.pdf) -->
