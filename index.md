@@ -29,8 +29,7 @@ course is hosted [on github](https://github.com/jabranham/math-camp).
 Homework problems will be uploaded here the day they're assigned.
 
 * [Homework 1](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-01-functions.pdf)
-* Homework 2
-<!-- * [Homework 2](/math-camp/homeworks/hw-02-calculus.pdf) -->
+* [Homework 2](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-02-calculus.pdf)
 <!-- * [Homework 3](/math-camp/homeworks/hw-03-matrix-algebra-and-r.pdf) -->
 <!-- * [Homework 4](/math-camp/homeworks/hw-05-sets-and-probability.pdf) -->
 <!-- * [Homework 5](/math-camp/homeworks/hw-06-probability.pdf) -->
@@ -40,9 +39,9 @@ Homework problems will be uploaded here the day they're assigned.
 
 **Under construction for 2017**
 
-* [Assumed knowledge](/math-camp/slides/0-arithmetic.pdf)
-* [Functions](/math-camp/slides/1-functions.pdf)
-* [Calculus]({{site.baseurl}}/slides/2-calculus.pdf)
+* [Assumed knowledge](https://github.com/jabranham/math-camp/raw/gh-pages/slides/0-arithmetic.pdf)
+* [Functions](https://github.com/jabranham/math-camp/raw/gh-pages/slides/1-functions.pdf)
+* [Calculus](https://github.com/jabranham/math-camp/raw/gh-pages/slides/2-calculus.pdf)
 <!-- * [Matrix algebra](/math-camp/slides/3-matrix-algebra.pdf) -->
 <!-- * [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) -->
 <!-- * [Probability](/math-camp/slides/5-probability.pdf) -->
