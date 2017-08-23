@@ -1,6 +1,6 @@
 ---
 title: "Intro to Math for Political Scientists"
-author: "Homework 5"
+author: "Homework 4"
 date: "Fall 2017"
 output: pdf_document
 ---

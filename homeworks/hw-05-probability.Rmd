@@ -1,6 +1,6 @@
 ---
-title: "Homework - Probability"
-author: "Math Camp"
+title: "Intro to Math for Political Scientists"
+author: "Homework 5"
 date: "Fall 2017"
 output: pdf_document
 ---

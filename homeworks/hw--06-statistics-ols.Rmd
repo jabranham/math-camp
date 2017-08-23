@@ -1,6 +1,6 @@
 ---
-title: HW - statistics & OLS
-author: J. Alexander Branham
+title: "Intro to Math for Political Scientists"
+author: "Homework 6"
 date: Fall 2017
 output: pdf_document
 ---
