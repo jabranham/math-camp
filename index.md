@@ -41,7 +41,7 @@ Homework problems will be uploaded here the day they're assigned.
 * [Functions](https://github.com/jabranham/math-camp/raw/gh-pages/slides/1-functions.pdf)
 * [Calculus](https://github.com/jabranham/math-camp/raw/gh-pages/slides/2-calculus.pdf)
 * [Matrix algebra](https://github.com/jabranham/math-camp/raw/gh-pages/slides/3-matrix-algebra.pdf)
-<!-- * [Sets and combinatorics](/math-camp/slides/4-sets-and-combinatorics.pdf) -->
+* [Sets and combinatorics](https://github.com/jabranham/math-camp/raw/gh-pages/slides/4-sets-and-combinatorics.pdf)
 <!-- * [Probability](/math-camp/slides/5-probability.pdf) -->
 <!-- * [Statistics](/math-camp/slides/6-statistics.pdf) -->
 <!-- * [Regression](/math-camp/slides/7-ols.pdf) -->
