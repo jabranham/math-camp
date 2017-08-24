@@ -24,10 +24,3 @@ $$Y = \left\{ \text{Male UT GOV faculty members with tenure} \right\} \qquad n(Y
     6. $X \cup Y$ - to which set is this equivalent? 
 
 3. Let $X$ and $Y$ be two sets, where $n(X) =14$ and $n(Y) =25$. If there are twice as many objects in $X \cup Y$ as there are in $X \cap Y$, how many objects are in *both* $X$ and $Y$?
-
-4. Let's learn more about R!
-    1. Using R, simulate 100 flips from a fair coin. Store these in an object called `flips`. (hint: `?rbinom`)
-        1. If you're feeling particularly savvy, you can use the `set.seed` function to make your "random" draws reproducible. 
-    2. Let's assume a `1` denotes heads, and a `0` denotes tails. How many heads did you get? 
-    3. If we were uncertain of whether the coin is fair or not, we can estimate the probability of getting a heads. One way of doing so is to take the number of heads we got divided by the number of trials. Using R, calculate this number. 
-    4. The number you got probably isn't exactly 0.5, even though that's the parameter we used to simulate these flips (in part 1). Why is this? Does this mean that the coin isn't fair? If so, why? If not, why not? 
