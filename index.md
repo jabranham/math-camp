@@ -32,7 +32,7 @@ Homework problems will be uploaded here the day they're assigned.
 * [Homework 2](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-02-calculus.pdf)
 * [Homework 3](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-03-matrix-algebra-and-r.pdf)
 * [Homework 4](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-04-sets-and-probability.pdf)
-<!-- * [Homework 5](/math-camp/homeworks/hw-06-probability.pdf) -->
+* [Homework 5](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-05-probability.pdf)
 <!-- * [Homework 6](/math-camp/homeworks/hw-statistics-ols.pdf) -->
 
 # Slides
@@ -42,9 +42,10 @@ Homework problems will be uploaded here the day they're assigned.
 * [Calculus](https://github.com/jabranham/math-camp/raw/gh-pages/slides/2-calculus.pdf)
 * [Matrix algebra](https://github.com/jabranham/math-camp/raw/gh-pages/slides/3-matrix-algebra.pdf)
 * [Sets and combinatorics](https://github.com/jabranham/math-camp/raw/gh-pages/slides/4-sets-and-combinatorics.pdf)
-<!-- * [Probability](/math-camp/slides/5-probability.pdf) -->
+* [Probability](https://github.com/jabranham/math-camp/raw/gh-pages/slides/5-probability.pdf)
 <!-- * [Statistics](/math-camp/slides/6-statistics.pdf) -->
 <!-- * [Regression](/math-camp/slides/7-ols.pdf) -->
+
 <!-- * [Best Practices](/math-camp/slides/best-practices.pdf) -->
 <!-- * [Data visualization](/math-camp/slides/data-viz.pdf) -->
 <!-- * [Basics of R](/math-camp/slides/basic-R.pdf) -->
