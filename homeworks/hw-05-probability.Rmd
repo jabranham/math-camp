@@ -5,13 +5,10 @@ date: "Fall 2017"
 output: pdf_document
 ---
 
-Each question assumes a standard deck of cards. Between each question,
-assume that you put back whatever cards you drew in the previous and
-shuffle the deck. 
+Each question assumes a standard deck of cards.
+Between each question (but not within the question), assume that you put back whatever cards you drew in the previous and shuffle the deck. 
 
-For bonus points, use `rmarkdown` to output nicely-typeset
-mathematical notation. For the calculation in #7, use an R code chunk
-to get the answer. 
+For bonus points, use \LaTeX\ to output nicely-typeset mathematical notation. 
 
 1. What is the marginal probability of drawing a four and then a three
    from a standard deck of cards?
@@ -30,9 +27,25 @@ to get the answer.
 6. What's the probability of drawing a three on the second draw given
    you drew a seven on the first draw?
 
-7. It rains 88 days of the year on average in Austin. The
+Assuming that drawing a black card is a "success" and anything else is a "failure," find the following.
+Continue to assume that you put back cards and randomize the deck between questions.
+
+7. The probability of getting a success on your first draw.
+
+8. The probability of getting 17 successes in a row.
+
+9. The probability of getting 15 or more successes in 30 draws.
+
+10. It rains 88 days of the year on average in Austin. The
    weatherperson in Austin is not totally reliable, but they've called
    for rain tomorrow. When it rains, they correctly forecast rain 80
    percent of the time. However, when it is dry, they also predict
    rain 15 percent of the time. What is the probability that it will
    rain tomorrow?
+
+11. Computers can be helpful to simulate large numbers of events. Let's use R to think about how probability works:
+    1. Using R, simulate 100 flips from a fair coin. Store these in an object called `flips`. (hint: `?rbinom`)
+        1. If you're feeling particularly savvy, you can use the `set.seed` function to make your "random" draws reproducible. 
+    2. Let's assume a `1` denotes heads, and a `0` denotes tails. How many heads did you get? 
+    3. If we were uncertain of whether the coin is fair or not, we can estimate the probability of getting a heads. One way of doing so is to take the number of heads we got divided by the number of trials. Using R, calculate this number. 
+    4. The number you got probably isn't exactly 0.5, even though that's the parameter we used to simulate these flips (in part 1). Why is this? Does this mean that the coin isn't fair? If so, why? If not, why not? 
