@@ -33,7 +33,7 @@ Homework problems will be uploaded here the day they're assigned.
 * [Homework 3](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-03-matrix-algebra-and-r.pdf)
 * [Homework 4](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-04-sets-and-probability.pdf)
 * [Homework 5](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-05-probability.pdf)
-* [Homework 6](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-06--statistics-ols.pdf)
+* [Homework 6](https://github.com/jabranham/math-camp/raw/gh-pages/homeworks/hw-06-statistics-ols.pdf)
 
 # Slides
 
