@@ -23,7 +23,7 @@ output: pdf_document
 
 3. Consider the following output from a regression with income (if 10s
 of thousands of dollars) as the dependent variable. Prestige
-represents the preciousness of a school, methodologist is an indicator
+represents the prestigiousness of a school, methodologist is an indicator
 variable for whether or not the person is a methdologist, and P*M is
 their interaction. 
 
@@ -34,7 +34,7 @@ their interaction.
 | P*M          |         1.4 |
 | Intercept    |          30 |
 
-1. Explain the substantive interpretation of all three variables. 
+1. Explain the substantive interpretation of all four parameter estimates. 
 
 Calculate: 
 
